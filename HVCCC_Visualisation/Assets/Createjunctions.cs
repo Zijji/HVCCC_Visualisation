@@ -24,17 +24,7 @@ public class Createjunctions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Maps junction lattitude and longitude to x and z values
-        double lat_distance = bottomright_lat - topleft_lat;
-        double jn_lat_distance = junction_lat - topleft_lat;
-        double topleft_bottomright_length_x = bottomright.transform.position.x - topleft.transform.position.x;
-        double jn_pos_x = topleft.transform.position.x + topleft_bottomright_length_x * (jn_lat_distance / lat_distance);
-
-        double lon_distance = bottomright_lon - topleft_lon;
-        double jn_lon_distance = junction_lon - topleft_lon;
-        double topleft_bottomright_length_z = bottomright.transform.position.z - topleft.transform.position.z;
-        double jn_pos_z = topleft.transform.position.z + topleft_bottomright_length_z * (jn_lon_distance / lon_distance);
-
+        
         //EXCEL PART, THE CSV IS IN THE RESOURCES FOLDER
         TextAsset junctionData = Resources.Load<TextAsset>("Junctions_Coordinates");
         string[] data = junctionData.text.Split(new char[] { '\n' });
@@ -62,18 +52,41 @@ public class Createjunctions : MonoBehaviour
             j.zCoordinate = zCoord;
 
             //DOES ARE ALL THE BITS OF DATA IN EXCEL, THE IMPORTANT ONES AT LEAST
-            Debug.Log(row[0] + ", " + row[1] + ", " + xCoord + ", " + zCoord);
+            //Debug.Log(row[0] + ", " + row[1] + ", " + xCoord + ", " + zCoord);
 
             junctions.Add(j);
         }
 
-
+        Debug.Log(junctions[0]);
         //topleft.position.x
         //bottomright.position.x
 
-
+        //Maps junction lattitude and longitude to x and z values
+        double lat_distance = bottomright_lat - topleft_lat;
+        double topleft_bottomright_length_x = bottomright.transform.position.x - topleft.transform.position.x;
+        double lon_distance = bottomright_lon - topleft_lon;
+        double topleft_bottomright_length_z = bottomright.transform.position.z - topleft.transform.position.z;
+        /*
+        double jn_lat_distance = junction_lat - topleft_lat;
+        double jn_pos_x = topleft.transform.position.x + topleft_bottomright_length_x * (jn_lat_distance / lat_distance);
+        double jn_lon_distance = junction_lon - topleft_lon;
+        double jn_pos_z = topleft.transform.position.z + topleft_bottomright_length_z * (jn_lon_distance / lon_distance);
         //Creates the junctions
-        Instantiate(junction, new Vector3( (float) jn_pos_x,topleft.transform.position.y, (float) jn_pos_z), transform.rotation);
+        Instantiate(junction, new Vector3((float)jn_pos_x, topleft.transform.position.y, (float)jn_pos_z), transform.rotation);
+        */
+
+
+        for (int i = 0; i < junctions.Count; i++)
+        {
+            double jn_lat_distance = junctions[i].xCoordinate - topleft_lat;
+            double jn_pos_x = topleft.transform.position.x + topleft_bottomright_length_x * (jn_lat_distance / lat_distance);
+            double jn_lon_distance = junctions[i].zCoordinate - topleft_lon;
+            double jn_pos_z = topleft.transform.position.z + topleft_bottomright_length_z * (jn_lon_distance / lon_distance);
+            //Creates the junctions
+            Instantiate(junction, new Vector3((float)jn_pos_x, topleft.transform.position.y, (float)jn_pos_z), transform.rotation);
+        }
+
+
     }
 
     // Update is called once per frame
