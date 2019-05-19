@@ -83,7 +83,11 @@ public class Createjunctions : MonoBehaviour
             double jn_lon_distance = junctions[i].zCoordinate - topleft_lon;
             double jn_pos_z = topleft.transform.position.z + topleft_bottomright_length_z * (jn_lon_distance / lon_distance);
             //Creates the junctions
-            Instantiate(junction, new Vector3((float)jn_pos_x, topleft.transform.position.y, (float)jn_pos_z), transform.rotation);
+            GameObject junction_object = Instantiate(junction, new Vector3((float)jn_pos_x, topleft.transform.position.y, (float)jn_pos_z), transform.rotation);
+            //givens the id and signal to the junction
+            junction_object.GetComponent<Junction>().junction_id=junctions[i].id; //set the variable you want to initialize
+            junction_object.GetComponent<Junction>().printJunctionConnectionData(); //set the variable you want to initialize
+
         }
 
 
