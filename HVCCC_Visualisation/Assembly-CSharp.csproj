@@ -60,6 +60,7 @@
      <Compile Include="Assets\Createjunctions.cs" />
      <Compile Include="Assets\Junction.cs" />
      <Compile Include="Assets\MoveCamera.cs" />
+     <Compile Include="Assets\TrackCreator.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/UoN/SENG4211/Repo/HVCCC_Visualisation/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
