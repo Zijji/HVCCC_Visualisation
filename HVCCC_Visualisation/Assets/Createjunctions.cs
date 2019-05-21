@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Createjunctions : MonoBehaviour
 {
+    public GameObject junction_parent;
     public GameObject junction;
     public GameObject map;      //This is the map where the junctions will be plotted.
     public double junction_lat;  //junction latitude
@@ -84,7 +85,9 @@ public class Createjunctions : MonoBehaviour
             double jn_pos_z = topleft.transform.position.z + topleft_bottomright_length_z * (jn_lon_distance / lon_distance);
             //Creates the junctions
             GameObject junction_object = Instantiate(junction, new Vector3((float)jn_pos_x, topleft.transform.position.y, (float)jn_pos_z), transform.rotation);
+            junction_object.transform.parent = junction_parent.transform;
             //givens the id and signal to the junction
+            junction_object.name = junctions[i].id;
             junction_object.GetComponent<Junction>().junction_id=junctions[i].id; //set the variable you want to initialize
             junction_object.GetComponent<Junction>().printJunctionConnectionData(); //set the variable you want to initialize
 
