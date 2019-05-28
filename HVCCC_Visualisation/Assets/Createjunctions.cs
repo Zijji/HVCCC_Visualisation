@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Schemas;
 public class Createjunctions : MonoBehaviour
 {
     public GameObject junction_parent;
@@ -18,6 +18,7 @@ public class Createjunctions : MonoBehaviour
     public double bottomright_lat = -33.854337;
     public double bottomright_lon = 152.634515;
 
+    public XMLHelper xml_helper = new XMLHelper();
     List<AllJunctions> junctions = new List<AllJunctions>();
 
 
@@ -25,12 +26,12 @@ public class Createjunctions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
         //EXCEL PART, THE CSV IS IN THE RESOURCES FOLDER
         TextAsset junctionData = Resources.Load<TextAsset>("Junctions_Coordinates");
         string[] data = junctionData.text.Split(new char[] { '\n' });
         //Debug.Log(data.Length);
-        for(int i = 1; i < data.Length; i++)
+        for (int i = 1; i < data.Length; i++)
         {
             string[] row = data[i].Split(new char[] { ',' });
             AllJunctions j = new AllJunctions();
@@ -59,8 +60,8 @@ public class Createjunctions : MonoBehaviour
         }
 
         Debug.Log(junctions[0]);
-        //topleft.position.x
-        //bottomright.position.x
+        // topleft.position.x;
+        // bottomright.position.x;
 
         //Maps junction lattitude and longitude to x and z values
         double lat_distance = bottomright_lat - topleft_lat;
@@ -79,6 +80,28 @@ public class Createjunctions : MonoBehaviour
 
         for (int i = 0; i < junctions.Count; i++)
         {
+            //Code below is for getting the junctions that junction i connects to
+            //NOTE: THe code below will likely be ommited in the final product
+            string connecting_junction_ids = "";
+            dataRailNetworkSectionsSection[] sections = this.xml_helper.getSections();
+
+            for (int j = 0; j < sections.Length; j++)
+            {
+
+                if (sections[j].startJunctionId.Equals(junctions[i].id))
+                {
+
+                    connecting_junction_ids += sections[j].endJunctionId + ';';
+                }
+                else if (sections[j].endJunctionId.Equals(junctions[i].id))
+                {
+                    connecting_junction_ids += sections[j].startJunctionId + ';';
+
+                }
+            }
+            print(connecting_junction_ids);
+            string[] connecting_junction_id_list = connecting_junction_ids.Split(';');
+
             double jn_lat_distance = junctions[i].xCoordinate - topleft_lat;
             double jn_pos_x = topleft.transform.position.x + topleft_bottomright_length_x * (jn_lat_distance / lat_distance);
             double jn_lon_distance = junctions[i].zCoordinate - topleft_lon;
@@ -88,8 +111,12 @@ public class Createjunctions : MonoBehaviour
             junction_object.transform.parent = junction_parent.transform;
             //givens the id and signal to the junction
             junction_object.name = junctions[i].id;
-            junction_object.GetComponent<Junction>().junction_id=junctions[i].id; //set the variable you want to initialize
+            junction_object.GetComponent<Junction>().junction_id = junctions[i].id; //set the variable you want to initialize
             junction_object.GetComponent<Junction>().printJunctionConnectionData(); //set the variable you want to initialize
+
+
+
+            junction_object.GetComponent<Junction>().connecting_junctions = connecting_junction_id_list; //sets the connection junctions to a vraible inside junction
 
         }
 
@@ -99,6 +126,6 @@ public class Createjunctions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

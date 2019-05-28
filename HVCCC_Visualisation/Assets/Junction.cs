@@ -6,7 +6,7 @@ using Schemas;
 public class Junction : MonoBehaviour
 {
     public string junction_id;
-
+    public string[] connecting_junctions;
     //The xml helper that is used to get info from the xml
     public XMLHelper xml_helper;
     //The list of junction connections
@@ -27,7 +27,7 @@ public class Junction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     //functions below prints all connection info. Also shows how to access junction connection info
@@ -35,20 +35,23 @@ public class Junction : MonoBehaviour
     {
         print("Junction Connection Data for " + this.junction_id);
         //if there are no junciton connections 
-        if(this.junction_connections == null){
+        if (this.junction_connections == null)
+        {
             print("No junction Connections");
         }
-        else{
-            for(int i = 0;i < this.junction_connections.Length;i++){
+        else
+        {
+            for (int i = 0; i < this.junction_connections.Length; i++)
+            {
                 string fromTrackId = this.junction_connections[i].fromTrackId;
-                string toTrackId= this.junction_connections[i].toTrackId;
-                string length=this.junction_connections[i].length;
-                string safeToSit=this.junction_connections[i].safeToSit;
-                string internalNodes=this.junction_connections[i].internalNodes;
+                string toTrackId = this.junction_connections[i].toTrackId;
+                string length = this.junction_connections[i].length;
+                string safeToSit = this.junction_connections[i].safeToSit;
+                string internalNodes = this.junction_connections[i].internalNodes;
 
-                print("fromTrackId:"+fromTrackId+";toTrackId:"+toTrackId+";length:"+length+";safeToSit:"+safeToSit+";internalNodes"+internalNodes);
-            } 
-            
+                print("fromTrackId:" + fromTrackId + ";toTrackId:" + toTrackId + ";length:" + length + ";safeToSit:" + safeToSit + ";internalNodes" + internalNodes);
+            }
+
         }
     }
 }
