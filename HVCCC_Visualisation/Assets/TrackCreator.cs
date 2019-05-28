@@ -20,10 +20,14 @@ public class TrackCreator : MonoBehaviour
         }
         */
         //for(int i = 0; i < 50; i++)
-        while(Vector3.Distance(TrackStart.transform.position, TrackPosition) < Vector3.Distance(TrackEnd.transform.position, TrackStart.transform.position))
+        //while(Vector3.Distance(TrackStart.transform.position, TrackPosition) < Vector3.Distance(TrackEnd.transform.position, TrackStart.transform.position))
+        //for (int i = 0; i < 50; i++)
+        while (Vector3.Distance(TrackStart.transform.position, TrackPosition) < Vector3.Distance(TrackEnd.transform.position, TrackStart.transform.position))
         {
             Instantiate(TrackObject, TrackPosition, TrackStart.transform.rotation);
-            TrackPosition += (TrackEnd.transform.position - TrackStart.transform.position).normalized;
+            Collider TrackCollider = TrackObject.GetComponent<Collider>();
+            TrackPosition += (TrackEnd.transform.position - TrackStart.transform.position).normalized * 0.02f;//, TrackCollider.bounds.size;
+            //TrackPosition += Vector3.Project((TrackEnd.transform.position - TrackStart.transform.position).normalized, TrackCollider.bounds.size);
         }
         
     }
