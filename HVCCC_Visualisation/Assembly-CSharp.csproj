@@ -58,9 +58,13 @@
      <Compile Include="Assets\AllJunctions.cs" />
      <Compile Include="Assets\Createjunction.cs" />
      <Compile Include="Assets\Createjunctions.cs" />
+     <Compile Include="Assets\CreateSections.cs" />
      <Compile Include="Assets\Junction.cs" />
+     <Compile Include="Assets\modelInputs.cs" />
      <Compile Include="Assets\MoveCamera.cs" />
+     <Compile Include="Assets\Section.cs" />
      <Compile Include="Assets\TrackCreator.cs" />
+     <Compile Include="Assets\XMLHelper.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/UoN/SENG4211/Repo/HVCCC_Visualisation/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
