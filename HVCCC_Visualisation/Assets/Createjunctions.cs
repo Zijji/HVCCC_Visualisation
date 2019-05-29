@@ -13,12 +13,12 @@ public class Createjunctions : MonoBehaviour
     public double junction_lon;  //junction longitude
 
     public GameObject topleft;  //Assumes topleft is representation of -31.725714, 147.696161 
-    public double topleft_lat = -31.725714;
-    public double topleft_lon = 147.696161;
+    public double topleft_lat = -29.7;
+    public double topleft_lon = 148.7;
 
     public GameObject bottomright; //Assumes bottom right is -33.854337, 152.634515
-    public double bottomright_lat = -33.854337;
-    public double bottomright_lon = 152.634515;
+    public double bottomright_lat = -34.3;
+    public double bottomright_lon = 153.3;
 
     public XMLHelper xml_helper = new XMLHelper();
     List<AllJunctions> junctions = new List<AllJunctions>();
@@ -32,8 +32,8 @@ public class Createjunctions : MonoBehaviour
         //EXCEL PART, THE CSV IS IN THE RESOURCES FOLDER
         TextAsset junctionData = Resources.Load<TextAsset>("Junctions_Coordinates");
         string[] data = junctionData.text.Split(new char[] { '\n' });
-        //Debug.Log(data.Length);
-        for (int i = 1; i < data.Length; i++)
+        Debug.Log(data.Length);
+        for (int i = 1; i < data.Length-1; i++)
         {
             string[] row = data[i].Split(new char[] { ',' });
             AllJunctions j = new AllJunctions();
@@ -42,8 +42,9 @@ public class Createjunctions : MonoBehaviour
             j.id = row[0];
 
             j.signalName = row[1];
-
+            Debug.Log("he");
             string x = row[2];
+            Debug.Log(x);
             x = x.Substring(1);
             double xCoord;
             double.TryParse(x, out xCoord);
