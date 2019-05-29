@@ -8,6 +8,7 @@ public class Createjunctions : MonoBehaviour
     public GameObject junction;
     public GameObject section_object;
     public GameObject map;      //This is the map where the junctions will be plotted.
+    public Terrain terrain;
     public double junction_lat;  //junction latitude
     public double junction_lon;  //junction longitude
 
@@ -53,10 +54,7 @@ public class Createjunctions : MonoBehaviour
             double zCoord;
             double.TryParse(z, out zCoord);
             j.zCoordinate = zCoord;
-
-            //DOES ARE ALL THE BITS OF DATA IN EXCEL, THE IMPORTANT ONES AT LEAST
-            //Debug.Log(row[0] + ", " + row[1] + ", " + xCoord + ", " + zCoord);
-
+            
             junctions.Add(j);
         }
 
@@ -107,8 +105,9 @@ public class Createjunctions : MonoBehaviour
             double jn_pos_x = topleft.transform.position.x + topleft_bottomright_length_x * (jn_lat_distance / lat_distance);
             double jn_lon_distance = junctions[i].zCoordinate - topleft_lon;
             double jn_pos_z = topleft.transform.position.z + topleft_bottomright_length_z * (jn_lon_distance / lon_distance);
+            float posy = Terrain.activeTerrain.SampleHeight(new Vector3((int)jn_pos_x, 0, (int)jn_pos_z));
             //Creates the junctions
-            GameObject junction_object = Instantiate(junction, new Vector3((float)jn_pos_x, topleft.transform.position.y, (float)jn_pos_z), transform.rotation);
+            GameObject junction_object = Instantiate(junction, new Vector3((float)jn_pos_x, posy, (float)jn_pos_z), transform.rotation);
             junction_object.transform.parent = junction_parent.transform;
             //givens the id and signal to the junction
             junction_object.name = junctions[i].id;
