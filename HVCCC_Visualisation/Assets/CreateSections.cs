@@ -22,6 +22,7 @@ public class CreateSections : MonoBehaviour
             double section_pos_x = 0.00;
             double section_pos_z = 0.00;
             double section_pos_y = 0.00;
+            //float section_pos_y = Terrain.activeTerrain.SampleHeight(new Vector3((float)section_pos_x, 0, (float)section_pos_z));
 
             GameObject section_object = Instantiate(section, new Vector3((float)section_pos_x, (float)section_pos_y, (float)section_pos_z), transform.rotation);
             //givens the id and signal to the junction
