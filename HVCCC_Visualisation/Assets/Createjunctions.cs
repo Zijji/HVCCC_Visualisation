@@ -4,6 +4,7 @@ using UnityEngine;
 using Schemas;
 public class Createjunctions : MonoBehaviour
 {
+    public GameObject trainObject;
     public GameObject junction_parent;
     public GameObject junction;
     public GameObject section_object;
@@ -124,6 +125,8 @@ public class Createjunctions : MonoBehaviour
         for (int i = 0; i < junctions.Count; i++)
         {
             GameObject thisJunction = GameObject.Find(junctions[i].id);
+            GameObject sectionParent = GameObject.Find("SectionParent");
+            
             if (thisJunction != null)
             {
                 Debug.Log("Found thisJunction not null!");
@@ -141,6 +144,7 @@ public class Createjunctions : MonoBehaviour
                             Debug.Log("Found endJunction not null!");
                             
                             GameObject newSection = Instantiate(section_object, thisJunction.transform.position, thisJunction.transform.rotation);
+                            newSection.transform.parent = sectionParent.transform;
                             newSection.GetComponent<TrackCreator>().SectionMoveStart(thisJunction.transform.position);
                             newSection.GetComponent<TrackCreator>().SectionMoveEnd(endJunction.transform.position);
                             newSection.GetComponent<TrackCreator>().SectionDraw();
@@ -156,11 +160,39 @@ public class Createjunctions : MonoBehaviour
                     }
                 }
             }
-            
+
             //thisJunction
         }
+        int trainNo = 0;
+        for (int i = 0; i < junctions.Count; i++)
+        {
+            if(Random.Range(0, 15) == 0)
+            {
+                //Creates Train for this junction randomly - 1 in 15 chance
+                GameObject trainJunction = GameObject.Find(junctions[i].id);
+                GameObject newTrainObject = Instantiate(trainObject, trainJunction.transform.position, trainJunction.transform.rotation);
+                newTrainObject.GetComponent<TrainMove>().junctionDestination = GameObject.Find(junctions[i].id);
+                newTrainObject.name = "Train" + trainNo;
+                trainNo++;
+                GameObject trainParent = GameObject.Find("TrainParent");
+                newTrainObject.transform.parent = trainParent.transform;
+            }
+            
 
-
+        }
+        /*
+        //Creates Train for this junction randomly - 1 in 15 chance
+        GameObject trainJunction = GameObject.Find("thisJunction");
+        GameObject newTrainObject = Instantiate(trainObject, trainJunction.transform.position, trainJunction.transform.rotation);
+        newTrainObject.GetComponent<TrainMove>().junctionDestination = GameObject.Find("thisJunction");
+        newTrainObject.name = "Train" + int.Parse(trainNo);
+        */
+        /*
+        //Creates Train for one junction
+        GameObject trainJunction = GameObject.Find("jn_Tahmoor_LoopPoints");
+        GameObject newTrainObject = Instantiate(trainObject, trainJunction.transform.position, trainJunction.transform.rotation);
+        newTrainObject.GetComponent<TrainMove>().junctionDestination = GameObject.Find("jn_Tahmoor_LoopPoints");
+        */
     }
 
     // Update is called once per frame
