@@ -66,18 +66,9 @@ public class Createjunctions : MonoBehaviour
 
         //Maps junction lattitude and longitude to x and z values
         double lat_distance = bottomright_lat - topleft_lat;
-        double topleft_bottomright_length_x = bottomright.transform.position.x - topleft.transform.position.x;
-        double lon_distance = bottomright_lon - topleft_lon;
         double topleft_bottomright_length_z = bottomright.transform.position.z - topleft.transform.position.z;
-        /*
-        double jn_lat_distance = junction_lat - topleft_lat;
-        double jn_pos_x = topleft.transform.position.x + topleft_bottomright_length_x * (jn_lat_distance / lat_distance);
-        double jn_lon_distance = junction_lon - topleft_lon;
-        double jn_pos_z = topleft.transform.position.z + topleft_bottomright_length_z * (jn_lon_distance / lon_distance);
-        //Creates the junctions
-        Instantiate(junction, new Vector3((float)jn_pos_x, topleft.transform.position.y, (float)jn_pos_z), transform.rotation);
-        */
-
+        double lon_distance = bottomright_lon - topleft_lon;
+        double topleft_bottomright_length_x = bottomright.transform.position.x - topleft.transform.position.x;
 
         for (int i = 0; i < junctions.Count; i++)
         {
@@ -107,9 +98,9 @@ public class Createjunctions : MonoBehaviour
             double jn_pos_x = topleft.transform.position.x + topleft_bottomright_length_x * (jn_lat_distance / lat_distance);
             double jn_lon_distance = junctions[i].zCoordinate - topleft_lon;
             double jn_pos_z = topleft.transform.position.z + topleft_bottomright_length_z * (jn_lon_distance / lon_distance);
-            float posy = Terrain.activeTerrain.SampleHeight(new Vector3((float)jn_pos_x, 0, (float)jn_pos_z));
+            float posy = Terrain.activeTerrain.SampleHeight(new Vector3((float)jn_pos_z, 0, (float)jn_pos_x));
             //Creates the junctions
-            GameObject junction_object = Instantiate(junction, new Vector3((float)jn_pos_x, posy, (float)jn_pos_z), transform.rotation);
+            GameObject junction_object = Instantiate(junction, new Vector3((float)jn_pos_z, posy, (float)jn_pos_x), transform.rotation);
             junction_object.transform.parent = junction_parent.transform;
             //givens the id and signal to the junction
             junction_object.name = junctions[i].id;
