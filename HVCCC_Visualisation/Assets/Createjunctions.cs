@@ -13,11 +13,11 @@ public class Createjunctions : MonoBehaviour
     public double junction_lat;  //junction latitude
     public double junction_lon;  //junction longitude
 
-    public GameObject topleft;  //Assumes topleft is representation of -31.725714, 147.696161 
+    public GameObject topleft;  //Assumes topleft is representation of 
     public double topleft_lat = -29.7;
     public double topleft_lon = 148.7;
 
-    public GameObject bottomright; //Assumes bottom right is -33.854337, 152.634515
+    public GameObject bottomright; //Assumes bottom right is 
     public double bottomright_lat = -34.3;
     public double bottomright_lon = 153.3;
 
