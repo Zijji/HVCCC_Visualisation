@@ -71,6 +71,16 @@ public class XMLHelper{
         throw new Exception(("The given track id : " + section_id + " does not correspond to any in the data file. Check that the track is is correct and that it there exists a track with that as it's id"));
     }
 
+    public dataRailNetworkRailPlannerTimeTables getTimetable()
+    {
+        //return data_object.railNetwork[0].railPlanner[0].timeTables;
+        return data_object.railNetwork[0].railPlanner[0].timeTables[0];
+    }
 
+    public dataRailNetworkRailPlannerAllPaths getPaths()
+    {
+        //return data_object.railNetwork[0].railPlanner[0].timeTables;
+        return data_object.railNetwork[0].railPlanner[0].allPaths[0];
+    }
 
 } 

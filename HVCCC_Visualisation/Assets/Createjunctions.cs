@@ -43,7 +43,7 @@ public class Createjunctions : MonoBehaviour
             j.id = row[0];
 
             j.signalName = row[1];
-            Debug.Log("he");
+            //Debug.Log("he");
             string x = row[2];
             Debug.Log(x);
             x = x.Substring(1);
@@ -154,6 +154,8 @@ public class Createjunctions : MonoBehaviour
 
             //thisJunction
         }
+
+        /**
         int trainNo = 0;
         for (int i = 0; i < junctions.Count; i++)
         {
@@ -168,9 +170,18 @@ public class Createjunctions : MonoBehaviour
                 GameObject trainParent = GameObject.Find("TrainParent");
                 newTrainObject.transform.parent = trainParent.transform;
             }
-            
+         }
+         */
 
-        }
+        // Just creating one train for testing
+        Debug.Log("Nathan: creating 1 train for testing");
+        GameObject trainJunction = GameObject.Find(junctions[0].id);
+        GameObject newTrainObject = Instantiate(trainObject, trainJunction.transform.position, trainJunction.transform.rotation);
+        newTrainObject.GetComponent<TrainMove>().junctionDestination = GameObject.Find(junctions[0].id);
+        GameObject trainParent = GameObject.Find("TrainParent");
+        newTrainObject.transform.parent = trainParent.transform;
+
+
         /*
         //Creates Train for this junction randomly - 1 in 15 chance
         GameObject trainJunction = GameObject.Find("thisJunction");

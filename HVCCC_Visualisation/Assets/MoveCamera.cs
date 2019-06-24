@@ -19,6 +19,7 @@ public class MoveCamera : MonoBehaviour
         float moveX = -Input.GetAxis("Horizontal");
         float moveZ = -Input.GetAxis("Vertical");
 
-        thisTransform.position = new Vector3(thisTransform.position.x + moveX * moveSpeed, thisTransform.position.y, thisTransform.position.z + moveZ * moveSpeed);
+        Quaternion rotateVector = Quaternion.Euler(0,thisTransform.eulerAngles.y,0);
+        thisTransform.position = thisTransform.position + (rotateVector * new Vector3(moveX * moveSpeed, 0, moveZ * moveSpeed));
     }
 }
