@@ -33,11 +33,11 @@ public class Junction : MonoBehaviour
     //functions below prints all connection info. Also shows how to access junction connection info
     public void printJunctionConnectionData()
     {
-        print("Junction Connection Data for " + this.junction_id);
+//        print("Junction Connection Data for " + this.junction_id);
         //if there are no junciton connections 
         if (this.junction_connections == null)
         {
-            print("No junction Connections");
+//            print("No junction Connections");
         }
         else
         {
@@ -49,7 +49,7 @@ public class Junction : MonoBehaviour
                 string safeToSit = this.junction_connections[i].safeToSit;
                 string internalNodes = this.junction_connections[i].internalNodes;
 
-                print("fromTrackId:" + fromTrackId + ";toTrackId:" + toTrackId + ";length:" + length + ";safeToSit:" + safeToSit + ";internalNodes" + internalNodes);
+//                print("fromTrackId:" + fromTrackId + ";toTrackId:" + toTrackId + ";length:" + length + ";safeToSit:" + safeToSit + ";internalNodes" + internalNodes);
             }
 
         }
