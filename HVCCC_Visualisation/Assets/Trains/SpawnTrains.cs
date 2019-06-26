@@ -57,7 +57,7 @@ public class SpawnTrains : MonoBehaviour
                 {
                     if (m.Equals("-1000"))
                     {
-                        print("Case being ignored because j = 10000");
+                        print("Case being ignored because j = 1000");
                         break; // Just ignore this junction it is not visited path (or the train) for this instance
                     }
                     else
