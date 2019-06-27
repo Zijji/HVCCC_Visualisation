@@ -26,7 +26,8 @@ public class SpawnTrains : MonoBehaviour
         StringBuilder sb = new StringBuilder();
 
         // Retreive all the paths from XML
-        for (int i = 0; i < xml_helper.getPaths().paths.Length; i++)
+        // for (int i = 0; i < xml_helper.getPaths().paths.Length; i++)
+		for (int i = 0; i < 3; i++) // Only 10 for testing 
         {
             dataRailNetworkRailPlannerAllPathsPaths current = xml_helper.getPaths().paths[i];
 
@@ -41,31 +42,27 @@ public class SpawnTrains : MonoBehaviour
 
             days = current.daysOfWeek.Split(' ');
             minutes = current.timeAtJunction.Split(' ');
-
-            foreach (string temp in minutes)
-            {
-                print(temp);
-            }
-
-            // Probably using StringBuilder to build before adding to the data structure called paths.
+			int j;
 
             foreach (string d in days)
             {
                 sb.Clear(); // Clear the string builder for a new path
+				
+				j = 0;
 
                 foreach (string m in minutes)
                 {
                     if (m.Equals("-1000"))
                     {
-                        print("Case being ignored because j = 1000");
-                        break; // Just ignore this junction it is not visited path (or the train) for this instance
+                        print("ID: " + i + " Case being ignored because m = 1000");
                     }
                     else
                     {
                         /* Add a new destination for the path. */
-                        sb.Append("foo"); // Currently appending nothing but should look into StringBuilder.AppendFormat()
-//        https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=netframework-4.8#methods
+						print("ID: " + i + " New destination: (" + timetable[j] + " " + m + ")"); //This outputs it to the current one. but still needs to factor in the days 1440 minutes in a day.
+                        // sb.Append("foo"); 
                     }
+					j++;
                 }
                 
                 // Insert into data structure called paths
