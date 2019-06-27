@@ -43,29 +43,30 @@ public class SpawnTrains : MonoBehaviour
             days = current.daysOfWeek.Split(' ');
             minutes = current.timeAtJunction.Split(' ');
 			int j;
+			int time; // Will be a combination of day + minute
 
             foreach (string d in days)
             {
-                sb.Clear(); // Clear the string builder for a new path
-				
+                sb.Clear();
 				j = 0;
 
                 foreach (string m in minutes)
                 {
                     if (m.Equals("-1000"))
                     {
-                        print("ID: " + i + " Case being ignored because m = 1000");
+                        print("ID: " + i + " case being ignored. " + i + d + m + j);
                     }
                     else
                     {
                         /* Add a new destination for the path. */
-						print("ID: " + i + " New destination: (" + timetable[j] + " " + m + ")"); //This outputs it to the current one. but still needs to factor in the days 1440 minutes in a day.
+						time = Convert.ToInt32(d) * 1440 + Convert.ToInt32(m); // 1440 minutes in a day
+						print("ID: " + i + " New destination: (" + timetable[j] + " " + time + ")");
                         // sb.Append("foo"); 
                     }
 					j++;
                 }
                 
-                // Insert into data structure called paths
+                /* Insert into data structure called paths */
             }
 
             // Checks the number of days and creates a PathCreator object for each day.
