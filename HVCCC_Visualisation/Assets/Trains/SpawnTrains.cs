@@ -63,7 +63,7 @@ public class SpawnTrains : MonoBehaviour
                     else
                     {
                         /* Add a new destination for the path. */
-                        sb.Append() // Currently appending nothing but should look into StringBuilder.AppendFormat()
+                        sb.Append("foo"); // Currently appending nothing but should look into StringBuilder.AppendFormat()
 //        https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=netframework-4.8#methods
                     }
                 }
