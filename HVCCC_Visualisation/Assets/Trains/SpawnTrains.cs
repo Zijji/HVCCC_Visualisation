@@ -57,22 +57,18 @@ public class SpawnTrains : MonoBehaviour
                 paths.Add(path);
             }
         }
-
-        print("Paths count: " + paths.Count);
         
         print("Input order: ");
-        for (var index = 0; index < paths.Count; index++)
+        foreach (var p in paths)
         {
-            Path p = paths[index];
             print(p);
         }
 
         paths.Sort(); // Sorts the collection based on the CompareTo() -- which sorts it based the minimum time on the time.
 
         print("Sorted order: ");
-        for (var index = 0; index < paths.Count; index++)
+        foreach (var p in paths)
         {
-            Path p = paths[index];
             print(p);
         }
     }
