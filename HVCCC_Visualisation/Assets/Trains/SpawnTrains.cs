@@ -1,9 +1,13 @@
-﻿using System.Collections;
+﻿/*
+ * Author: Nathan Ebba
+ * Date: 28/06/2019
+ * GitHub: ebbanat@gmail.com | c3236497@uon.edu.au
+ */
+
 using System.Collections.Generic;
 using UnityEngine;
 using Schemas;
 using System;
-using System.Text;
 
 public class SpawnTrains : MonoBehaviour
 {
@@ -12,85 +16,64 @@ public class SpawnTrains : MonoBehaviour
     {
         // Get input from XML
         XMLHelper xml_helper = new XMLHelper();
-        LinkedList<string> paths = new LinkedList<string>();
-        
+        List<Path> paths = new List<Path>();
+
         // Getting the timetables from the XML
         dataRailNetworkRailPlannerTimeTables timetables = xml_helper.getTimetable();
-
         string[] downTimetable = timetables.downTimetable[0].junctionIds.Split(' ');
         string[] upTimetable = timetables.upTimetable[0].junctionIds.Split(' ');
-        
-        string[] timetable; // references if the direciton is up or down the valley
-        string[] days; // Days travelled 1 day = 1440 minutes
-        string[] minutes; // Times at the junctions minutes after midnight
-        StringBuilder sb = new StringBuilder();
 
-        // Retreive all the paths from XML
+        /* Retrieve all the paths from XML */
+        int j;
         // for (int i = 0; i < xml_helper.getPaths().paths.Length; i++)
-		for (int i = 0; i < 3; i++) // Only 10 for testing 
+        for (int i = 0; i < 3; i++) 
         {
             dataRailNetworkRailPlannerAllPathsPaths current = xml_helper.getPaths().paths[i];
 
-            if (current.timetableId.Equals("downTimetable"))
-            {
-                timetable = downTimetable;
-            }
-            else
-            {
-                timetable = upTimetable;
-            }
-
-            days = current.daysOfWeek.Split(' ');
-            minutes = current.timeAtJunction.Split(' ');
-			int j;
-			int time; // Will be a combination of day + minute
+            var timetable = current.timetableId.Equals("downTimetable") ? downTimetable : upTimetable;
+            var days = current.daysOfWeek.Split(' '); // Days travelled 1 day = 1440 minutes
+            var minutes = current.timeAtJunction.Split(' '); // Times at the junctions minutes after midnight
 
             foreach (string d in days)
             {
-                sb.Clear();
-				j = 0;
-
+                Path path = new Path();
+                j = 0;
                 foreach (string m in minutes)
                 {
                     if (m.Equals("-1000"))
                     {
-                        print("ID: " + i + " case being ignored. " + i + d + m + j);
+                        // print("ID: " + i + " case being ignored. " + i + d + m + j);
                     }
                     else
                     {
                         /* Add a new destination for the path. */
-						time = Convert.ToInt32(d) * 1440 + Convert.ToInt32(m); // 1440 minutes in a day
-						print("ID: " + i + " New destination: (" + timetable[j] + " " + time + ")");
-                        // sb.Append("foo"); 
+                        var time = Convert.ToInt32(d) * 1440 + Convert.ToInt32(m);
+                        //print("ID: " + i + " New destination: (" + timetable[j] + " " + time + ")");
+                        //paths.Add(new Destinations {junction = timetable[j], time = time});
+                        path.AddDestination(timetable[j], time);
                     }
-					j++;
+                    j++;
                 }
-                
-                /* Insert into data structure called paths */
+                paths.Add(path);
             }
+        }
 
-            // Checks the number of days and creates a PathCreator object for each day.
-//            for (int k = 0; k < daysTravelsOnPath.Length; k++)
-//            {
-//                PathCreator pathCreator = new PathCreator(isUp, (int) Convert.ToInt32(daysTravelsOnPath[k]));
-//
-//                //Checks for timeAtJunction, if they are -1000, the train does not go there so the visit to that junction (in setDestination) is not added
-//                for (int j = 0; j < timeAtJunction.Length; j++)
-//                {
-//                    //string dest = "";
-//                    if (downTimetable[j].Equals("-1000"))
-//                    {
-//                        break;
-//                    }
-//                    else
-//                    {
-//                        pathCreator.setDestination(currentTimetable[j], timeAtJunction[j]);
-//                    }
-//                }
-//
-//                print(pathCreator.ToString());
-//                pathObjects.AddFirst(pathCreator);
-//            }
+        print("Paths count: " + paths.Count);
+        
+        print("Input order: ");
+        for (var index = 0; index < paths.Count; index++)
+        {
+            Path p = paths[index];
+            print(p);
+        }
+
+        paths.Sort(); // Sorts the collection based on the CompareTo() -- which sorts it based the minimum time on the time.
+
+        print("Sorted order: ");
+        for (var index = 0; index < paths.Count; index++)
+        {
+            Path p = paths[index];
+            print(p);
         }
     }
 }
