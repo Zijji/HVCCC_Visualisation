@@ -14,13 +14,11 @@ public class XMLHelper{
         using (XmlReader reader = XmlReader.Create("modelInputs.xml"))
         {
             data_object = (data) ser.Deserialize(reader);
-
         }
-
     }
 
     public dataRailNetworkJunctionsJunction[] getJunctions(){
-        //Return the all the jucntions as alist of junction objects
+        //Return the all the junctions as a list of junction objects
         return data_object.railNetwork[0].junctions[0].junction;
     }
 
