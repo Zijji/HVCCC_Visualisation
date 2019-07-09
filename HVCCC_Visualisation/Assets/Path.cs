@@ -41,7 +41,7 @@ public class Path : IComparable<Path>, IEquatable<Path>
     {
         StringBuilder sb = new StringBuilder();
 
-        sb.Append("MinTime: " + GetMinTime() + " ");
+//        sb.Append("MinTime: " + GetMinTime() + " "); 
         
         int i = 0;
         foreach (string unused in _junctions)

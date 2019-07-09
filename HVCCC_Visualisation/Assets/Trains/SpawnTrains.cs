@@ -11,12 +11,14 @@ using System;
 
 public class SpawnTrains : MonoBehaviour
 {
+    
+    List<Path> paths = new List<Path>(); // Will contain all the trains that will need to be spawned at anytime.
+
     // Start is called before the first frame update
     void Start()
     {
         // Get input from XML
         XMLHelper xml_helper = new XMLHelper();
-        List<Path> paths = new List<Path>();
 
         // Getting the timetables from the XML
         dataRailNetworkRailPlannerTimeTables timetables = xml_helper.getTimetable();
@@ -71,5 +73,21 @@ public class SpawnTrains : MonoBehaviour
         {
             print(p);
         }
+        
+        /*
+         * Should make a dispatcher that creates trains at the correct time
+         * Will probably be the function that runs at every frame or something more frequent.
+         * because this one just runs at the start but this is where everything should get created.
+         */
+    }
+
+    void Update()
+    {
+        /* Create the trains */
+        
+        /* Check if it is time to dispatch the train */
+        
+        
+        // First need to setup a global time in the visualization.
     }
 }
