@@ -12,7 +12,7 @@ namespace UnityStandardAssets.Cameras
         // 	Camera Rig
         // 		Pivot
         // 			Camera
-
+        public GameObject junc;
         [SerializeField] private float m_MoveSpeed = 1f;                      // How fast the rig will move to keep up with the target's position.
         [Range(0f, 10f)] [SerializeField] private float m_TurnSpeed = 1.5f;   // How fast the rig will rotate from user input.
         [SerializeField] private float m_TurnSmoothing = 0.0f;                // How much smoothing to apply to the turn input, to reduce mouse-turn jerkiness
@@ -49,6 +49,16 @@ namespace UnityStandardAssets.Cameras
             {
                 Cursor.lockState = m_LockCursor ? CursorLockMode.Locked : CursorLockMode.None;
                 Cursor.visible = !m_LockCursor;
+            }
+
+            //Toggles the junctions
+            if (Input.GetKeyDown(KeyCode.J))
+            {
+                junc.active = false;
+            }
+            else if (Input.GetKeyDown(KeyCode.K))
+            {
+                junc.active = true;
             }
         }
 

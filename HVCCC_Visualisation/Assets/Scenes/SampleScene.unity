@@ -392,6 +392,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FreeLookCameraRig
       objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 49a0e923d39ec3c4c8bb97699e2f2903, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 49a0e923d39ec3c4c8bb97699e2f2903, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.078047514
@@ -456,6 +460,18 @@ PrefabInstance:
       propertyPath: m_Target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 49a0e923d39ec3c4c8bb97699e2f2903, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 49a0e923d39ec3c4c8bb97699e2f2903, type: 3}
+      propertyPath: junc
+      value: 
+      objectReference: {fileID: 1163393327}
+    - target: {fileID: 2000000, guid: 49a0e923d39ec3c4c8bb97699e2f2903, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49a0e923d39ec3c4c8bb97699e2f2903, type: 3}
 --- !u!1 &947228840 stripped
@@ -508,10 +524,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 392ab5ab806483b409ea65d968b9400f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trainObject: {fileID: 4596497141785460168, guid: 2d772b4095c084b48980035e7fe52e4e,
-    type: 3}
+  trainObject: {fileID: 100000, guid: 0ad22278b9f2b52478964f560cac6aed, type: 3}
   junction_parent: {fileID: 1163393327}
   junction: {fileID: 632044044779309480, guid: dcfc4656c7d8f9c41a3c1d3ecc40e9da, type: 3}
+  loader: {fileID: 5780358946835953565, guid: 87c899004b0953b42b6eb5d95864c89e, type: 3}
   section_object: {fileID: 1766393104068256895, guid: 75888e12be8e47644a633edd8199b906,
     type: 3}
   map: {fileID: 0}
@@ -725,6 +741,51 @@ Transform:
   m_Father: {fileID: 1163393329}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2072525120
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2072525122}
+  - component: {fileID: 2072525121}
+  m_Layer: 0
+  m_Name: GUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2072525121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072525120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d4fd7e5279f84444a100189cc98b496, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objects:
+  - {fileID: 1163393327}
+--- !u!4 &2072525122
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072525120}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.081226826, y: -0.248878, z: 0.09206009}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1766393102527183443
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -737,10 +798,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: SectionDrawer
       objectReference: {fileID: 0}
+    - target: {fileID: 1766393104068256895, guid: 75888e12be8e47644a633edd8199b906,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1766393104068256867, guid: 75888e12be8e47644a633edd8199b906,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.06
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1766393104068256867, guid: 75888e12be8e47644a633edd8199b906,
         type: 3}
@@ -750,7 +816,7 @@ PrefabInstance:
     - target: {fileID: 1766393104068256867, guid: 75888e12be8e47644a633edd8199b906,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -15.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1766393104068256867, guid: 75888e12be8e47644a633edd8199b906,
         type: 3}
@@ -790,6 +856,22 @@ PrefabInstance:
     - target: {fileID: 1766393104068256867, guid: 75888e12be8e47644a633edd8199b906,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1766393104068256866, guid: 75888e12be8e47644a633edd8199b906,
+        type: 3}
+      propertyPath: TrackObject
+      value: 
+      objectReference: {fileID: 1723293929391784, guid: 962682aa3ee07c8419df1c21424745ee,
+        type: 3}
+    - target: {fileID: 1766393104068256866, guid: 75888e12be8e47644a633edd8199b906,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1766393104585815231, guid: 75888e12be8e47644a633edd8199b906,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

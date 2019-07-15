@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Schemas;
 
 public class Junction : MonoBehaviour
 {
+    public Text frontText;
+    public Text backText;
     public string junction_id;
     public string[] connecting_junctions;
     //The xml helper that is used to get info from the xml
@@ -16,18 +19,22 @@ public class Junction : MonoBehaviour
     {
         xml_helper = new XMLHelper();
 
+
+
         //using the xml helper to get the junctionconnections
         this.junction_connections = xml_helper.getJunctionById(this.junction_id).junctionConnection;
         // print("id " + this.junction_id);
         this.printJunctionConnectionData();
         // print("id " + this.junction_id +  " with junction " + this.junction_connections[0].fromTrackId);
+        frontText.text = this.junction_id;
+        backText.text = this.junction_id;
         
     }
 
     // Update is called once per frame
     void Update()
     {
-
+       
     }
 
     //functions below prints all connection info. Also shows how to access junction connection info

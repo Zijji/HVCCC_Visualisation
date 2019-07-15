@@ -7,6 +7,7 @@ public class Createjunctions : MonoBehaviour
     public GameObject trainObject;
     public GameObject junction_parent;
     public GameObject junction;
+    public GameObject loader;
     public GameObject section_object;
     public GameObject map;      //This is the map where the junctions will be plotted.
     public Terrain terrain;
@@ -99,6 +100,14 @@ public class Createjunctions : MonoBehaviour
             double jn_lon_distance = junctions[i].zCoordinate - topleft_lon;
             double jn_pos_z = topleft.transform.position.z + topleft_bottomright_length_z * (jn_lon_distance / lon_distance);
             float posy = Terrain.activeTerrain.SampleHeight(new Vector3((float)jn_pos_z, 0, (float)jn_pos_x));
+            
+            //Makes the loaders, might to find a better place to put, othjer wise they go invisible with junction markers.
+            if(junctions[i].id.Contains("Loader") == true)
+            {
+                GameObject loaderobject = Instantiate(loader, new Vector3((float)jn_pos_z, posy, (float)jn_pos_x), transform.rotation);
+            }
+
+
             //Creates the junctions
             GameObject junction_object = Instantiate(junction, new Vector3((float)jn_pos_z, posy, (float)jn_pos_x), transform.rotation);
             junction_object.transform.parent = junction_parent.transform;
@@ -106,9 +115,6 @@ public class Createjunctions : MonoBehaviour
             junction_object.name = junctions[i].id;
             junction_object.GetComponent<Junction>().junction_id = junctions[i].id; //set the variable you want to initialize
             junction_object.GetComponent<Junction>().printJunctionConnectionData(); //set the variable you want to initialize
-
-
-
             junction_object.GetComponent<Junction>().connecting_junctions = connecting_junction_id_list; //sets the connection junctions to a vraible inside junction
 
         }
@@ -200,6 +206,6 @@ public class Createjunctions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 }

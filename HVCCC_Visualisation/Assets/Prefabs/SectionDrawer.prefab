@@ -261,7 +261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TrackStart: {fileID: 1766393104014597364}
   TrackEnd: {fileID: 1766393103812257787}
-  TrackObject: {fileID: 4088652811425627430, guid: d162e66d963a67e408ebb6b4f576f23c,
+  TrackObject: {fileID: 1723293929391784, guid: 962682aa3ee07c8419df1c21424745ee,
     type: 3}
 --- !u!1 &1766393104585815231
 GameObject:
