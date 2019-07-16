@@ -524,10 +524,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 392ab5ab806483b409ea65d968b9400f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trainObject: {fileID: 100000, guid: 0ad22278b9f2b52478964f560cac6aed, type: 3}
+  trainObject: {fileID: 1249906412741392, guid: 41d506e3e24722f4bbb74c8edf6ce71c,
+    type: 3}
   junction_parent: {fileID: 1163393327}
   junction: {fileID: 632044044779309480, guid: dcfc4656c7d8f9c41a3c1d3ecc40e9da, type: 3}
-  loader: {fileID: 5780358946835953565, guid: 87c899004b0953b42b6eb5d95864c89e, type: 3}
+  loader: {fileID: 1137366309790036033, guid: f45306b2cc13bcd418fbf25e044296b4, type: 3}
   section_object: {fileID: 1766393104068256895, guid: 75888e12be8e47644a633edd8199b906,
     type: 3}
   map: {fileID: 0}
