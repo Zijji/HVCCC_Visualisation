@@ -12,6 +12,22 @@ public class Path : IComparable<Path>, IEquatable<Path>
         _junctions.Add(newJunction);
         _times.Add(newTime);
     }
+    //Gets the path's length, or number of junctions in the path
+    public int Length()
+    {
+        return _junctions.Count;
+    }
+
+    //Gets the junction at index pos
+    public String GetJunction(int pos)
+    {
+        return (String) _junctions[pos];
+    }
+    //Gets time at index pos 
+    public int GetTime(int pos)
+    {
+        return (int) _times[pos];
+    }
 
     /* Returns the smallest earlier time increment */
     private int GetMinTime()

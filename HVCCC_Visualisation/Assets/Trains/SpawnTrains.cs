@@ -11,7 +11,9 @@ using System;
 
 public class SpawnTrains : MonoBehaviour
 {
-    
+    private float trainTime = 764;
+    private float prevTime = 764;
+
     List<Path> paths = new List<Path>(); // Will contain all the trains that will need to be spawned at anytime.
 
     // Start is called before the first frame update
@@ -73,7 +75,7 @@ public class SpawnTrains : MonoBehaviour
         {
             print(p);
         }
-        
+
         /*
          * Should make a dispatcher that creates trains at the correct time
          * Will probably be the function that runs at every frame or something more frequent.
@@ -83,11 +85,24 @@ public class SpawnTrains : MonoBehaviour
 
     void Update()
     {
+        //Uses in built time variable, may need to place elsewhere for rewind/fast forward capability
+        trainTime += Time.deltaTime;
+        if (trainTime >= Mathf.Ceil(prevTime))
+        {
+            prevTime = trainTime;
+            Debug.Log(trainTime);
+            //Debug.Log(paths[0]);
+        }
         /* Create the trains */
-        
+        Debug.Log(paths[0].GetJunction(0));
+        Debug.Log(paths[0].GetTime(0));
+
+
         /* Check if it is time to dispatch the train */
-        
-        
+
+
         // First need to setup a global time in the visualization.
+
+
     }
 }
