@@ -29,6 +29,8 @@ public class SpawnTrains : MonoBehaviour
         {
             Debug.Log("Error: No time object found. Create an object called 'TimeObject' with the script 'TimeController.cs'");
         }
+        //Gets time from time object
+        prevTime = getTimeObj.GetComponent<TimeController>().GetTime();
 
         // Get input from XML
         XMLHelper xml_helper = new XMLHelper();
@@ -98,41 +100,97 @@ public class SpawnTrains : MonoBehaviour
     void Update()
     {
         float trainTime = getTimeObj.GetComponent<TimeController>().GetTime();
-        //Uses in built time variable, may need to place elsewhere for rewind/fast forward capability
-        if (trainTime >= Mathf.Ceil(prevTime))
+        float trainTimeSpeed = getTimeObj.GetComponent<TimeController>().GetSpeed();
+        //case for spawning trains when time is progressing normally
+        if (trainTimeSpeed > 0)
         {
-            prevTime = trainTime;
-            Debug.Log(trainTime);
-            //Debug.Log(paths[0]);
-            //Debug.Log("POP:   " + paths[0].PopJunction());
-            //Debug.Log(paths[0].GetTime(0));
-
-            for (int p = 0; p < paths.Count; p++ )
+            if (trainTime >= Mathf.Ceil(prevTime))
             {
-                if ((trainTime >= ((float)paths[p].GetTime(0))) && (pathsChecked[p] == 0))
+                prevTime = trainTime;
+                Debug.Log(trainTime);
+                //Debug.Log(paths[0]);
+                //Debug.Log("POP:   " + paths[0].PopJunction());
+                //Debug.Log(paths[0].GetTime(0));
+
+                for (int p = 0; p < paths.Count; p++)
                 {
-                    pathsChecked[p] = 1;
-                    //String nameJunction = paths[0].PopJunction();
-                    GameObject thisJunction = GameObject.Find(paths[p].GetJunction(0));
-                    GameObject newTrain = Instantiate(Train, thisJunction.transform.position, thisJunction.transform.rotation);
-                    newTrain.GetComponent<TrainMovement>().TrainPath = paths[p];
-                    Debug.Log("true");
+                    if ((trainTime >= ((float)paths[p].GetTime(0))) && (pathsChecked[p] == 0))
+                    {
+                        pathsChecked[p] = 1;
+                        //String nameJunction = paths[0].PopJunction();
+                        GameObject thisJunction = GameObject.Find(paths[p].GetJunction(0));
+                        GameObject newTrain = Instantiate(Train, thisJunction.transform.position, thisJunction.transform.rotation);
+                        newTrain.GetComponent<TrainMovement>().TrainPath = paths[p];
+                        Debug.Log("true");
+                    }
                 }
             }
-            /*
-            if (trainTime >= ((float)paths[0].GetTime(0)))
+        }
+        
+        //case when time is reversed
+        if (trainTimeSpeed < 0)
+        {
+            if (trainTime <= Mathf.Ceil(prevTime))
             {
-                String nameJunction = paths[0].PopJunction();
-                GameObject thisJunction = GameObject.Find(paths[0].GetJunction(0));
+                prevTime = trainTime;
+                Debug.Log(trainTime);
+                //Debug.Log(paths[0]);
+                //Debug.Log("POP:   " + paths[0].PopJunction());
+                //Debug.Log(paths[0].GetTime(0));
+
+                for (int p = 0; p < paths.Count; p++)
+                {
+                    if ((trainTime >= ((float)paths[p].GetTime(paths[p].Length() - 1))) && (pathsChecked[p] == 0))
+                    {
+                        pathsChecked[p] = 1;
+                        //String nameJunction = paths[0].PopJunction();
+                        GameObject thisJunction = GameObject.Find(paths[p].GetJunction(paths[p].Length() - 1));
+                        GameObject newTrain = Instantiate(Train, thisJunction.transform.position, thisJunction.transform.rotation);
+                        newTrain.GetComponent<TrainMovement>().TrainPath = paths[p];
+                        Debug.Log("true");
+                    }
+                }
+            }
+        }
+        
+
+
+        //Uses in built time variable, may need to place elsewhere for rewind/fast forward capability
+        /*
+    if (trainTime >= Mathf.Ceil(prevTime))
+    {
+        prevTime = trainTime;
+        Debug.Log(trainTime);
+        //Debug.Log(paths[0]);
+        //Debug.Log("POP:   " + paths[0].PopJunction());
+        //Debug.Log(paths[0].GetTime(0));
+
+        for (int p = 0; p < paths.Count; p++ )
+        {
+            if ((trainTime >= ((float)paths[p].GetTime(0))) && (pathsChecked[p] == 0))
+            {
+                pathsChecked[p] = 1;
+                //String nameJunction = paths[0].PopJunction();
+                GameObject thisJunction = GameObject.Find(paths[p].GetJunction(0));
                 GameObject newTrain = Instantiate(Train, thisJunction.transform.position, thisJunction.transform.rotation);
-                newTrain.GetComponent<TrainMovement>().TrainPath = paths[0];
+                newTrain.GetComponent<TrainMovement>().TrainPath = paths[p];
                 Debug.Log("true");
             }
-            else
-            {
-                Debug.Log("false");
-            }
-            */
+        }
+    }
+        if (trainTime >= ((float)paths[0].GetTime(0)))
+        {
+            String nameJunction = paths[0].PopJunction();
+            GameObject thisJunction = GameObject.Find(paths[0].GetJunction(0));
+            GameObject newTrain = Instantiate(Train, thisJunction.transform.position, thisJunction.transform.rotation);
+            newTrain.GetComponent<TrainMovement>().TrainPath = paths[0];
+            Debug.Log("true");
+        }
+        else
+        {
+            Debug.Log("false");
+        }
+        */
             /*
             if (trainTime >= ( (float)paths[0].GetTime(0)))
             {
@@ -179,5 +237,4 @@ public class SpawnTrains : MonoBehaviour
         // First need to setup a global time in the visualization.
 
 
-    }
 }
