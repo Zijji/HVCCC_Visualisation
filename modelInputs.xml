@@ -61,7 +61,7 @@
 	  <schedulingOption name="dedicatedDemandAdjustmentWindow" value="4"/>
     </schedulingOptions>
      <tracks>
-      <!-- Full Rail Topology Tracks -->
+      <!-- Full Rail Topology Tracks comment: NE -->
       <track id="trk_KCT_AR1" forceDirection="UP"/>
       <track id="trk_KCT_AR2" forceDirection="UP"/>
       <track id="trk_KCT_AR3" forceDirection="UP"/>
