@@ -16,7 +16,7 @@ public class SpawnTrains : MonoBehaviour
     private GameObject getTimeObj;
 
 
-    List<Path> paths = new List<Path>(); // Will contain all the trains that will need to be spawned at anytime.
+    List<ConsistPath> paths = new List<ConsistPath>(); // Will contain all the trains that will need to be spawned at anytime.
     List<int> pathsChecked = new List<int>(); // Contains whether the paths have been spawned (0 = not spawned yet; 1 = spawned)
     //Made an int list in case we need to expand it out later.
 
@@ -51,7 +51,7 @@ public class SpawnTrains : MonoBehaviour
 
             foreach (string d in days)
             {
-                Path path = new Path();
+                ConsistPath path = new ConsistPath();
                 j = 0;
                 foreach (string m in minutes)
                 {
