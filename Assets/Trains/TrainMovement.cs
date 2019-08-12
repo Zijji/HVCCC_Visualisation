@@ -10,7 +10,7 @@ public class TrainMovement : MonoBehaviour
     //public GameObject stationDestionation;
     public float speed = 0.25f;
     public GameObject junctionDestination = null; //set this variable to be the next destination.
-    public Path TrainPath = null;
+    public ConsistPath TrainPath = null;
 
     private GameObject getTimeObj;
 
@@ -28,8 +28,8 @@ public class TrainMovement : MonoBehaviour
                 }
                 else
                 {
-                    GetPathDest();
-                    TimeTrainMovement();
+                    //GetPathDest();
+                    //TimeTrainMovement(); // Comment out causing: Index out of range error 0 might be too low
                 }
                 
             }
