@@ -635,6 +635,7 @@
      <None Include="Assets\UnityARKitPlugin\Examples\Common\Shaders\InstancedSurfaceShader.shader" />
      <None Include="Assets\MapboxAR\Examples\ARTabletop\Shaders\Clip_MapBoxStylesPerRenderer.shader" />
      <None Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\Shaders\YUVShader.shader" />
+     <None Include="Assets\Resources\Mapbox\MapboxConfiguration.txt" />
      <None Include="Assets\UnityARInterface\Examples\Common\Shaders\MobileARShadow.shader" />
      <None Include="Assets\Mapbox\link.xml" />
      <None Include="Assets\Mapbox\Core\Plugins\link.xml" />
@@ -863,6 +864,24 @@
  <Reference Include="nunit.framework">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.8f1/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
+ <Reference Include="Mapbox.VectorTile.ExtensionMethods">
+ <HintPath>C:/Users/SENG/Desktop/HVCCC_12AUG/HVCCC_Visualisation/Assets/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.ExtensionMethods.dll</HintPath>
+ </Reference>
+ <Reference Include="Mapbox.VectorTile.Geometry">
+ <HintPath>C:/Users/SENG/Desktop/HVCCC_12AUG/HVCCC_Visualisation/Assets/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.Geometry.dll</HintPath>
+ </Reference>
+ <Reference Include="Mapbox.VectorTile.PbfReader">
+ <HintPath>C:/Users/SENG/Desktop/HVCCC_12AUG/HVCCC_Visualisation/Assets/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.PbfReader.dll</HintPath>
+ </Reference>
+ <Reference Include="Mapbox.VectorTile.VectorTileReader">
+ <HintPath>C:/Users/SENG/Desktop/HVCCC_12AUG/HVCCC_Visualisation/Assets/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.VectorTileReader.dll</HintPath>
+ </Reference>
+ <Reference Include="Mapbox.IO.Compression">
+ <HintPath>C:/Users/SENG/Desktop/HVCCC_12AUG/HVCCC_Visualisation/Assets/Mapbox/Core/Plugins/ThirdParty/Mapbox.IO.Compression/net35/Mapbox.IO.Compression.dll</HintPath>
+ </Reference>
+ <Reference Include="Mapbox.Json">
+ <HintPath>C:/Users/SENG/Desktop/HVCCC_12AUG/HVCCC_Visualisation/Assets/Mapbox/Core/Plugins/ThirdParty/Mapbox.Json/Net35/Mapbox.Json.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.Analytics.Editor">
  <HintPath>C:/Users/SENG/Desktop/HVCCC_12AUG/HVCCC_Visualisation/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
  </Reference>
@@ -871,24 +890,6 @@
  </Reference>
  <Reference Include="Unity.Analytics.Tracker">
  <HintPath>C:/Users/SENG/Desktop/HVCCC_12AUG/HVCCC_Visualisation/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
- </Reference>
- <Reference Include="Mapbox.Json">
- <HintPath>C:/Users/SENG/Desktop/HVCCC_12AUG/HVCCC_Visualisation/Assets/Mapbox/Core/Plugins/ThirdParty/Mapbox.Json/Net35/Mapbox.Json.dll</HintPath>
- </Reference>
- <Reference Include="Mapbox.VectorTile.Geometry">
- <HintPath>C:/Users/SENG/Desktop/HVCCC_12AUG/HVCCC_Visualisation/Assets/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.Geometry.dll</HintPath>
- </Reference>
- <Reference Include="Mapbox.IO.Compression">
- <HintPath>C:/Users/SENG/Desktop/HVCCC_12AUG/HVCCC_Visualisation/Assets/Mapbox/Core/Plugins/ThirdParty/Mapbox.IO.Compression/net35/Mapbox.IO.Compression.dll</HintPath>
- </Reference>
- <Reference Include="Mapbox.VectorTile.VectorTileReader">
- <HintPath>C:/Users/SENG/Desktop/HVCCC_12AUG/HVCCC_Visualisation/Assets/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.VectorTileReader.dll</HintPath>
- </Reference>
- <Reference Include="Mapbox.VectorTile.PbfReader">
- <HintPath>C:/Users/SENG/Desktop/HVCCC_12AUG/HVCCC_Visualisation/Assets/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.PbfReader.dll</HintPath>
- </Reference>
- <Reference Include="Mapbox.VectorTile.ExtensionMethods">
- <HintPath>C:/Users/SENG/Desktop/HVCCC_12AUG/HVCCC_Visualisation/Assets/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.ExtensionMethods.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.8f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
