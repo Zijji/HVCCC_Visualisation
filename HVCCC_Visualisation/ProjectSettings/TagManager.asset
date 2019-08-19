@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Rails
   - TurnoutRails
+  - ShowOnPause
   layers:
   - Default
   - TransparentFX
