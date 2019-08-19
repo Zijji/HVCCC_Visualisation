@@ -1,0 +1,190 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="railLog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="networkData" type="xs:string" minOccurs="0" />
+        <xs:element name="railEvents" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TrainCreated" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="direction" type="xs:string" />
+                  <xs:attribute name="junctionID" type="xs:string" />
+                  <xs:attribute name="operator" type="xs:string" />
+                  <xs:attribute name="time" type="xs:string" />
+                  <xs:attribute name="trackID" type="xs:string" />
+                  <xs:attribute name="trainID" type="xs:string" />
+                  <xs:attribute name="trainType" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="TrainPassedByJunction" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="cycleID" type="xs:string" />
+                  <xs:attribute name="direction" type="xs:string" />
+                  <xs:attribute name="junctionID" type="xs:string" />
+                  <xs:attribute name="time" type="xs:string" />
+                  <xs:attribute name="trainID" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="TrainHeadLeaveTrack" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="cycleID" type="xs:string" />
+                  <xs:attribute name="direction" type="xs:string" />
+                  <xs:attribute name="sectionID" type="xs:string" />
+                  <xs:attribute name="speed" type="xs:string" />
+                  <xs:attribute name="time" type="xs:string" />
+                  <xs:attribute name="trackID" type="xs:string" />
+                  <xs:attribute name="trainID" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="TrainDepartTerminal" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="cycleID" type="xs:string" />
+                  <xs:attribute name="plannedTime" type="xs:string" />
+                  <xs:attribute name="terminalID" type="xs:string" />
+                  <xs:attribute name="time" type="xs:string" />
+                  <xs:attribute name="trainID" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="TrainEnterTrack" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="cycleID" type="xs:string" />
+                  <xs:attribute name="direction" type="xs:string" />
+                  <xs:attribute name="sectionID" type="xs:string" />
+                  <xs:attribute name="speed" type="xs:string" />
+                  <xs:attribute name="time" type="xs:string" />
+                  <xs:attribute name="trackID" type="xs:string" />
+                  <xs:attribute name="trainID" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="TrainReachedSignal" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="cycleID" type="xs:string" />
+                  <xs:attribute name="signalID" type="xs:string" />
+                  <xs:attribute name="signalState" type="xs:string" />
+                  <xs:attribute name="time" type="xs:string" />
+                  <xs:attribute name="trainID" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="TrainTailLeaveTrack" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="cycleID" type="xs:string" />
+                  <xs:attribute name="direction" type="xs:string" />
+                  <xs:attribute name="sectionID" type="xs:string" />
+                  <xs:attribute name="speed" type="xs:string" />
+                  <xs:attribute name="time" type="xs:string" />
+                  <xs:attribute name="trackID" type="xs:string" />
+                  <xs:attribute name="trainID" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="TrainReachedJunction" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="cycleID" type="xs:string" />
+                  <xs:attribute name="direction" type="xs:string" />
+                  <xs:attribute name="junctionID" type="xs:string" />
+                  <xs:attribute name="time" type="xs:string" />
+                  <xs:attribute name="trainID" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="TrainArrivedLoadpoint" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="cycleID" type="xs:string" />
+                  <xs:attribute name="loadpointID" type="xs:string" />
+                  <xs:attribute name="mineID" type="xs:string" />
+                  <xs:attribute name="plannedTime" type="xs:string" />
+                  <xs:attribute name="time" type="xs:string" />
+                  <xs:attribute name="trainID" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="TrainLoadStart" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="cycleID" type="xs:string" />
+                  <xs:attribute name="plannedTime" type="xs:string" />
+                  <xs:attribute name="time" type="xs:string" />
+                  <xs:attribute name="trainID" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="TrainWaitForTracks" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="cycleID" type="xs:string" />
+                  <xs:attribute name="time" type="xs:string" />
+                  <xs:attribute name="trainID" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="TrainLoadComp" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="amount" type="xs:string" />
+                  <xs:attribute name="cycleID" type="xs:string" />
+                  <xs:attribute name="plannedTime" type="xs:string" />
+                  <xs:attribute name="time" type="xs:string" />
+                  <xs:attribute name="trainID" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="TrainWaitJunction" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="cycleID" type="xs:string" />
+                  <xs:attribute name="junctionID" type="xs:string" />
+                  <xs:attribute name="time" type="xs:string" />
+                  <xs:attribute name="trainID" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="TrainWaitEnd" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="cycleID" type="xs:string" />
+                  <xs:attribute name="time" type="xs:string" />
+                  <xs:attribute name="trainID" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="TrainDepartLoadpoint" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="cycleID" type="xs:string" />
+                  <xs:attribute name="plannedTime" type="xs:string" />
+                  <xs:attribute name="time" type="xs:string" />
+                  <xs:attribute name="trainID" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="TrainArrivedDumpstation" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="cycleID" type="xs:string" />
+                  <xs:attribute name="dumpstationID" type="xs:string" />
+                  <xs:attribute name="plannedTime" type="xs:string" />
+                  <xs:attribute name="terminalID" type="xs:string" />
+                  <xs:attribute name="time" type="xs:string" />
+                  <xs:attribute name="trainID" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="TrainDumpStart" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="cycleID" type="xs:string" />
+                  <xs:attribute name="plannedTime" type="xs:string" />
+                  <xs:attribute name="time" type="xs:string" />
+                  <xs:attribute name="trainID" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="TrainDumpComp" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="amount" type="xs:string" />
+                  <xs:attribute name="cycleID" type="xs:string" />
+                  <xs:attribute name="maintenanceRequired" type="xs:string" />
+                  <xs:attribute name="plannedTime" type="xs:string" />
+                  <xs:attribute name="time" type="xs:string" />
+                  <xs:attribute name="trainID" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="tmp" type="xs:string" /> <!--FIX LINE TO BE ADDED-->
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="tmp" type="xs:string" /> <!--FIX LINE TO BE ADDED-->
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="railLog" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
