@@ -537,6 +537,7 @@
      <Compile Include="Assets\TimeController.cs" />
      <Compile Include="Assets\TimeScript.cs" />
      <Compile Include="Assets\TrackCreator.cs" />
+     <Compile Include="Assets\TrainMoveBasic.cs" />
      <Compile Include="Assets\TrainPath.cs" />
      <Compile Include="Assets\Trains\SpawnTrains.cs" />
      <Compile Include="Assets\Trains\TrainMovement.cs" />
