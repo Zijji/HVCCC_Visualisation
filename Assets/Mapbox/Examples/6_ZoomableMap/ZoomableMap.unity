@@ -414,6 +414,7 @@ GameObject:
   - component: {fileID: 555018383}
   - component: {fileID: 555018386}
   - component: {fileID: 555018388}
+  - component: {fileID: 555018385}
   m_Layer: 0
   m_Name: Map
   m_TagString: Untagged
@@ -563,6 +564,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &555018385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555018382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c6c4a60b58e9e84fa8d89fe2e46dfd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _map: {fileID: 555018383}
+  _locationStrings: []
+  _spawnScale: 4
+  _markerPrefab: {fileID: 1839187062704024, guid: 70b491ba3713d6e4ebe7aec4f7709403,
+    type: 3}
 --- !u!114 &555018386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -587,7 +605,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 555018382}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dcf32ea2cc0514b569329f6b6b68f9b4, type: 3}
   m_Name: 
