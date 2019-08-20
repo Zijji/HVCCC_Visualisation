@@ -365,11 +365,18 @@ PrefabInstance:
     - target: {fileID: 114603753021256032, guid: 98be219873e6d4dffb5949746f515a33,
         type: 3}
       propertyPath: m_Text
-      value: "<b>Worldwide Dynamic Zoom & Panning Support</b>\n\nThis example is a
-        starting point for creating a traditional web-based zoomable map. Go anywhere
-        in the world and check out Mapbox\u2019s high-quality satellite imagery. It
-        also uses the SpawnOnMap script to instantiate custom markers on the map at
-        specified locations."
+      value: '<b>HVCCC 3D Rail Network Visualisation</b>
+
+
+        To navigate, please use WASD controls
+
+        To zoom, please scroll in or out
+
+        To navigate to a specific suburb, please type the location into the search
+        bar in the top right
+
+
+        This system is powered by Mapbox and UoN'
       objectReference: {fileID: 0}
     - target: {fileID: 114731470950229392, guid: 98be219873e6d4dffb5949746f515a33,
         type: 3}
@@ -1330,13 +1337,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1787361570}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.5735764, y: 0, z: 0, w: 0.8191521}
   m_LocalPosition: {x: 0, y: 200, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 70, y: 0, z: 0}
 --- !u!1001 &1812228710
 PrefabInstance:
   m_ObjectHideFlags: 0
