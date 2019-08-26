@@ -27,7 +27,8 @@ public class UIManager : MonoBehaviour
             if (Time.timeScale == 1)
             {
                 Time.timeScale = 0;
-                Screen.lockCursor = false;
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 showPaused();
             }
             else if (Time.timeScale == 0)
@@ -49,16 +50,16 @@ public class UIManager : MonoBehaviour
     //controls the pausing of the scene
     public void pauseControl()
     {
-        if (Time.timeScale == 1)
-        {
-            Time.timeScale = 0;
-            showPaused();
-        }
-        else if (Time.timeScale == 0)
-        {
+        //if (Time.timeScale == 1)
+        //{
+            ///Time.timeScale = 0;
+           // showPaused();
+        //}
+        //else if (Time.timeScale == 0)
+        //{
             Time.timeScale = 1;
             hidePaused();
-        }
+        //}
     }
 
     //shows objects with ShowOnPause tag
@@ -79,11 +80,6 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    //loads inputted level
-    public void LoadLevel(string level)
-    {
-        Application.LoadLevel(level);
-    }
 
     public void toggle()
     {
@@ -91,6 +87,9 @@ public class UIManager : MonoBehaviour
         foreach (GameObject go in objects)
         {
             go.active = setToggle;
+            showPaused();
         }
     }
+
+
 }
