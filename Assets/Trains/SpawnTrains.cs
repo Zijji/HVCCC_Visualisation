@@ -23,6 +23,7 @@ public class SpawnTrains : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("is using new Spawntrains");
         //Finds time object
         getTimeObj = GameObject.Find("TimeObject");
         if(getTimeObj == null)
@@ -32,17 +33,46 @@ public class SpawnTrains : MonoBehaviour
 
         // Get input from XML
         XMLHelper xml_helper = new XMLHelper();
+        string[] train_ids = xml_helper.getWorkingTrainIds();
+        Debug.Log("working trains " + train_ids.Length);
+        for (int i = 0; i < train_ids.Length; i++)
+        {
+            Dictionary<string, List<string>> xml_train_paths_dic = xml_helper.getTimeOrderedRouteById(train_ids[i]);
+            ConsistPath path = new ConsistPath();
 
+            for (int j = 0; j < xml_train_paths_dic["passed"].Count; j++)
+            {
+                //int passed_time = Convert.ToInt32(xml_train_paths_dic["passed"][j].Split('.')[0]) * 60 + Convert.ToInt32(Convert.ToSingle(xml_train_paths_dic["passed"][j].Split('.')[1])*0.6);
+                /*
+                Debug.Log("hour: " + xml_train_paths_dic["passed"][j].Split('.')[0]);
+                Debug.Log("minute: " + xml_train_paths_dic["passed"][j].Split('.')[1]);
+                int passed_time = Convert.ToInt32(xml_train_paths_dic["passed"][j].Split('.')[0]) * 60 + Convert.ToInt32 (Convert.ToSingle(xml_train_paths_dic["passed"][j].Split('.')[1]) * 0.6);
+                int reached_time = Convert.ToInt32(xml_train_paths_dic["reached"][j].Split('.')[0]) * 60 + Convert.ToInt32(Convert.ToSingle(xml_train_paths_dic["reached"][j].Split('.')[1]) * 0.6);
+                */
+
+
+                path.AddDestination(xml_train_paths_dic["junctions"][j], float.Parse(xml_train_paths_dic["reached"][j]), float.Parse(xml_train_paths_dic["passed"][j]));
+
+            
+
+            }
+            paths.Add(path);
+            //Debug.Log(path.ToString());
+        }
         // Getting the timetables from the XML
-        dataRailNetworkRailPlannerTimeTables timetables = xml_helper.getTimetable();
-        string[] downTimetable = timetables.downTimetable[0].junctionIds.Split(' ');
-        string[] upTimetable = timetables.upTimetable[0].junctionIds.Split(' ');
+        //dataRailNetworkRailPlannerTimeTables timetables = xml_helper.getTimetable();
+        //string[] downTimetable = timetables.downTimetable[0].junctionIds.Split(' ');
+        //string[] upTimetable = timetables.upTimetable[0].junctionIds.Split(' ');
+        
 
         /* Retrieve all the paths from XML */
-        int j;
-        for (int i = 0; i < xml_helper.getPaths().paths.Length; i++)
-        //for (int i = 0; i < 3; i++) 
+        //int j;
+        //for (int i = 0; i < xml_helper.getPaths().paths.Length; i++)
+       
+            //for (int i = 0; i < 3; i++) 
+        /*
         {
+               
             dataRailNetworkRailPlannerAllPathsPaths current = xml_helper.getPaths().paths[i];
 
             var timetable = current.timetableId.Equals("downTimetable") ? downTimetable : upTimetable;
@@ -61,7 +91,7 @@ public class SpawnTrains : MonoBehaviour
                     }
                     else
                     {
-                        /* Add a new destination for the path. */
+                        // Add a new destination for the path. 
                         var time = Convert.ToInt32(d) * 1440 + Convert.ToInt32(m);
                         //print("ID: " + i + " New destination: (" + timetable[j] + " " + time + ")");
                         //paths.Add(new Destinations {junction = timetable[j], time = time});
@@ -71,8 +101,10 @@ public class SpawnTrains : MonoBehaviour
                 }
                 paths.Add(path);
                 pathsChecked.Add(0);
+                
             }
-        }
+            
+       }**/ 
         
         print("Input order: ");
         foreach (var p in paths)
@@ -99,7 +131,7 @@ public class SpawnTrains : MonoBehaviour
     {
         float trainTime = getTimeObj.GetComponent<TimeController>().GetTime();
         //Uses in built time variable, may need to place elsewhere for rewind/fast forward capability
-        if (trainTime >= Mathf.Ceil(prevTime))
+        if (trainTime >= prevTime)//Mathf.Ceil(prevTime))
         {
             prevTime = trainTime;
             Debug.Log(trainTime);
@@ -109,15 +141,16 @@ public class SpawnTrains : MonoBehaviour
 
             for (int p = 0; p < paths.Count; p++ )
             {
-                if ((trainTime >= ((float)paths[p].GetTime(0))) && (pathsChecked[p] == 0))
+                if ((trainTime >= (paths[p].GetDepartureTime(0))) & (pathsChecked[p] == 0))
                 {
                     pathsChecked[p] = 1;
                     //String nameJunction = paths[0].PopJunction();
                     GameObject thisJunction = GameObject.Find(paths[p].GetJunction(0));
                     GameObject newTrain = Instantiate(Train, thisJunction.transform.position, thisJunction.transform.rotation);
                     newTrain.GetComponent<TrainMovement>().TrainPath = paths[p];
-                    Debug.Log("true");
+                    Debug.Log("Create a train!");
                 }
+                Debug.Log(p);
             }
             /*
             if (trainTime >= ((float)paths[0].GetTime(0)))

@@ -2,24 +2,34 @@
 using System.Xml;
 using System.Xml.Serialization;
 using Schemas;
+using Schemas1;
 using System;
+using System.Collections.Generic;
 //
 
 
 public class XMLHelper{
-    public data data_object;
+    public data model_inputs_data_object;
+    public railLog rail_log;
 
     public XMLHelper(){
         XmlSerializer ser = new XmlSerializer(typeof(data));
         using (XmlReader reader = XmlReader.Create("modelInputs.xml"))
         {
-            data_object = (data) ser.Deserialize(reader);
+            model_inputs_data_object = (data) ser.Deserialize(reader);
         }
+
+        XmlSerializer ser1 = new XmlSerializer(typeof(railLog));
+        using (XmlReader reader = XmlReader.Create("RailEventsLog.xml"))
+        {
+            rail_log= (railLog) ser1.Deserialize(reader);
+        }
+
     }
 
     public dataRailNetworkJunctionsJunction[] getJunctions(){
         //Return the all the junctions as a list of junction objects
-        return data_object.railNetwork[0].junctions[0].junction;
+        return model_inputs_data_object.railNetwork[0].junctions[0].junction;
     }
 
     public dataRailNetworkJunctionsJunction getJunctionById(string junction_id){
@@ -37,7 +47,7 @@ public class XMLHelper{
 
     public dataRailNetworkTracksTrack[] getTracks(){
         // Return all the tracks as a list of Track objects
-        return data_object.railNetwork[0].tracks[0].track;
+        return model_inputs_data_object.railNetwork[0].tracks[0].track;
     }
 
     public dataRailNetworkTracksTrack getTrackById(string track_id){
@@ -54,7 +64,7 @@ public class XMLHelper{
 
     public dataRailNetworkSectionsSection[] getSections(){
         // Return all the tracks as a list of Track objects
-        return data_object.railNetwork[0].sections[0].section;
+        return model_inputs_data_object.railNetwork[0].sections[0].section;
     }
 
     public dataRailNetworkSectionsSection getSectionById(string section_id){
@@ -72,13 +82,141 @@ public class XMLHelper{
     public dataRailNetworkRailPlannerTimeTables getTimetable()
     {
         //return data_object.railNetwork[0].railPlanner[0].timeTables;
-        return data_object.railNetwork[0].railPlanner[0].timeTables[0];
+        return model_inputs_data_object.railNetwork[0].railPlanner[0].timeTables[0];
     }
 
     public dataRailNetworkRailPlannerAllPaths getPaths()
     {
         //return data_object.railNetwork[0].railPlanner[0].timeTables;
-        return data_object.railNetwork[0].railPlanner[0].allPaths[0];
+        return model_inputs_data_object.railNetwork[0].railPlanner[0].allPaths[0];
+    }
+
+
+
+//-----------------------------------------------------------------------------
+//----- Functions below are used for RailLog
+//-----------------------------------------------------------------------------
+    public string[] getAllTrainIds()
+    {
+        //
+        // Gets all the trains including the trains that do not exit the departure terminal
+        //
+        railLogRailEventsTrainCreated[]  trains_created = rail_log.railEvents[0].TrainCreated;
+        string[] train_ids = new string[trains_created.Length];
+        for (int i =0;i<trains_created.Length;i++ ){
+            train_ids[i] = trains_created[i].trainID;
+        }
+        return train_ids;
+
+    }
+
+
+    public string[] getWorkingTrainIds()
+    {
+        //
+        // Gets all the trains that leave the departure terminal
+        //
+        railLogRailEventsTrainCreated[]  trains_created = rail_log.railEvents[0].TrainCreated;
+        List<string> train_ids = new List<string>();
+        for (int i =0;i<trains_created.Length;i++ ){
+            if(getReachedJunctionById(trains_created[i].trainID).Length>0){
+                train_ids.Add(trains_created[i].trainID);
+            }
+        }
+        return train_ids.ToArray();
+
+    }
+
+    public railLogRailEventsTrainCreated getTrainCreationById(string train_id){
+        //
+        // Gets a train creation event given it's id
+        //
+
+        railLogRailEventsTrainCreated[]  trains_created = rail_log.railEvents[0].TrainCreated;
+        for (int i =0;i<trains_created.Length;i++ ){
+            if (trains_created[i].trainID==train_id){
+                    return trains_created[i];
+                }
+        }
+        
+        throw new Exception(("The given train id: " + train_id + " does not correspond to any in the data file. Check that the train_id is correct and that it there exists a train_id with that as it's id"));
+
+
+
+    }
+    public railLogRailEventsTrainReachedJunction[] getReachedJunctionById(String train_id){
+        //
+        // Get all the Reached junction events for a train
+        //
+
+
+        List<railLogRailEventsTrainReachedJunction> reached_junctions = new List<railLogRailEventsTrainReachedJunction>();
+        for (int i =0;i<rail_log.railEvents[0].TrainReachedJunction.Length;i++)
+        {
+            if (rail_log.railEvents[0].TrainReachedJunction[i].trainID.Equals(train_id)){
+                reached_junctions.Add(rail_log.railEvents[0].TrainReachedJunction[i]);
+            }
+            
+        }
+        return reached_junctions.ToArray();
+    }
+    public railLogRailEventsTrainPassedByJunction[] getPassedByJunctionById(String train_id){
+        //
+        // Get all the Passed junction events for a train
+        //
+
+
+        List<railLogRailEventsTrainPassedByJunction> passed_junctions = new List<railLogRailEventsTrainPassedByJunction>();
+        for (int i =0;i<rail_log.railEvents[0].TrainPassedByJunction.Length;i++)
+        {
+            if (rail_log.railEvents[0].TrainPassedByJunction[i].trainID.Equals(train_id)){
+                passed_junctions.Add(rail_log.railEvents[0].TrainPassedByJunction[i]);
+            }
+            
+        }
+        return passed_junctions.ToArray();
+    }
+    public Dictionary<string,List<string>> getTimeOrderedRouteById(string train_id){
+        //
+        // Gets all the information for a train route
+        //Returns a dictionary of the form {"junctions":<list of junction names>, "reached":<list of times a train reach the junction> ,"passed":<list of times a train passed the junction}
+        // A single index,i, corresponds to the all the information of trains and a junction: "junctions"][i] = junction name, "reached"][i]= time reached "junction"][i], "passed"][i]=time passed "junction"][i]
+        //
+
+
+        List<string> junction_list = new List<string>();
+        List<string> reached_list = new List<string>();
+        List<string> passed_list = new List<string>();
+        // The first value(in each of the list,i.e., junction_list[0],reached_list[0],passed_list[0]) corresponds to the starting junctions of the list
+        railLogRailEventsTrainCreated train_created = getTrainCreationById(train_id);
+        junction_list.Add(train_created.junctionID);
+        reached_list.Add(train_created.time);
+        //reached_list.Add("0");
+
+        railLogRailEventsTrainReachedJunction[] reached_junctions = getReachedJunctionById(train_id);
+        //Array.Sort(reached_junctions,(x,y)=>x.time.CompareTo(y.time));
+        railLogRailEventsTrainPassedByJunction[] passed_junctions = getPassedByJunctionById(train_id);
+        //Array.Sort(passed_junctions,(x,y)=>x.time.CompareTo(y.time));
+ 
+        for(int i = 0;i<reached_junctions.Length;i++){
+            // Console.WriteLine("P "+passed_junctions[i].junctionID);
+            // Console.WriteLine("P "+passed_junctions[i].time);
+
+            // Console.WriteLine("R "+reached_junctions[i].junctionID);
+            // Console.WriteLine("R "+reached_junctions[i].time);
+            passed_list.Add(passed_junctions[i].time);
+            reached_list.Add(reached_junctions[i].time);
+            junction_list.Add(reached_junctions[i].junctionID);
+        }
+
+        //As when the train reachs it final junction it stops, the final passed value is irrelevent
+        passed_list.Add("1000");
+        Dictionary<string, List<string>> return_dict = new Dictionary<string, List<string>>(3);
+        return_dict.Add("junctions",junction_list);
+        return_dict.Add("reached",reached_list);
+        return_dict.Add("passed",passed_list);
+
+        return return_dict;
     }
 
 } 

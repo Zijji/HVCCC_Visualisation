@@ -5,12 +5,14 @@ using System.Text;
 public class ConsistPath : IComparable<ConsistPath>, IEquatable<ConsistPath>
 {
     private ArrayList _junctions = new ArrayList();
-    private ArrayList _times = new ArrayList();
+    private ArrayList _arrival_times = new ArrayList();
+    private ArrayList _departure_times = new ArrayList();
 
-    public void AddDestination(string newJunction, int newTime)
+    public void AddDestination(string newJunction, float arrival_time, float departure_time)
     {
         _junctions.Add(newJunction);
-        _times.Add(newTime);
+        _arrival_times.Add(arrival_time);
+        _departure_times.Add(departure_time);
     }
 
     //Gets the path's length, or number of junctions in the path
@@ -26,9 +28,19 @@ public class ConsistPath : IComparable<ConsistPath>, IEquatable<ConsistPath>
     }
 
     //Gets time at index pos 
-    public int GetTime(int pos)
+    public float GetTime(int pos)
     {
-        return (int) _times[pos];
+        return (float) _departure_times[pos];
+    }
+    //Gets arrival time
+    public float GetArrivalTime(int pos)
+    {
+        return (float)_arrival_times[pos];
+    }
+    //Gets departure time
+    public float GetDepartureTime(int pos)
+    {
+        return (float)_departure_times[pos];
     }
 
     //Removes top of junctions
@@ -36,15 +48,16 @@ public class ConsistPath : IComparable<ConsistPath>, IEquatable<ConsistPath>
     {
         String returnJunction = (String) _junctions[0];
         _junctions.RemoveAt(0);
-        _times.RemoveAt(0);
+        _arrival_times.RemoveAt(0);
+        _departure_times.RemoveAt(0);
         return returnJunction;
     }
 
     /* Returns the smallest earlier time increment */
-    private int GetMinTime()
+    private float GetMinTime()
     {
-        int min = int.MaxValue;
-        foreach (int i in _times)
+        float min = float.MaxValue;
+        foreach (float i in _departure_times)
         {
             if (i < min)
             {
@@ -76,7 +89,9 @@ public class ConsistPath : IComparable<ConsistPath>, IEquatable<ConsistPath>
             sb.Append("(");
             sb.Append(_junctions[i]);
             sb.Append(",");
-            sb.Append(_times[i]);
+            sb.Append(_departure_times[i]);
+            sb.Append(",");
+            sb.Append(_arrival_times[i]);
             sb.Append(")");
             i++;
         }
