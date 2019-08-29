@@ -22,9 +22,12 @@ public class MapboxCreateJunctions : MonoBehaviour
     [SerializeField]
     float _spawnScale = 100f;
 
-    [SerializeField]
+    [SerializeField] 
     GameObject _markerPrefab;
-
+    
+    
+    public GameObject _junctionParent;
+    
     List<GameObject> _spawnedObjects;
 
     void Start()
@@ -82,6 +85,7 @@ public class MapboxCreateJunctions : MonoBehaviour
             var locationString = _locationStrings[i];
             _locations[i] = Conversions.StringToLatLon(locationString);
             var instance = Instantiate(_markerPrefab);
+            instance.transform.parent = _junctionParent.transform;
             instance.transform.localPosition = _map.GeoToWorldPosition(_locations[i], true);
             instance.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
             if(i < junctionNames.Count)

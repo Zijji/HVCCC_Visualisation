@@ -11,6 +11,7 @@ public class TrainMovement : MonoBehaviour
     public float speed = 0.25f;
     public GameObject junctionDestination = null; //set this variable to be the next destination.
     public ConsistPath TrainPath = null;
+    public Vector3 junctionPrevTransform;
 
     private GameObject getTimeObj;
 
@@ -20,7 +21,11 @@ public class TrainMovement : MonoBehaviour
     void FixedUpdate()
     {
             BasicTrainMovement();
-            if (GetNearDest())
+            MapScale();
+            float trainTime = getTimeObj.GetComponent<TimeController>().GetTime();
+            //if (GetNearDest()
+            //Now checks if time > departure time
+            if (trainTime > TrainPath.GetDepartureTime(pathCurrentDest-1))
             {
                 if (NoMorePath())
                 {
@@ -28,8 +33,8 @@ public class TrainMovement : MonoBehaviour
                 }
                 else
                 {
-                    //GetPathDest();
-                    //TimeTrainMovement(); // Comment out causing: Index out of range error 0 might be too low
+                    GetPathDest();
+                    TimeTrainMovement(); // Comment out causing: Index out of range error 0 might be too low
                 }
                 
             }
@@ -46,44 +51,9 @@ public class TrainMovement : MonoBehaviour
             Debug.Log("Error: No time object found. Create an object called 'TimeObject' with the script 'TimeController.cs'");
         }
 
+        pathCurrentDest = 1;
         GetPathDest();
         TimeTrainMovement();
-        //print("Train created");
-        //print(TrainPath);
-        
-        // Example of trains moving around junctions that are next to it.
-        /**transform.position = Vector3.MoveTowards(transform.position, junctionDestination.transform.position, speed * Time.deltaTime);
-        //Vector3 relativePos = junctionDestination.transform.position - transform.position;
-        //Quaternion trainDirection = Quaternion.LookRotation(relativePos, Vector3.up);
-        //transform.rotation = trainDirection;
-        var heading = junctionDestination.transform.position - transform.position;
-        if (heading.magnitude < 0.1f)
-        {
-            //Gets random connected junction from junction
-            string[] newJunction = junctionDestination.GetComponent<Junction>().connecting_junctions;
-            junctionDestination = GameObject.Find(newJunction[Random.Range(0, newJunction.Length - 1)]);
-           // public string[] connecting_junctions;
-           //junctionDestination.GetComponent<TrainMove>().junctionDestination;
-           //Gets random station to move towards
-        }
-
-        /* // Basic Example
-        junctionDestination.GetComponent<Junction>();
-        GameObject.Find("Hand");
-        transform.position = Vector3.MoveTowards(transform.position, currentDestination.transform.position, speed * Time.deltaTime);
-        var heading = currentDestination.transform.position - transform.position;
-        if (heading.magnitude < 0.1f)
-        {
-            if (currentDestination != warabrookStation)
-            {
-                currentDestination = warabrookStation;
-            }
-            else
-            {
-                currentDestination = hexhamStation;
-            }
-        }
-        */
     }
 
     private void BasicTrainMovement()
@@ -99,9 +69,14 @@ public class TrainMovement : MonoBehaviour
     {
         float distance = Vector3.Distance(junctionDestination.transform.position, transform.position);
         float trainTime = getTimeObj.GetComponent<TimeController>().GetTime();
-        float dTime = TrainPath.GetTime(pathCurrentDest) - trainTime;
+        float dTime = (TrainPath.GetArrivalTime(pathCurrentDest-1) - trainTime);
+        //Debug.Log(distance);
+        //Debug.Log(trainTime);
+        //Debug.Log(dTime);
         
-        speed = (distance / dTime);///Time.deltaTime;
+        
+        speed = (distance / dTime)*getTimeObj.GetComponent<TimeController>().GetSpeed();///Time.deltaTime;
+        //Debug.Log(speed);
         //TrainPath.GetJunction();
         //transform.position = Vector3.MoveTowards(transform.position, junctionDestination.transform.position, speed * Time.deltaTime);
     }
@@ -111,8 +86,9 @@ public class TrainMovement : MonoBehaviour
         if (pathCurrentDest < TrainPath.Length())
         {
             junctionDestination = GameObject.Find(TrainPath.GetJunction(pathCurrentDest));
+            junctionPrevTransform = junctionDestination.transform.position;
             pathCurrentDest++;
-            return true;
+            return true; 
         }
         return false;
         //TrainPath.GetTime(pathCurrentDest);
@@ -139,5 +115,20 @@ public class TrainMovement : MonoBehaviour
             }
         }
         return false;
+    }
+
+    private void MapScale()
+    {
+        
+        if (junctionDestination != null)
+        {
+            if (junctionPrevTransform != junctionDestination.transform.position)
+            {
+                transform.position += (junctionDestination.transform.position - junctionPrevTransform);
+            }
+            junctionPrevTransform = junctionDestination.transform.position;
+            TimeTrainMovement();
+        }
+        
     }
 }

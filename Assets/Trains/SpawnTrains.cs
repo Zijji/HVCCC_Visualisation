@@ -14,6 +14,7 @@ public class SpawnTrains : MonoBehaviour
     public float prevTime;
     public GameObject Train;
     private GameObject getTimeObj;
+    private int trainNo = 0;
 
 
     List<ConsistPath> paths = new List<ConsistPath>(); // Will contain all the trains that will need to be spawned at anytime.
@@ -42,13 +43,6 @@ public class SpawnTrains : MonoBehaviour
 
             for (int j = 0; j < xml_train_paths_dic["passed"].Count; j++)
             {
-                //int passed_time = Convert.ToInt32(xml_train_paths_dic["passed"][j].Split('.')[0]) * 60 + Convert.ToInt32(Convert.ToSingle(xml_train_paths_dic["passed"][j].Split('.')[1])*0.6);
-                /*
-                Debug.Log("hour: " + xml_train_paths_dic["passed"][j].Split('.')[0]);
-                Debug.Log("minute: " + xml_train_paths_dic["passed"][j].Split('.')[1]);
-                int passed_time = Convert.ToInt32(xml_train_paths_dic["passed"][j].Split('.')[0]) * 60 + Convert.ToInt32 (Convert.ToSingle(xml_train_paths_dic["passed"][j].Split('.')[1]) * 0.6);
-                int reached_time = Convert.ToInt32(xml_train_paths_dic["reached"][j].Split('.')[0]) * 60 + Convert.ToInt32(Convert.ToSingle(xml_train_paths_dic["reached"][j].Split('.')[1]) * 0.6);
-                */
 
 
                 path.AddDestination(xml_train_paths_dic["junctions"][j], float.Parse(xml_train_paths_dic["reached"][j]), float.Parse(xml_train_paths_dic["passed"][j]));
@@ -57,54 +51,8 @@ public class SpawnTrains : MonoBehaviour
 
             }
             paths.Add(path);
-            //Debug.Log(path.ToString());
+            pathsChecked.Add(0);
         }
-        // Getting the timetables from the XML
-        //dataRailNetworkRailPlannerTimeTables timetables = xml_helper.getTimetable();
-        //string[] downTimetable = timetables.downTimetable[0].junctionIds.Split(' ');
-        //string[] upTimetable = timetables.upTimetable[0].junctionIds.Split(' ');
-        
-
-        /* Retrieve all the paths from XML */
-        //int j;
-        //for (int i = 0; i < xml_helper.getPaths().paths.Length; i++)
-       
-            //for (int i = 0; i < 3; i++) 
-        /*
-        {
-               
-            dataRailNetworkRailPlannerAllPathsPaths current = xml_helper.getPaths().paths[i];
-
-            var timetable = current.timetableId.Equals("downTimetable") ? downTimetable : upTimetable;
-            var days = current.daysOfWeek.Split(' '); // Days travelled 1 day = 1440 minutes
-            var minutes = current.timeAtJunction.Split(' '); // Times at the junctions minutes after midnight
-
-            foreach (string d in days)
-            {
-                ConsistPath path = new ConsistPath();
-                j = 0;
-                foreach (string m in minutes)
-                {
-                    if (m.Equals("-1000"))
-                    {
-                        // print("ID: " + i + " case being ignored. " + i + d + m + j);
-                    }
-                    else
-                    {
-                        // Add a new destination for the path. 
-                        var time = Convert.ToInt32(d) * 1440 + Convert.ToInt32(m);
-                        //print("ID: " + i + " New destination: (" + timetable[j] + " " + time + ")");
-                        //paths.Add(new Destinations {junction = timetable[j], time = time});
-                        path.AddDestination(timetable[j], time);
-                    }
-                    j++;
-                }
-                paths.Add(path);
-                pathsChecked.Add(0);
-                
-            }
-            
-       }**/ 
         
         print("Input order: ");
         foreach (var p in paths)
@@ -127,89 +75,27 @@ public class SpawnTrains : MonoBehaviour
          */
     }
 
-    void Update()
+    void FixedUpdate()
     {
         float trainTime = getTimeObj.GetComponent<TimeController>().GetTime();
         //Uses in built time variable, may need to place elsewhere for rewind/fast forward capability
-        if (trainTime >= prevTime)//Mathf.Ceil(prevTime))
+        if (trainTime >= prevTime)
         {
             prevTime = trainTime;
-            Debug.Log(trainTime);
-            //Debug.Log(paths[0]);
-            //Debug.Log("POP:   " + paths[0].PopJunction());
-            //Debug.Log(paths[0].GetTime(0));
 
             for (int p = 0; p < paths.Count; p++ )
             {
-                if ((trainTime >= (paths[p].GetDepartureTime(0))) & (pathsChecked[p] == 0))
+                if ((trainTime >= paths[p].GetDepartureTime(0)) & (pathsChecked[p] == 0))
                 {
                     pathsChecked[p] = 1;
-                    //String nameJunction = paths[0].PopJunction();
                     GameObject thisJunction = GameObject.Find(paths[p].GetJunction(0));
                     GameObject newTrain = Instantiate(Train, thisJunction.transform.position, thisJunction.transform.rotation);
+                    newTrain.name = "Train" + trainNo;
+                    trainNo++;
                     newTrain.GetComponent<TrainMovement>().TrainPath = paths[p];
-                    Debug.Log("Create a train!");
                 }
-                Debug.Log(p);
             }
-            /*
-            if (trainTime >= ((float)paths[0].GetTime(0)))
-            {
-                String nameJunction = paths[0].PopJunction();
-                GameObject thisJunction = GameObject.Find(paths[0].GetJunction(0));
-                GameObject newTrain = Instantiate(Train, thisJunction.transform.position, thisJunction.transform.rotation);
-                newTrain.GetComponent<TrainMovement>().TrainPath = paths[0];
-                Debug.Log("true");
-            }
-            else
-            {
-                Debug.Log("false");
-            }
-            */
-            /*
-            if (trainTime >= ( (float)paths[0].GetTime(0)))
-            {
-                String nameJunction = paths[0].PopJunction();
-                GameObject thisJunction = GameObject.Find(nameJunction);
-                GameObject nextJunction = GameObject.Find(paths[0].GetJunction(0));
-                GameObject newTrain = Instantiate(Train, thisJunction.transform.position, thisJunction.transform.rotation);
-                newTrain.GetComponent<TrainMovement>().junctionDestination = nextJunction;
-                Debug.Log("true");
-            }
-            else
-            {
-                Debug.Log("false");
-            }
-             * */
         }
-        /* Create the trains */
-        /*
-        Debug.Log(paths[0].GetTime(0));
-        if ((trainTime >= paths[0].GetTime(0)) && (trainMake = false))
-        {
-            trainMake = true;
-            GameObject thisJunction = GameObject.Find(paths[0].GetJunction(0));
-            GameObject nextJunction = GameObject.Find(paths[0].GetJunction(1));
-            GameObject newTrain = Instantiate(Train, thisJunction.transform.position, thisJunction.transform.rotation);
-            newTrain.GetComponent<TrainMovement>().junctionDestination = nextJunction;
-
-            Debug.Log("true");
-        }
-        else
-        {
-            Debug.Log("false");
-        }
-         * */
-        /*
-        if (paths[0].GetTime(0))
-        Debug.Log(paths[0].GetJunction(0));
-        Debug.Log(paths[0].GetTime(0));
-        */
-
-        /* Check if it is time to dispatch the train */
-
-
-        // First need to setup a global time in the visualization.
 
 
     }
