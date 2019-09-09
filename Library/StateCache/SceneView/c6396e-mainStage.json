@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":false,"pivot":{"x":281.20257568359377,"y":165.39840698242188,"z":0.0},"rotation":{"x":-0.623920202255249,"y":0.009843504056334496,"z":-0.007859965786337853,"w":-0.7813908457756043},"size":377.32843017578127,"orthographic":false}
-=======
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":false,"pivot":{"x":490.7842712402344,"y":331.0997619628906,"z":0.0},"rotation":{"x":-0.27133631706237795,"y":0.260623574256897,"z":-0.07658102363348007,"w":-0.9233646988868713},"size":825.2921752929688,"orthographic":false}
->>>>>>> adding-ui-to-raileventlogs

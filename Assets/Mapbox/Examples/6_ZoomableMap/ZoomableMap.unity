@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -120,81 +120,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!21 &179654054
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: DefaultTopMaterial
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMask:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _BumpScale: 1
-    - _Cutoff: 0.5
-    - _DetailNormalMapScale: 1
-    - _DstBlend: 0
-    - _GlossMapScale: 1
-    - _Glossiness: 0.5
-    - _GlossyReflections: 1
-    - _Metallic: 0
-    - _Mode: 0
-    - _OcclusionStrength: 1
-    - _Parallax: 0.02
-    - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 1
-    - _SrcBlend: 1
-    - _UVSec: 0
-    - _ZWrite: 1
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1001 &197266180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -365,23 +290,8 @@ PrefabInstance:
     - target: {fileID: 114603753021256032, guid: 98be219873e6d4dffb5949746f515a33,
         type: 3}
       propertyPath: m_Text
-<<<<<<< HEAD
-      value: '<b>HVCCC 3D Rail Network Visualisation</b>
-
-
-        To navigate, please use WASD controls
-
-        To zoom, please scroll in or out
-
-        To navigate to a specific suburb, please type the location into the search
-        bar in the top right
-
-
-        This system is powered by Mapbox and UoN'
-=======
       value: "Welcome to the HVCCC 3D eWoCC Visualisation Model\n\n- WASD Controls
         to move \n- Scroll to zoom in or out"
->>>>>>> adding-ui-to-raileventlogs
       objectReference: {fileID: 0}
     - target: {fileID: 114731470950229392, guid: 98be219873e6d4dffb5949746f515a33,
         type: 3}
@@ -638,35 +548,14 @@ MonoBehaviour:
   _vectorData:
     _layerProperty:
       tileJsonData:
-<<<<<<< HEAD
-        tileJSONLoaded: 0
-        LayerDisplayNames:
-        - admin
-        - aeroway
-        - airport_label
-        - building
-        - housenum_label
-        - landuse
-        - landuse_overlay
-        - motorway_junction
-        - natural_label
-        - place_label
-        - poi_label
-        - road
-        - structure
-        - transit_stop_label
-        - water
-        - waterway
-=======
         tileJSONLoaded: 1
         LayerDisplayNames: []
->>>>>>> adding-ui-to-raileventlogs
       _sourceType: 2
       sourceOptions:
         isActive: 1
         layerSource:
           Name: Mapbox Streets
-          Id: mapbox.mapbox-streets-v8
+          Id: mapbox.mapbox-streets-v8, mapbox-satellite (1)
           Modified: 
           UserName: 
       useOptimizedStyle: 0
@@ -682,47 +571,12 @@ MonoBehaviour:
       - coreOptions:
           sourceId: 
           isActive: 1
-<<<<<<< HEAD
-          sublayerName: RailwayTracks
-=======
           sublayerName: Untitled
->>>>>>> adding-ui-to-raileventlogs
           geometryType: 1
           layerName: road
           snapToTerrain: 1
           combineMeshes: 0
         lineGeometryOptions:
-<<<<<<< HEAD
-          Width: 5
-        filterOptions:
-          _selectedLayerName: road
-          filters:
-          - Key: class
-            KeyDescription: 'One of: ''motorway'', ''motorway_link'', ''trunk'', ''primary'',
-              ''secondary'', ''tertiary'', ''trunk_link'', ''primary_link'', ''secondary_link'',
-              ''tertiary_link'', ''street'', ''street_limited'', ''pedestrian'', ''construction'',
-              ''track'', ''service'', ''ferry'', ''path'', ''golf'', ''level_crossing'',
-              ''turning_circle'', ''roundabout'', ''mini_roundabout'', ''turning_loop'',
-              ''traffic_signals'''
-            PropertyValue: major_rail
-            Min: 0
-            Max: 0
-            filterOperator: 0
-          - Key: class
-            KeyDescription: 'One of: ''motorway'', ''motorway_link'', ''trunk'', ''primary'',
-              ''secondary'', ''tertiary'', ''trunk_link'', ''primary_link'', ''secondary_link'',
-              ''tertiary_link'', ''street'', ''street_limited'', ''pedestrian'', ''construction'',
-              ''track'', ''service'', ''ferry'', ''path'', ''golf'', ''level_crossing'',
-              ''turning_circle'', ''roundabout'', ''mini_roundabout'', ''turning_loop'',
-              ''traffic_signals'''
-            PropertyValue: service_rail
-            Min: 0
-            Max: 0
-            filterOperator: 0
-          combinerType: 0
-        extrusionOptions:
-          _selectedLayerName: road
-=======
           Width: 1
         filterOptions:
           _selectedLayerName: road
@@ -730,19 +584,13 @@ MonoBehaviour:
           combinerType: 0
         extrusionOptions:
           _selectedLayerName: 
->>>>>>> adding-ui-to-raileventlogs
           extrusionType: 5
           extrusionGeometryType: 0
           propertyName: height
           propertyDescription: 
           minimumHeight: 0
-<<<<<<< HEAD
-          maximumHeight: 10
-          extrusionScaleFactor: 10
-=======
           maximumHeight: 1
           extrusionScaleFactor: 1
->>>>>>> adding-ui-to-raileventlogs
         colliderOptions:
           colliderType: 0
         materialOptions:
@@ -763,15 +611,9 @@ MonoBehaviour:
             texturingType: 0
             materials:
             - Materials:
-<<<<<<< HEAD
-              - {fileID: 179654054}
-            - Materials:
-              - {fileID: 817650883}
-=======
               - {fileID: 708115509}
             - Materials:
               - {fileID: 949986070}
->>>>>>> adding-ui-to-raileventlogs
             atlasInfo: {fileID: 11400000, guid: 414754d7155df47beb52ca117a774f21,
               type: 2}
             colorPalette: {fileID: 11400000, guid: 57bdfa37edf7a4f7f999d19443497554,
@@ -783,12 +625,7 @@ MonoBehaviour:
         buildingsWithUniqueIds: 1
         moveFeaturePositionTo: 0
         MeshModifiers: []
-<<<<<<< HEAD
-        GoModifiers:
-        - {fileID: 11400000, guid: 152804104400c9141aa2113a5dd77581, type: 2}
-=======
         GoModifiers: []
->>>>>>> adding-ui-to-raileventlogs
         presetFeatureType: 1
         _maskValue: 0
         selectedTypes: 
@@ -864,22 +701,14 @@ MonoBehaviour:
   _spawnScale: 10
   _markerPrefab: {fileID: 1839187062704024, guid: 9b5b1b761a8994c07affd0a05396633b,
     type: 3}
-<<<<<<< HEAD
---- !u!21 &817650883
-=======
 --- !u!21 &708115509
->>>>>>> adding-ui-to-raileventlogs
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-  m_Name: DefaultSideMaterial
-=======
   m_Name: DefaultTopMaterial
->>>>>>> adding-ui-to-raileventlogs
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -912,11 +741,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-<<<<<<< HEAD
-        m_Texture: {fileID: 2800000, guid: eef5c5fe165da49da9d0ee7a33401d97, type: 3}
-=======
         m_Texture: {fileID: 0}
->>>>>>> adding-ui-to-raileventlogs
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -951,11 +776,7 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-<<<<<<< HEAD
---- !u!1001 &1178802930
-=======
 --- !u!1001 &744086022
->>>>>>> adding-ui-to-raileventlogs
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1828,13 +1649,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1787361570}
-  m_LocalRotation: {x: 0.5735764, y: 0, z: 0, w: 0.8191521}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 200, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 70, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1001 &1812228710
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1850,11 +1671,7 @@ PrefabInstance:
     - target: {fileID: 4596497141785460168, guid: 7819fc9b516c7a447be2f3961fa05340,
         type: 3}
       propertyPath: m_IsActive
-<<<<<<< HEAD
-      value: 1
-=======
       value: 0
->>>>>>> adding-ui-to-raileventlogs
       objectReference: {fileID: 0}
     - target: {fileID: 7439761635891090158, guid: 7819fc9b516c7a447be2f3961fa05340,
         type: 3}

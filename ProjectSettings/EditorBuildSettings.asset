@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-%YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
---- !u!1045 &1
-EditorBuildSettings:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Scenes: []
-  m_configObjects: {}
-=======
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1045 &1
@@ -19,4 +9,3 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   m_configObjects: {}
->>>>>>> adding-ui-to-raileventlogs
