@@ -61,6 +61,7 @@ public class TrainMovement : MonoBehaviour
         if(junctionDestination != null)
         {
             transform.position = Vector3.MoveTowards(transform.position, junctionDestination.transform.position, speed * Time.deltaTime);
+            transform.LookAt(junctionDestination.transform.position, Vector3.up);
         }
         
     }
