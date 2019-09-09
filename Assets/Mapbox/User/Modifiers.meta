@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Mapbox/User/Modifiers.meta
 guid: 039229c3b4fa7fa438b40b3e406f2343
+=======
+guid: ced249403ad6d644eb0686d17b85fea1
+>>>>>>> adding-ui-to-raileventlogs:Assets/WSM Game Studio.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
