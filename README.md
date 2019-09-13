@@ -18,6 +18,8 @@ These instructions will get you a copy of the project up and running on your loc
 git clone https://github.com/Zijji/HVCCC_Visualisation.git
 ```
 3. Open the project with Unity
+4. Load Scene (Need to put the name of the Scene here)
+5. Click the play button
 
 ## Running the tests
 
