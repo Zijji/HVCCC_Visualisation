@@ -30,6 +30,9 @@ public class MapboxCreateJunctions : MonoBehaviour
     
     List<GameObject> _spawnedObjects;
 
+    public float zoom;
+    
+
     void Start()
     {
         //EXCEL PART, THE CSV IS IN THE RESOURCES FOLDER
@@ -88,25 +91,51 @@ public class MapboxCreateJunctions : MonoBehaviour
             instance.transform.parent = _junctionParent.transform;
             instance.transform.localPosition = _map.GeoToWorldPosition(_locations[i], true);
             instance.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
-            if(i < junctionNames.Count)
+            if (i < junctionNames.Count)
             {
                 instance.name = junctionNames[i];
             }
-            
+
             _spawnedObjects.Add(instance);
         }
+    
+        zoom = _map.AbsoluteZoom;
+
     }
 
-    private void Update()
+    void Update()
     {
-        int count = _spawnedObjects.Count;
-        for (int i = 0; i < count; i++)
+        if (zoom != _map.AbsoluteZoom)
         {
-            var spawnedObject = _spawnedObjects[i];
-            var location = _locations[i];
-            spawnedObject.transform.localPosition = _map.GeoToWorldPosition(location, true);
-            spawnedObject.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
+            int count = _spawnedObjects.Count;
+            for (int i = 0; i < count; i++)
+            {
+                var spawnedObject = _spawnedObjects[i];
+                var location = _locations[i];
+                spawnedObject.transform.localPosition = _map.GeoToWorldPosition(location, true);
+                spawnedObject.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
+            }
+
+            zoom = _map.AbsoluteZoom;
         }
+    }
+    
+    void OnGUI()
+    {
+        if (Event.current.type == EventType.ScrollWheel || Event.current.type == EventType.MouseDrag || 
+            Event.current.type == EventType.MouseUp || Event.current.type == EventType.MouseDown)
+        {
+            int count = _spawnedObjects.Count;
+            for (int i = 0; i < count; i++)
+            {
+                var spawnedObject = _spawnedObjects[i];
+                var location = _locations[i];
+                spawnedObject.transform.localPosition = _map.GeoToWorldPosition(location, true);
+                spawnedObject.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
+            }
+        }
+        
+        Debug.Log(Event.current.type);
     }
 
 }
