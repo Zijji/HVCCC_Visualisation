@@ -52,6 +52,12 @@ public class UIManager : MonoBehaviour
     public void DisplayTime()
     {
         timeText.text = ""+ universalTime.GetComponent<TimeController>().GetTime();
+        float hours = universalTime.GetComponent<TimeController>().GetTime();
+        float minutes = hours % 1;
+        hours = hours - minutes;
+        minutes = minutes * 60;
+
+        timeText.text = hours + ":" + (int)minutes;
     }
 
 }
