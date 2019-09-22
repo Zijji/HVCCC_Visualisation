@@ -7630,6 +7630,7 @@ MonoBehaviour:
   speed: 0.25
   junctionDestination: {fileID: 0}
   junctionPrevTransform: {x: 0, y: 0, z: 0}
+  leadTrain: {fileID: 0}
 --- !u!1 &2102466805505159837
 GameObject:
   m_ObjectHideFlags: 0

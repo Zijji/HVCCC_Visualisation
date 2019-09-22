@@ -12,7 +12,7 @@ public class TrainMovement : MonoBehaviour
     public GameObject junctionDestination = null; //set this variable to be the next destination.
     public ConsistPath TrainPath = null;
     public Vector3 junctionPrevTransform;
-
+    public GameObject leadTrain;
     private GameObject getTimeObj;
 
     private int pathCurrentDest = 0;        //Index of current destination in path
