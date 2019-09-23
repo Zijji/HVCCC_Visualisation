@@ -123,7 +123,8 @@ public class MapboxCreateJunctions : MonoBehaviour
     void OnGUI()
     {
         if (Event.current.type == EventType.ScrollWheel || Event.current.type == EventType.MouseDrag || 
-            Event.current.type == EventType.MouseUp || Event.current.type == EventType.MouseDown)
+            Event.current.type == EventType.MouseUp || Event.current.type == EventType.MouseDown || Event.current.Equals(Event.KeyboardEvent("w"))
+            || Event.current.Equals(Event.KeyboardEvent("a")) || Event.current.Equals(Event.KeyboardEvent("s")) || Event.current.Equals(Event.KeyboardEvent("d")))
         {
             int count = _spawnedObjects.Count;
             for (int i = 0; i < count; i++)
@@ -134,8 +135,18 @@ public class MapboxCreateJunctions : MonoBehaviour
                 spawnedObject.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
             }
         }
-        
-        Debug.Log(Event.current.type);
+        else
+        {
+            int count = _spawnedObjects.Count;
+            for (int i = 0; i < count; i++)
+            {
+                var spawnedObject = _spawnedObjects[i];
+                var location = _locations[i];
+                spawnedObject.transform.localPosition = _map.GeoToWorldPosition(location, true);
+                spawnedObject.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
+            }
+        }
+        Debug.Log("Current Event" + Event.current.type);
     }
 
 }
