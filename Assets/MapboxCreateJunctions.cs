@@ -40,7 +40,6 @@ public class MapboxCreateJunctions : MonoBehaviour
         string[] data = junctionData.text.Split(new char[] { '\n' });
         List<string> junctionLocations = new List<string>();
         List<string> junctionNames = new List<string>();
-        
         for (int i = 1; i < data.Length - 1; i++)
         {
             string[] row = data[i].Split(new char[] { ',' });
@@ -68,6 +67,28 @@ public class MapboxCreateJunctions : MonoBehaviour
             junctionLocations.Add(x + "," + z);
             junctionNames.Add(row[0]);
         }
+        /*
+        AllJunctions j1 = new AllJunctions();
+        j1.id = "id1";
+        j1.signalName = "signal1";
+        j1.xCoordinate = -33.9324425;
+        j1.zCoordinate = 151.1910184;
+        junctions.Add(j1);
+         *
+        junctionLocations.Add("-33.9324425,151.1910184");
+        junctionLocations.Add("-33.9325201,151.1914601");
+        junctionLocations.Add("-33.9326104,151.19183");
+        junctionLocations.Add("-33.9327024,151.1920802");
+        junctionLocations.Add("-33.9328467,151.192379");
+        junctionNames.Add("junction1");
+        junctionNames.Add("junction2");
+        junctionNames.Add("junction3");
+        junctionNames.Add("junction4");
+        junctionNames.Add("junction5");
+         */
+
+
+
         //Inserts the junctions to the start of the location strings array. 
         string[] junctionLocationsArr = junctionLocations.ToArray();
         var allLocations = new string[_locationStrings.Length + junctionLocationsArr.Length];
