@@ -40,7 +40,6 @@ public class TrainMovement : MonoBehaviour
         
 
     }
-
     void Start()
     {
         //Finds time object
@@ -74,9 +73,23 @@ public class TrainMovement : MonoBehaviour
         float distance = Vector3.Distance(junctionDestination.transform.position, junctionPrev.transform.position);
 
         //transform.position = junctionPrev.transform.position;
-        transform.position = new Vector3(junctionPrev.transform.position.x + (junctionDestination.transform.position.x - junctionPrev.transform.position.x) *((trainTime - destTime) /(prevTime - destTime)),
-                                        junctionPrev.transform.position.y + (junctionDestination.transform.position.y - junctionPrev.transform.position.y) * ((trainTime - destTime) / (prevTime - destTime)),
-                                        junctionPrev.transform.position.z + (junctionDestination.transform.position.z - junctionPrev.transform.position.z) * ((trainTime - destTime) / (prevTime - destTime))
+
+
+        /*
+        transform.position = new Vector3(junctionPrev.transform.position.x + (junctionDestination.transform.position.x - junctionPrev.transform.position.x) *0,
+                                        junctionPrev.transform.position.y + (junctionDestination.transform.position.y - junctionPrev.transform.position.y) *0,
+                                        junctionPrev.transform.position.z + (junctionDestination.transform.position.z - junctionPrev.transform.position.z) *0
+                                            );
+         */
+        /*
+        transform.position = new Vector3(junctionPrev.transform.position.x + (junctionDestination.transform.position.x - junctionPrev.transform.position.x) * ((trainTime - prevTime) / (prevTime - destTime)),
+                                        junctionPrev.transform.position.y + (junctionDestination.transform.position.y - junctionPrev.transform.position.y) * ((trainTime - prevTime) / (prevTime - destTime)),
+                                        junctionPrev.transform.position.z + (junctionDestination.transform.position.z - junctionPrev.transform.position.z) * ((trainTime - prevTime) / (prevTime - destTime))
+                                            );
+         */
+        transform.position = new Vector3(junctionDestination.transform.position.x - (junctionDestination.transform.position.x - junctionPrev.transform.position.x) * ((trainTime - prevTime) / (prevTime - destTime)),
+                                        junctionDestination.transform.position.y - (junctionDestination.transform.position.y - junctionPrev.transform.position.y) * ((trainTime - prevTime) / (prevTime - destTime)),
+                                        junctionDestination.transform.position.z - (junctionDestination.transform.position.z - junctionPrev.transform.position.z) * ((trainTime - prevTime) / (prevTime - destTime))
                                             );
             //junctionPrev.transform.position * distance*(destTime - trainTime)/(prevTime - trainTime);
 
