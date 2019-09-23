@@ -10,8 +10,8 @@ public class TrainMovement : MonoBehaviour
     //public GameObject stationDestionation;
     public float speed = 0.25f;
     public GameObject junctionDestination = null; //set this variable to be the next destination.
+    public GameObject junctionPrev = null; //previous junction.
     public ConsistPath TrainPath = null;
-    public Vector3 junctionPrevTransform;
 
     private GameObject getTimeObj;
 
@@ -20,8 +20,7 @@ public class TrainMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-            BasicTrainMovement();
-            MapScale();
+            TimeTrainMovement();
             float trainTime = getTimeObj.GetComponent<TimeController>().GetTime();
             //if (GetNearDest()
             //Now checks if time > departure time
@@ -68,15 +67,32 @@ public class TrainMovement : MonoBehaviour
     //Movement taking into consideration time.
     private void TimeTrainMovement()
     {
+        transform.LookAt(junctionDestination.transform.position, Vector3.up);
+        float trainTime = getTimeObj.GetComponent<TimeController>().GetTime();
+        float destTime = (TrainPath.GetArrivalTime(pathCurrentDest));
+        float prevTime = (TrainPath.GetArrivalTime(pathCurrentDest-1));
+        float distance = Vector3.Distance(junctionDestination.transform.position, junctionPrev.transform.position);
+
+        //transform.position = junctionPrev.transform.position;
+        transform.position = new Vector3(junctionPrev.transform.position.x + (junctionDestination.transform.position.x - junctionPrev.transform.position.x) *((trainTime - destTime) /(prevTime - destTime)),
+                                        junctionPrev.transform.position.y + (junctionDestination.transform.position.y - junctionPrev.transform.position.y) * ((trainTime - destTime) / (prevTime - destTime)),
+                                        junctionPrev.transform.position.z + (junctionDestination.transform.position.z - junctionPrev.transform.position.z) * ((trainTime - destTime) / (prevTime - destTime))
+                                            );
+            //junctionPrev.transform.position * distance*(destTime - trainTime)/(prevTime - trainTime);
+
+
+        /*
         float distance = Vector3.Distance(junctionDestination.transform.position, transform.position);
         float trainTime = getTimeObj.GetComponent<TimeController>().GetTime();
         float dTime = (TrainPath.GetArrivalTime(pathCurrentDest-1) - trainTime);
+        */
         //Debug.Log(distance);
         //Debug.Log(trainTime);
         //Debug.Log(dTime);
-        
-        
-        speed = (distance / dTime)*getTimeObj.GetComponent<TimeController>().GetSpeed();///Time.deltaTime;
+        //Places train where it should be according to time.
+
+
+        //speed = (distance / dTime)*getTimeObj.GetComponent<TimeController>().GetSpeed();///Time.deltaTime;
         //Debug.Log(speed);
         //TrainPath.GetJunction();
         //transform.position = Vector3.MoveTowards(transform.position, junctionDestination.transform.position, speed * Time.deltaTime);
@@ -87,7 +103,7 @@ public class TrainMovement : MonoBehaviour
         if (pathCurrentDest < TrainPath.Length())
         {
             junctionDestination = GameObject.Find(TrainPath.GetJunction(pathCurrentDest));
-            junctionPrevTransform = junctionDestination.transform.position;
+            junctionPrev = GameObject.Find(TrainPath.GetJunction(pathCurrentDest-1));
             pathCurrentDest++;
             return true; 
         }
@@ -116,20 +132,5 @@ public class TrainMovement : MonoBehaviour
             }
         }
         return false;
-    }
-
-    private void MapScale()
-    {
-        
-        if (junctionDestination != null)
-        {
-            if (junctionPrevTransform != junctionDestination.transform.position)
-            {
-                transform.position += (junctionDestination.transform.position - junctionPrevTransform);
-            }
-            junctionPrevTransform = junctionDestination.transform.position;
-            TimeTrainMovement();
-        }
-        
     }
 }
