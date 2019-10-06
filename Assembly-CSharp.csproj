@@ -619,6 +619,7 @@
     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\NativeInterface\ARUserAnchor.cs" />
     <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\NativeInterface\UnityARSessionNativeInterface.cs" />
     <Compile Include="Assets\UnityARKitPlugin\UnityARKitPluginSettings.cs" />
+    <Compile Include="Assets\WorldTime.cs" />
     <Compile Include="Assets\WSM Game Studio\Train Controller_v3\Railroad Builder\Scripts\Bezier.cs" />
     <Compile Include="Assets\WSM Game Studio\Train Controller_v3\Railroad Builder\Scripts\Extensions.cs" />
     <Compile Include="Assets\WSM Game Studio\Train Controller_v3\Railroad Builder\Scripts\OrientedPoint.cs" />
