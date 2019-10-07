@@ -8,7 +8,8 @@ using System.Collections.Generic;
 //
 
 
-public class XMLHelper{
+public class XMLHelper
+{
     public data model_inputs_data_object;
     public railLog rail_log;
 
