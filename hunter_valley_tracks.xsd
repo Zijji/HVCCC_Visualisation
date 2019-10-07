@@ -1,0 +1,107 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="kml" targetNamespace="http://www.opengis.net/kml/2.2" xmlns:mstns="http://www.opengis.net/kml/2.2" xmlns="http://www.opengis.net/kml/2.2" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:element name="kml" msdata:IsDataSet="true" msdata:Locale="en-US">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Document">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Schema" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="SimpleField" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="name" form="unqualified" type="xs:string" />
+                        <xs:attribute name="type" form="unqualified" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="name" form="unqualified" type="xs:string" />
+                  <xs:attribute name="id" form="unqualified" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Folder" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="name" type="xs:string" minOccurs="0" />
+                    <xs:element name="Placemark" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="name" type="xs:string" minOccurs="0" />
+                          <xs:element name="Style" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="LineStyle" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="color" type="xs:string" minOccurs="0" />
+                                    </xs:sequence>
+                                    <xs:attribute name="tmp" type="xs:string" /> <!--FIX LINE TO BE ADDED-->
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="PolyStyle" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="fill" type="xs:string" minOccurs="0" />
+                                    </xs:sequence>
+                                    <xs:attribute name="tmp" type="xs:string" /> <!--FIX LINE TO BE ADDED-->
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="tmp" type="xs:string" /> <!--FIX LINE TO BE ADDED-->
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="ExtendedData" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="SchemaData" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="SimpleData" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:simpleContent msdata:ColumnName="SimpleData_Text" msdata:Ordinal="1">
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute name="name" form="unqualified" type="xs:string" />
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="schemaUrl" form="unqualified" type="xs:string" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="tmp" type="xs:string" /> <!--FIX LINE TO BE ADDED-->
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="MultiGeometry" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="LineString" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="coordinates" type="xs:string" minOccurs="0" />
+                                    </xs:sequence>
+                                    <xs:attribute name="tmp" type="xs:string" /> <!--FIX LINE TO BE ADDED-->
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="tmp" type="xs:string" /> <!--FIX LINE TO BE ADDED-->
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="tmp" type="xs:string" /> <!--FIX LINE TO BE ADDED-->
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="tmp" type="xs:string" /> <!--FIX LINE TO BE ADDED-->
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="id" form="unqualified" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

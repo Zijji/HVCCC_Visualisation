@@ -4,14 +4,14 @@ using System.Xml.Serialization;
 using Schemas;
 using Schemas1;
 using System;
+using Tracks;
 using System.Collections.Generic;
-//
 
 
 public class XMLHelper{
     public data model_inputs_data_object;
     public railLog rail_log;
-
+    public kml kml_tracks;
     public XMLHelper(){
         XmlSerializer ser = new XmlSerializer(typeof(data));
         using (XmlReader reader = XmlReader.Create("modelInputs.xml"))
@@ -24,6 +24,15 @@ public class XMLHelper{
         {
             rail_log= (railLog) ser1.Deserialize(reader);
         }
+
+        XmlSerializer ser2 = new XmlSerializer(typeof(kml));
+        using (XmlReader reader = XmlReader.Create("hunter_valley_tracks.xml"))
+        {
+            kml_tracks = (kml) ser2.Deserialize(reader);
+
+        }
+
+
 
     }
 
@@ -191,12 +200,13 @@ public class XMLHelper{
         railLogRailEventsTrainCreated train_created = getTrainCreationById(train_id);
         junction_list.Add(train_created.junctionID);
         reached_list.Add(train_created.time);
-        //reached_list.Add("0");
+
 
         railLogRailEventsTrainReachedJunction[] reached_junctions = getReachedJunctionById(train_id);
-        //Array.Sort(reached_junctions,(x,y)=>x.time.CompareTo(y.time));
+        Array.Sort(reached_junctions,(x,y)=>x.time.CompareTo(y.time));
+        Array.Sort(reached_junctions,(x,y)=>x.time.CompareTo(y.time));
         railLogRailEventsTrainPassedByJunction[] passed_junctions = getPassedByJunctionById(train_id);
-        //Array.Sort(passed_junctions,(x,y)=>x.time.CompareTo(y.time));
+        Array.Sort(passed_junctions,(x,y)=>x.time.CompareTo(y.time));
  
         for(int i = 0;i<reached_junctions.Length;i++){
             // Console.WriteLine("P "+passed_junctions[i].junctionID);
@@ -218,5 +228,49 @@ public class XMLHelper{
 
         return return_dict;
     }
+    //-----------------------------------------------------------------------------
+    //----- Functions below are used for RailLog
+    //-----------------------------------------------------------------------------
+    
+    //----- Returns a list of coordinates for a track of the form [[x1,y1],[x2,y2],[x3,y3]]
+    public List<List<List<float>>> getAllTrackCoords(){
+        kmlDocumentFolderPlacemark[] placemarks = getAllTrackObjects();
+        // Console.WriteLine(placemarks.Length);
+        List<List<List<float>>> track_coords_list= new List<List<List<float>>>();
+        Console.WriteLine(placemarks[0].MultiGeometry[0].LineString[0].coordinates.Split(','));
+        
+         for(int i = 0;i<placemarks.Length;i++){
+        //for(int i = 0;i<1;i++){
 
+            // Console.WriteLine(i);
+            string[] temp_coords_vals = placemarks[i].MultiGeometry[0].LineString[0].coordinates.Split(' ');
+            List<List<float>> temp_coords = new List<List<float>>();
+            // Console.WriteLine(temp_coords_vals);
+            for(int j = 0;j<temp_coords_vals.Length;j++){
+                Console.WriteLine(temp_coords_vals[j]);
+                float temp_x = float.Parse(temp_coords_vals[j].Split(',')[0]);
+                float temp_y = float.Parse(temp_coords_vals[j].Split(',')[1]);
+                List<float> temp_coord = new List<float>();
+                temp_coord.Add(temp_x);
+                temp_coord.Add(temp_y);
+                temp_coords.Add(temp_coord);
+                // track_coord_list[i].Add(temp_coord);
+
+            }
+            track_coords_list.Add(temp_coords);
+        }
+        return track_coords_list;
+        // Console.WriteLine("Testing the first track" + kml_tracks.Items[0].Folder[0].Placemark[0].MultiGeometry[0].LineString[0].coordinates);
+
+        // Console.WriteLine("Testing the first track" + kml_tracks.Items[0].Folder[0].Placemark[10].MultiGeometry[0].LineString[0].coordinates);
+        
+    }
+    //----- Returns a list of the tracks in their raw form as Placemarks
+    public kmlDocumentFolderPlacemark[] getAllTrackObjects(){
+        
+        return kml_tracks.Items[0].Folder[0].Placemark;
+        // Console.WriteLine("Testing the first track" + kml_tracks.Items[0].Folder[0].Placemark[10].MultiGeometry[0].LineString[0].coordinates);
+    }
+
+   
 } 
