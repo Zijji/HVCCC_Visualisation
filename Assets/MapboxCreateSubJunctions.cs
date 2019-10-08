@@ -7,6 +7,9 @@ using Mapbox.Unity.Map;
 using Mapbox.Unity.MeshGeneration.Factories;
 using Mapbox.Unity.Utilities;
 
+using UnityEngine.AI;
+
+
 public class MapboxCreateSubJunctions : MonoBehaviour
 {
     //List<SubJunctionsTrack> allSubJunctions = new List<SubJunctionsTrack>();
@@ -28,18 +31,25 @@ public class MapboxCreateSubJunctions : MonoBehaviour
 
     public GameObject _subJunctionParent;
 
-    List<GameObject> _spawnedObjects;
+    public List<GameObject> _spawnedObjects;
 
     public float zoom;
     XMLHelper xml_helper = new XMLHelper();
 
+    public NavMeshSurface surface;
 
     void Start()
     {
+        makeSubJunctions();
+        zoom = _map.AbsoluteZoom;
+        surface.BuildNavMesh();
+    }
 
+    void makeSubJunctions()
+    {
         List<List<List<float>>> allTracks = xml_helper.getAllTrackCoords();
         List<string> allSubJunctions = new List<string>();
-        
+
         foreach (List<List<float>> tracks in allTracks)
         {
             foreach (List<float> subTracks in tracks)
@@ -50,7 +60,7 @@ public class MapboxCreateSubJunctions : MonoBehaviour
 
         List<string> subJunctionNames = new List<string>();
 
-        for (int i =0; i < allSubJunctions.Count; i++)
+        for (int i = 0; i < allSubJunctions.Count; i++)
         {
             subJunctionNames.Add("subJunction_" + i);
         }
@@ -81,9 +91,9 @@ public class MapboxCreateSubJunctions : MonoBehaviour
             }
             _spawnedObjects.Add(instance);
         }
-
-        zoom = _map.AbsoluteZoom;
     }
+
+        
 
     /**
     void Update()

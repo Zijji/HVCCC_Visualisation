@@ -537,6 +537,10 @@
      <Compile Include="Assets\MapboxCreateSubJunctions.cs" />
      <Compile Include="Assets\modelInputs.cs" />
      <Compile Include="Assets\MoveCamera.cs" />
+     <Compile Include="Assets\NavMeshLink.cs" />
+     <Compile Include="Assets\NavMeshModifier.cs" />
+     <Compile Include="Assets\NavMeshModifierVolume.cs" />
+     <Compile Include="Assets\NavMeshSurface.cs" />
      <Compile Include="Assets\RailEventsLog.cs" />
      <Compile Include="Assets\Section.cs" />
      <Compile Include="Assets\SubJunctionsTrack.cs" />
