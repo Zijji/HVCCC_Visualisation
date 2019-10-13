@@ -43,7 +43,11 @@ public class UIManager : MonoBehaviour
         setToggle = !setToggle;
         foreach (GameObject go in objects)
         {
-            go.SetActive(setToggle);
+            foreach (Transform child in go.transform)
+            {
+                child.GetChild(0).gameObject.SetActive(setToggle);
+                child.GetChild(1).gameObject.SetActive(setToggle);
+            }
         }
     }
     public void AccelerateTime()
