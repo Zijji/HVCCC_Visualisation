@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":false,"pivot":{"x":-12.556434631347657,"y":17.02279281616211,"z":184.8407440185547},"rotation":{"x":-0.05799512192606926,"y":-0.4442722499370575,"z":0.028827112168073655,"w":-0.893555760383606},"size":378.2572326660156,"orthographic":false}
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":false,"pivot":{"x":-28.628761291503908,"y":0.006132207810878754,"z":59.14137649536133},"rotation":{"x":0.5303254723548889,"y":0.0,"z":0.0,"w":0.8477941155433655},"size":82.41595458984375,"orthographic":true}
+>>>>>>> origin/MAPBOX-wasd
