@@ -8,71 +8,22 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PixelRect:
-    serializedVersion: 2
-    x: 147.33334
-    y: 136
-    width: 968
-    height: 498
-  m_ShowMode: 0
-  m_Title: 
-  m_RootView: {fileID: 4}
-  m_MinSize: {x: 200, y: 220}
-  m_MaxSize: {x: 4000, y: 4020}
---- !u!114 &2
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 1280
-    y: 43
-    width: 1920
-    height: 997
+    x: 0.6666667
+    y: 50
+    width: 1278.6667
+    height: 1349.3334
   m_ShowMode: 4
   m_Title: 
-  m_RootView: {fileID: 5}
+  m_RootView: {fileID: 3}
   m_MinSize: {x: 950, y: 544}
   m_MaxSize: {x: 10000, y: 10000}
---- !u!114 &3
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 968
-    height: 498
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 16}
-  m_Panes:
-  - {fileID: 16}
-  m_Selected: 0
-  m_LastSelected: 0
---- !u!114 &4
+--- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -85,18 +36,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-  - {fileID: 3}
+  - {fileID: 6}
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 968
-    height: 498
-  m_MinSize: {x: 200, y: 220}
-  m_MaxSize: {x: 4000, y: 4020}
-  vertical: 0
-  controlID: 1276
---- !u!114 &5
+    y: 30
+    width: 1279
+    height: 1300
+  m_MinSize: {x: 610, y: 494}
+  m_MaxSize: {x: 14006, y: 14044}
+  vertical: 1
+  controlID: 132
+--- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,18 +60,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-  - {fileID: 6}
-  - {fileID: 8}
-  - {fileID: 7}
+  - {fileID: 4}
+  - {fileID: 2}
+  - {fileID: 5}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1920
-    height: 997
+    width: 1279
+    height: 1350
   m_MinSize: {x: 950, y: 544}
   m_MaxSize: {x: 10000, y: 10000}
---- !u!114 &6
+--- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,12 +88,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1920
+    width: 1279
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
   m_LastLoadedLayoutName: 
---- !u!114 &7
+--- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,11 +109,61 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 977
-    width: 1920
+    y: 1330
+    width: 1279
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
+--- !u!114 &6
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 7}
+  - {fileID: 12}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1279
+    height: 1300
+  m_MinSize: {x: 610, y: 494}
+  m_MaxSize: {x: 14006, y: 14044}
+  vertical: 0
+  controlID: 133
+--- !u!114 &7
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 8}
+  - {fileID: 11}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 712
+    height: 1300
+  m_MinSize: {x: 406, y: 494}
+  m_MaxSize: {x: 10002, y: 14044}
+  vertical: 1
+  controlID: 40
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -177,17 +178,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 9}
-  - {fileID: 14}
+  - {fileID: 10}
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 30
-    width: 1920
-    height: 947
-  m_MinSize: {x: 808, y: 494}
-  m_MaxSize: {x: 14004, y: 14044}
+    y: 0
+    width: 712
+    height: 584
+  m_MinSize: {x: 406, y: 222}
+  m_MaxSize: {x: 8006, y: 4022}
   vertical: 0
-  controlID: 1606
+  controlID: 41
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -197,22 +198,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Children:
-  - {fileID: 10}
-  - {fileID: 13}
+  m_Children: []
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1372
-    height: 947
-  m_MinSize: {x: 606, y: 494}
-  m_MaxSize: {x: 10002, y: 14044}
-  vertical: 1
-  controlID: 1549
+    width: 204
+    height: 584
+  m_MinSize: {x: 202, y: 222}
+  m_MaxSize: {x: 4002, y: 4022}
+  m_ActualView: {fileID: 15}
+  m_Panes:
+  - {fileID: 15}
+  m_Selected: 0
+  m_LastSelected: 0
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -222,22 +224,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Children:
-  - {fileID: 11}
-  - {fileID: 12}
+  m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 0
+    x: 204
     y: 0
-    width: 1372
-    height: 496
-  m_MinSize: {x: 606, y: 222}
-  m_MaxSize: {x: 6054, y: 4022}
-  vertical: 0
-  controlID: 1509
+    width: 508
+    height: 584
+  m_MinSize: {x: 204, y: 222}
+  m_MaxSize: {x: 4004, y: 4022}
+  m_ActualView: {fileID: 16}
+  m_Panes:
+  - {fileID: 16}
+  - {fileID: 17}
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -254,16 +258,17 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 403
-    height: 496
-  m_MinSize: {x: 202, y: 222}
-  m_MaxSize: {x: 4002, y: 4022}
-  m_ActualView: {fileID: 17}
+    y: 584
+    width: 712
+    height: 716
+  m_MinSize: {x: 232, y: 272}
+  m_MaxSize: {x: 10002, y: 10022}
+  m_ActualView: {fileID: 18}
   m_Panes:
-  - {fileID: 17}
+  - {fileID: 18}
+  - {fileID: 19}
   m_Selected: 0
-  m_LastSelected: 0
+  m_LastSelected: 1
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -279,17 +284,19 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 403
+    x: 712
     y: 0
-    width: 969
-    height: 496
-  m_MinSize: {x: 404, y: 122}
-  m_MaxSize: {x: 2052, y: 2070}
-  m_ActualView: {fileID: 18}
+    width: 567
+    height: 1300
+  m_MinSize: {x: 204, y: 222}
+  m_MaxSize: {x: 4004, y: 4022}
+  m_ActualView: {fileID: 14}
   m_Panes:
-  - {fileID: 18}
+  - {fileID: 14}
+  - {fileID: 20}
+  - {fileID: 13}
   m_Selected: 0
-  m_LastSelected: 0
+  m_LastSelected: 1
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -298,53 +305,2818 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13401, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Test Runner
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 496
-    width: 1372
-    height: 451
-  m_MinSize: {x: 232, y: 272}
-  m_MaxSize: {x: 10002, y: 10022}
-  m_ActualView: {fileID: 19}
-  m_Panes:
-  - {fileID: 19}
-  - {fileID: 20}
-  m_Selected: 0
-  m_LastSelected: 1
+    x: 713.3334
+    y: 72.66667
+    width: 565
+    height: 569
+  m_ViewDataDictionary: {fileID: 0}
+  m_TestTypeToolbarIndex: 0
+  m_PlayModeTestListGUI:
+    m_Window: {fileID: 13}
+    newResultList:
+    - id: 1159
+      uniqueId: '[HVCCC_Visualisation][suite]'
+      name: HVCCC_Visualisation
+      fullName: HVCCC_Visualisation
+      resultStatus: 1
+      duration: 0.194699
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 
+      parentUniqueId: 
+    - id: 1005
+      uniqueId: '[D:/hvccc_23sep/HVCCC_Visualisation/Library/ScriptAssemblies/Tests.dll][suite]'
+      name: Tests.dll
+      fullName: D:/hvccc_23sep/HVCCC_Visualisation/Library/ScriptAssemblies/Tests.dll
+      resultStatus: 1
+      duration: 0.1572514
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1000
+      parentUniqueId: '[HVCCC_Visualisation][suite]'
+    - id: 1006
+      uniqueId: Tests.dll/[Tests][suite]
+      name: Tests
+      fullName: Tests
+      resultStatus: 1
+      duration: 0.13911
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1005
+      parentUniqueId: '[D:/hvccc_23sep/HVCCC_Visualisation/Library/ScriptAssemblies/Tests.dll][suite]'
+    - id: 1002
+      uniqueId: Tests.dll/Tests/[Tests][Tests.NewTestScript][suite]
+      name: NewTestScript
+      fullName: Tests.NewTestScript
+      resultStatus: 1
+      duration: 0.1182298
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1006
+      parentUniqueId: Tests.dll/[Tests][suite]
+    - id: 1003
+      uniqueId: Tests.dll/Tests/NewTestScript/[Tests][Tests.NewTestScript.NewTestScriptSimplePasses]
+      name: NewTestScriptSimplePasses
+      fullName: Tests.NewTestScript.NewTestScriptSimplePasses
+      resultStatus: 1
+      duration: 0.0400112
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1002
+      parentUniqueId: Tests.dll/Tests/[Tests][Tests.NewTestScript][suite]
+    - id: 1004
+      uniqueId: Tests.dll/Tests/NewTestScript/[Tests][Tests.NewTestScript.NewTestScriptWithEnumeratorPasses]
+      name: NewTestScriptWithEnumeratorPasses
+      fullName: Tests.NewTestScript.NewTestScriptWithEnumeratorPasses
+      resultStatus: 1
+      duration: 0.0465579
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1002
+      parentUniqueId: Tests.dll/Tests/[Tests][Tests.NewTestScript][suite]
+    m_ResultText: NewTestScript (0.118s)
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 7dc7445e
+      m_LastClickedID: 1581565821
+      m_ExpandedIDs: d3293fdd1205e43a8359db417dc7445effffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategoryMask: 0
+      availableCategories:
+      - Uncategorized
+  m_EditModeTestListGUI:
+    m_Window: {fileID: 13}
+    newResultList:
+    - id: 1000
+      uniqueId: '[HVCCC_Visualisation][suite]'
+      name: HVCCC_Visualisation
+      fullName: HVCCC_Visualisation
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 
+      parentUniqueId: 
+    - id: 1145
+      uniqueId: '[D:/hvccc_23sep/HVCCC_Visualisation/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll][suite]'
+      name: Assembly-CSharp-Editor.dll
+      fullName: D:/hvccc_23sep/HVCCC_Visualisation/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1000
+      parentUniqueId: '[HVCCC_Visualisation][suite]'
+    - id: 1146
+      uniqueId: Assembly-CSharp-Editor.dll/[Mapbox][suite]
+      name: Mapbox
+      fullName: Mapbox
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1145
+      parentUniqueId: '[D:/hvccc_23sep/HVCCC_Visualisation/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll][suite]'
+    - id: 1155
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/[Mapbox.CheapRulerCs][suite]
+      name: CheapRulerCs
+      fullName: Mapbox.CheapRulerCs
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1146
+      parentUniqueId: Assembly-CSharp-Editor.dll/[Mapbox][suite]
+    - id: 1156
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/CheapRulerCs/[Mapbox.CheapRulerCs.UnitTest][suite]
+      name: UnitTest
+      fullName: Mapbox.CheapRulerCs.UnitTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1155
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/[Mapbox.CheapRulerCs][suite]
+    - id: 1140
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/CheapRulerCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.CheapRulerCs.UnitTest.CheapRulerCsTest][suite]
+      name: CheapRulerCsTest
+      fullName: Mapbox.CheapRulerCs.UnitTest.CheapRulerCsTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1156
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/CheapRulerCs/[Mapbox.CheapRulerCs.UnitTest][suite]
+    - id: 1142
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/CheapRulerCs/UnitTest/CheapRulerCsTest/[Assembly-CSharp-Editor][Mapbox.CheapRulerCs.UnitTest.CheapRulerCsTest.DistanceInMiles]
+      name: DistanceInMiles
+      fullName: Mapbox.CheapRulerCs.UnitTest.CheapRulerCsTest.DistanceInMiles
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1140
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/CheapRulerCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.CheapRulerCs.UnitTest.CheapRulerCsTest][suite]
+    - id: 1143
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/CheapRulerCs/UnitTest/CheapRulerCsTest/[Assembly-CSharp-Editor][Mapbox.CheapRulerCs.UnitTest.CheapRulerCsTest.DistanceInNauticalMiles]
+      name: DistanceInNauticalMiles
+      fullName: Mapbox.CheapRulerCs.UnitTest.CheapRulerCsTest.DistanceInNauticalMiles
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1140
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/CheapRulerCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.CheapRulerCs.UnitTest.CheapRulerCsTest][suite]
+    - id: 1141
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/CheapRulerCs/UnitTest/CheapRulerCsTest/[Assembly-CSharp-Editor][Mapbox.CheapRulerCs.UnitTest.CheapRulerCsTest.FixturesLoaded]
+      name: FixturesLoaded
+      fullName: Mapbox.CheapRulerCs.UnitTest.CheapRulerCsTest.FixturesLoaded
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1140
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/CheapRulerCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.CheapRulerCs.UnitTest.CheapRulerCsTest][suite]
+    - id: 1144
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/CheapRulerCs/UnitTest/CheapRulerCsTest/[Assembly-CSharp-Editor][Mapbox.CheapRulerCs.UnitTest.CheapRulerCsTest.FromTile]
+      name: FromTile
+      fullName: Mapbox.CheapRulerCs.UnitTest.CheapRulerCsTest.FromTile
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1140
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/CheapRulerCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.CheapRulerCs.UnitTest.CheapRulerCsTest][suite]
+    - id: 1150
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/[Mapbox.Editor][suite]
+      name: Editor
+      fullName: Mapbox.Editor
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1146
+      parentUniqueId: Assembly-CSharp-Editor.dll/[Mapbox][suite]
+    - id: 1012
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/Editor/[Assembly-CSharp-Editor][Mapbox.Editor.TreeElementUtilityTests][suite]
+      name: TreeElementUtilityTests
+      fullName: Mapbox.Editor.TreeElementUtilityTests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1150
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/[Mapbox.Editor][suite]
+    - id: 1016
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/Editor/TreeElementUtilityTests/[Assembly-CSharp-Editor][Mapbox.Editor.TreeElementUtilityTests.FindCommonAncestorsWithinListWorks]
+      name: FindCommonAncestorsWithinListWorks
+      fullName: Mapbox.Editor.TreeElementUtilityTests.FindCommonAncestorsWithinListWorks
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1012
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/Editor/[Assembly-CSharp-Editor][Mapbox.Editor.TreeElementUtilityTests][suite]
+    - id: 1015
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/Editor/TreeElementUtilityTests/[Assembly-CSharp-Editor][Mapbox.Editor.TreeElementUtilityTests.TestListToTreeThrowsExceptionIfRootIsInvalidDepth]
+      name: TestListToTreeThrowsExceptionIfRootIsInvalidDepth
+      fullName: Mapbox.Editor.TreeElementUtilityTests.TestListToTreeThrowsExceptionIfRootIsInvalidDepth
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1012
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/Editor/[Assembly-CSharp-Editor][Mapbox.Editor.TreeElementUtilityTests][suite]
+    - id: 1014
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/Editor/TreeElementUtilityTests/[Assembly-CSharp-Editor][Mapbox.Editor.TreeElementUtilityTests.TestListToTreeWorks]
+      name: TestListToTreeWorks
+      fullName: Mapbox.Editor.TreeElementUtilityTests.TestListToTreeWorks
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1012
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/Editor/[Assembly-CSharp-Editor][Mapbox.Editor.TreeElementUtilityTests][suite]
+    - id: 1013
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/Editor/TreeElementUtilityTests/[Assembly-CSharp-Editor][Mapbox.Editor.TreeElementUtilityTests.TestTreeToListWorks]
+      name: TestTreeToListWorks
+      fullName: Mapbox.Editor.TreeElementUtilityTests.TestTreeToListWorks
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1012
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/Editor/[Assembly-CSharp-Editor][Mapbox.Editor.TreeElementUtilityTests][suite]
+    - id: 1017
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/Editor/[Assembly-CSharp-Editor][Mapbox.Editor.TreeModelTests][suite]
+      name: TreeModelTests
+      fullName: Mapbox.Editor.TreeModelTests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1150
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/[Mapbox.Editor][suite]
+    - id: 1018
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/Editor/TreeModelTests/[Assembly-CSharp-Editor][Mapbox.Editor.TreeModelTests.TestTreeModelCanAddElements]
+      name: TestTreeModelCanAddElements
+      fullName: Mapbox.Editor.TreeModelTests.TestTreeModelCanAddElements
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1017
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/Editor/[Assembly-CSharp-Editor][Mapbox.Editor.TreeModelTests][suite]
+    - id: 1019
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/Editor/TreeModelTests/[Assembly-CSharp-Editor][Mapbox.Editor.TreeModelTests.TestTreeModelCanRemoveElements]
+      name: TestTreeModelCanRemoveElements
+      fullName: Mapbox.Editor.TreeModelTests.TestTreeModelCanRemoveElements
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1017
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/Editor/[Assembly-CSharp-Editor][Mapbox.Editor.TreeModelTests][suite]
+    - id: 1153
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/[Mapbox.MapboxSdkCs][suite]
+      name: MapboxSdkCs
+      fullName: Mapbox.MapboxSdkCs
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1146
+      parentUniqueId: Assembly-CSharp-Editor.dll/[Mapbox][suite]
+    - id: 1154
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/[Mapbox.MapboxSdkCs.UnitTest][suite]
+      name: UnitTest
+      fullName: Mapbox.MapboxSdkCs.UnitTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1153
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/[Mapbox.MapboxSdkCs][suite]
+    - id: 1024
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.AngleSmoothingTest][suite]
+      name: AngleSmoothingTest
+      fullName: Mapbox.MapboxSdkCs.UnitTest.AngleSmoothingTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1154
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/[Mapbox.MapboxSdkCs.UnitTest][suite]
+    - id: 1026
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/AngleSmoothingTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.AngleSmoothingTest.Average]
+      name: Average
+      fullName: Mapbox.MapboxSdkCs.UnitTest.AngleSmoothingTest.Average
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1024
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.AngleSmoothingTest][suite]
+    - id: 1027
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/AngleSmoothingTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.AngleSmoothingTest.LowPass]
+      name: LowPass
+      fullName: Mapbox.MapboxSdkCs.UnitTest.AngleSmoothingTest.LowPass
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1024
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.AngleSmoothingTest][suite]
+    - id: 1025
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/AngleSmoothingTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.AngleSmoothingTest.NoOp]
+      name: NoOp
+      fullName: Mapbox.MapboxSdkCs.UnitTest.AngleSmoothingTest.NoOp
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1024
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.AngleSmoothingTest][suite]
+    - id: 1028
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/AngleSmoothingTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.AngleSmoothingTest.Weighted]
+      name: Weighted
+      fullName: Mapbox.MapboxSdkCs.UnitTest.AngleSmoothingTest.Weighted
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1024
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.AngleSmoothingTest][suite]
+    - id: 1029
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.BboxToVector2dBoundsConverterTest][suite]
+      name: BboxToVector2dBoundsConverterTest
+      fullName: Mapbox.MapboxSdkCs.UnitTest.BboxToVector2dBoundsConverterTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1154
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/[Mapbox.MapboxSdkCs.UnitTest][suite]
+    - id: 1030
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/BboxToVector2dBoundsConverterTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.BboxToVector2dBoundsConverterTest.Deserialize]
+      name: Deserialize
+      fullName: Mapbox.MapboxSdkCs.UnitTest.BboxToVector2dBoundsConverterTest.Deserialize
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1029
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.BboxToVector2dBoundsConverterTest][suite]
+    - id: 1031
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/BboxToVector2dBoundsConverterTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.BboxToVector2dBoundsConverterTest.Serialize]
+      name: Serialize
+      fullName: Mapbox.MapboxSdkCs.UnitTest.BboxToVector2dBoundsConverterTest.Serialize
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1029
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.BboxToVector2dBoundsConverterTest][suite]
+    - id: 1032
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.BearingFilterTest][suite]
+      name: BearingFilterTest
+      fullName: Mapbox.MapboxSdkCs.UnitTest.BearingFilterTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1154
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/[Mapbox.MapboxSdkCs.UnitTest][suite]
+    - id: 1033
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/BearingFilterTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.BearingFilterTest.InvalidValues]
+      name: InvalidValues
+      fullName: Mapbox.MapboxSdkCs.UnitTest.BearingFilterTest.InvalidValues
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1032
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.BearingFilterTest][suite]
+    - id: 1034
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/BearingFilterTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.BearingFilterTest.ToStringTest]
+      name: ToStringTest
+      fullName: Mapbox.MapboxSdkCs.UnitTest.BearingFilterTest.ToStringTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1032
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.BearingFilterTest][suite]
+    - id: 1035
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.CanonicalTileIdTest][suite]
+      name: CanonicalTileIdTest
+      fullName: Mapbox.MapboxSdkCs.UnitTest.CanonicalTileIdTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1154
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/[Mapbox.MapboxSdkCs.UnitTest][suite]
+    - id: 1036
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/CanonicalTileIdTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.CanonicalTileIdTest.ToVector2d]
+      name: ToVector2d
+      fullName: Mapbox.MapboxSdkCs.UnitTest.CanonicalTileIdTest.ToVector2d
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1035
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.CanonicalTileIdTest][suite]
+    - id: 1037
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.CompressionTest][suite]
+      name: CompressionTest
+      fullName: Mapbox.MapboxSdkCs.UnitTest.CompressionTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1154
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/[Mapbox.MapboxSdkCs.UnitTest][suite]
+    - id: 1040
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/CompressionTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.CompressionTest.Corrupt]
+      name: Corrupt
+      fullName: Mapbox.MapboxSdkCs.UnitTest.CompressionTest.Corrupt
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1037
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.CompressionTest][suite]
+    - id: 1041
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/CompressionTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.CompressionTest.Decompress]
+      name: Decompress
+      fullName: Mapbox.MapboxSdkCs.UnitTest.CompressionTest.Decompress
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1037
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.CompressionTest][suite]
+    - id: 1038
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/CompressionTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.CompressionTest.Empty]
+      name: Empty
+      fullName: Mapbox.MapboxSdkCs.UnitTest.CompressionTest.Empty
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1037
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.CompressionTest][suite]
+    - id: 1039
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/CompressionTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.CompressionTest.NotCompressed]
+      name: NotCompressed
+      fullName: Mapbox.MapboxSdkCs.UnitTest.CompressionTest.NotCompressed
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1037
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.CompressionTest][suite]
+    - id: 1042
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.DirectionResourceTest][suite]
+      name: DirectionResourceTest
+      fullName: Mapbox.MapboxSdkCs.UnitTest.DirectionResourceTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1154
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/[Mapbox.MapboxSdkCs.UnitTest][suite]
+    - id: 1046
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/DirectionResourceTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.DirectionResourceTest.GetUrl]
+      name: GetUrl
+      fullName: Mapbox.MapboxSdkCs.UnitTest.DirectionResourceTest.GetUrl
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1042
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.DirectionResourceTest][suite]
+    - id: 1043
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/DirectionResourceTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.DirectionResourceTest.SetInvalidBearings]
+      name: SetInvalidBearings
+      fullName: Mapbox.MapboxSdkCs.UnitTest.DirectionResourceTest.SetInvalidBearings
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1042
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.DirectionResourceTest][suite]
+    - id: 1044
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/DirectionResourceTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.DirectionResourceTest.SetInvalidRadiuses_Mismatched]
+      name: SetInvalidRadiuses_Mismatched
+      fullName: Mapbox.MapboxSdkCs.UnitTest.DirectionResourceTest.SetInvalidRadiuses_Mismatched
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1042
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.DirectionResourceTest][suite]
+    - id: 1045
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/DirectionResourceTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.DirectionResourceTest.SetInvalidRadiuses_TooSmall]
+      name: SetInvalidRadiuses_TooSmall
+      fullName: Mapbox.MapboxSdkCs.UnitTest.DirectionResourceTest.SetInvalidRadiuses_TooSmall
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1042
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.DirectionResourceTest][suite]
+    - id: 1047
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.DirectionsTest][suite]
+      name: DirectionsTest
+      fullName: Mapbox.MapboxSdkCs.UnitTest.DirectionsTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1154
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/[Mapbox.MapboxSdkCs.UnitTest][suite]
+    - id: 1048
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/DirectionsTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.DirectionsTest.SerializesAndDeserializesBasic]
+      name: SerializesAndDeserializesBasic
+      fullName: Mapbox.MapboxSdkCs.UnitTest.DirectionsTest.SerializesAndDeserializesBasic
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1047
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.DirectionsTest][suite]
+    - id: 1049
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/DirectionsTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.DirectionsTest.SerializesAndDeserializesWithSteps]
+      name: SerializesAndDeserializesWithSteps
+      fullName: Mapbox.MapboxSdkCs.UnitTest.DirectionsTest.SerializesAndDeserializesWithSteps
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1047
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.DirectionsTest][suite]
+    - id: 1050
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.FileSourceTest][suite]
+      name: FileSourceTest
+      fullName: Mapbox.MapboxSdkCs.UnitTest.FileSourceTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1154
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/[Mapbox.MapboxSdkCs.UnitTest][suite]
+    - id: 1052
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/FileSourceTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.FileSourceTest.MultipleRequests]
+      name: MultipleRequests
+      fullName: Mapbox.MapboxSdkCs.UnitTest.FileSourceTest.MultipleRequests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1050
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.FileSourceTest][suite]
+    - id: 1051
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/FileSourceTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.FileSourceTest.Request]
+      name: Request
+      fullName: Mapbox.MapboxSdkCs.UnitTest.FileSourceTest.Request
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1050
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.FileSourceTest][suite]
+    - id: 1053
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/FileSourceTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.FileSourceTest.RequestCancel]
+      name: RequestCancel
+      fullName: Mapbox.MapboxSdkCs.UnitTest.FileSourceTest.RequestCancel
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1050
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.FileSourceTest][suite]
+    - id: 1054
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/FileSourceTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.FileSourceTest.RequestDnsError]
+      name: RequestDnsError
+      fullName: Mapbox.MapboxSdkCs.UnitTest.FileSourceTest.RequestDnsError
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1050
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.FileSourceTest][suite]
+    - id: 1055
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/FileSourceTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.FileSourceTest.RequestForbidden]
+      name: RequestForbidden
+      fullName: Mapbox.MapboxSdkCs.UnitTest.FileSourceTest.RequestForbidden
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1050
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.FileSourceTest][suite]
+    - id: 1056
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/FileSourceTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.FileSourceTest.WaitWithNoRequests]
+      name: WaitWithNoRequests
+      fullName: Mapbox.MapboxSdkCs.UnitTest.FileSourceTest.WaitWithNoRequests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1050
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.FileSourceTest][suite]
+    - id: 1057
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.ForwardGeocodeResourceTest][suite]
+      name: ForwardGeocodeResourceTest
+      fullName: Mapbox.MapboxSdkCs.UnitTest.ForwardGeocodeResourceTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1154
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/[Mapbox.MapboxSdkCs.UnitTest][suite]
+    - id: 1060
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/ForwardGeocodeResourceTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.ForwardGeocodeResourceTest.GetUrl]
+      name: GetUrl
+      fullName: Mapbox.MapboxSdkCs.UnitTest.ForwardGeocodeResourceTest.GetUrl
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1057
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.ForwardGeocodeResourceTest][suite]
+    - id: 1059
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/ForwardGeocodeResourceTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.ForwardGeocodeResourceTest.SetInvalidCountries]
+      name: SetInvalidCountries
+      fullName: Mapbox.MapboxSdkCs.UnitTest.ForwardGeocodeResourceTest.SetInvalidCountries
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1057
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.ForwardGeocodeResourceTest][suite]
+    - id: 1058
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/ForwardGeocodeResourceTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.ForwardGeocodeResourceTest.SetInvalidTypes]
+      name: SetInvalidTypes
+      fullName: Mapbox.MapboxSdkCs.UnitTest.ForwardGeocodeResourceTest.SetInvalidTypes
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1057
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.ForwardGeocodeResourceTest][suite]
+    - id: 1061
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.GeocoderTest][suite]
+      name: GeocoderTest
+      fullName: Mapbox.MapboxSdkCs.UnitTest.GeocoderTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1154
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/[Mapbox.MapboxSdkCs.UnitTest][suite]
+    - id: 1063
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/GeocoderTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.GeocoderTest.SerializesAndDeserializesForward]
+      name: SerializesAndDeserializesForward
+      fullName: Mapbox.MapboxSdkCs.UnitTest.GeocoderTest.SerializesAndDeserializesForward
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1061
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.GeocoderTest][suite]
+    - id: 1062
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/GeocoderTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.GeocoderTest.SerializesAndDeserializesReverse]
+      name: SerializesAndDeserializesReverse
+      fullName: Mapbox.MapboxSdkCs.UnitTest.GeocoderTest.SerializesAndDeserializesReverse
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1061
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.GeocoderTest][suite]
+    - id: 1075
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.LonLatToVector2dConverterTest][suite]
+      name: LonLatToVector2dConverterTest
+      fullName: Mapbox.MapboxSdkCs.UnitTest.LonLatToVector2dConverterTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1154
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/[Mapbox.MapboxSdkCs.UnitTest][suite]
+    - id: 1076
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/LonLatToVector2dConverterTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.LonLatToVector2dConverterTest.Deserialize]
+      name: Deserialize
+      fullName: Mapbox.MapboxSdkCs.UnitTest.LonLatToVector2dConverterTest.Deserialize
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1075
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.LonLatToVector2dConverterTest][suite]
+    - id: 1077
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/LonLatToVector2dConverterTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.LonLatToVector2dConverterTest.Serialize]
+      name: Serialize
+      fullName: Mapbox.MapboxSdkCs.UnitTest.LonLatToVector2dConverterTest.Serialize
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1075
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.LonLatToVector2dConverterTest][suite]
+    - id: 1085
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest][suite]
+      name: MapMatcherTest
+      fullName: Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1154
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/[Mapbox.MapboxSdkCs.UnitTest][suite]
+    - id: 1098
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/MapMatcherTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest.AllParameters]
+      name: AllParameters
+      fullName: Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest.AllParameters
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1085
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest][suite]
+    - id: 1090
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/MapMatcherTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest.AlternativesWithSteps]
+      name: AlternativesWithSteps
+      fullName: Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest.AlternativesWithSteps
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1085
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest][suite]
+    - id: 1094
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/MapMatcherTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest.Annotation]
+      name: Annotation
+      fullName: Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest.Annotation
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1085
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest][suite]
+    - id: 1086
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/MapMatcherTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest.AsSimpleAsPossible]
+      name: AsSimpleAsPossible
+      fullName: Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest.AsSimpleAsPossible
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1085
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest][suite]
+    - id: 1099
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/MapMatcherTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest.CoordinatesNull]
+      name: CoordinatesNull
+      fullName: Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest.CoordinatesNull
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1085
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest][suite]
+    - id: 1100
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/MapMatcherTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest.InvalidCoordinate]
+      name: InvalidCoordinate
+      fullName: Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest.InvalidCoordinate
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1085
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest][suite]
+    - id: 1096
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/MapMatcherTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest.LanguageEnglish]
+      name: LanguageEnglish
+      fullName: Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest.LanguageEnglish
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1085
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest][suite]
+    - id: 1097
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/MapMatcherTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest.LanguageGerman]
+      name: LanguageGerman
+      fullName: Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest.LanguageGerman
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1085
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest][suite]
+    - id: 1088
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/MapMatcherTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest.NoSegment]
+      name: NoSegment
+      fullName: Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest.NoSegment
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1085
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest][suite]
+    - id: 1092
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/MapMatcherTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest.OverviewFull]
+      name: OverviewFull
+      fullName: Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest.OverviewFull
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1085
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest][suite]
+    - id: 1091
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/MapMatcherTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest.OverviewSimplified]
+      name: OverviewSimplified
+      fullName: Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest.OverviewSimplified
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1085
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest][suite]
+    - id: 1087
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/MapMatcherTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest.Profiles]
+      name: Profiles
+      fullName: Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest.Profiles
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1085
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest][suite]
+    - id: 1089
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/MapMatcherTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest.Radiuses]
+      name: Radiuses
+      fullName: Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest.Radiuses
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1085
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest][suite]
+    - id: 1095
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/MapMatcherTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest.Tidy]
+      name: Tidy
+      fullName: Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest.Tidy
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1085
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest][suite]
+    - id: 1093
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/MapMatcherTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest.Timestamps]
+      name: Timestamps
+      fullName: Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest.Timestamps
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1085
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapMatcherTest][suite]
+    - id: 1078
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapTest][suite]
+      name: MapTest
+      fullName: Mapbox.MapboxSdkCs.UnitTest.MapTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1154
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/[Mapbox.MapboxSdkCs.UnitTest][suite]
+    - id: 1081
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/MapTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapTest.ChangeMapId]
+      name: ChangeMapId
+      fullName: Mapbox.MapboxSdkCs.UnitTest.MapTest.ChangeMapId
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1078
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapTest][suite]
+    - id: 1080
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/MapTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapTest.RasterHelsinki]
+      name: RasterHelsinki
+      fullName: Mapbox.MapboxSdkCs.UnitTest.MapTest.RasterHelsinki
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1078
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapTest][suite]
+    - id: 1082
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/MapTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapTest.SetVector2dBoundsZoom]
+      name: SetVector2dBoundsZoom
+      fullName: Mapbox.MapboxSdkCs.UnitTest.MapTest.SetVector2dBoundsZoom
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1078
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapTest][suite]
+    - id: 1083
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/MapTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapTest.TileMax]
+      name: TileMax
+      fullName: Mapbox.MapboxSdkCs.UnitTest.MapTest.TileMax
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1078
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapTest][suite]
+    - id: 1079
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/MapTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapTest.World]
+      name: World
+      fullName: Mapbox.MapboxSdkCs.UnitTest.MapTest.World
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1078
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapTest][suite]
+    - id: 1084
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/MapTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapTest.Zoom]
+      name: Zoom
+      fullName: Mapbox.MapboxSdkCs.UnitTest.MapTest.Zoom
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1078
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.MapTest][suite]
+    - id: 1101
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.PolylineToVector2dListConverterTest][suite]
+      name: PolylineToVector2dListConverterTest
+      fullName: Mapbox.MapboxSdkCs.UnitTest.PolylineToVector2dListConverterTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1154
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/[Mapbox.MapboxSdkCs.UnitTest][suite]
+    - id: 1102
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/PolylineToVector2dListConverterTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.PolylineToVector2dListConverterTest.Deserialize]
+      name: Deserialize
+      fullName: Mapbox.MapboxSdkCs.UnitTest.PolylineToVector2dListConverterTest.Deserialize
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1101
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.PolylineToVector2dListConverterTest][suite]
+    - id: 1103
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/PolylineToVector2dListConverterTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.PolylineToVector2dListConverterTest.Serialize]
+      name: Serialize
+      fullName: Mapbox.MapboxSdkCs.UnitTest.PolylineToVector2dListConverterTest.Serialize
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1101
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.PolylineToVector2dListConverterTest][suite]
+    - id: 1104
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.PolylineUtilsTest][suite]
+      name: PolylineUtilsTest
+      fullName: Mapbox.MapboxSdkCs.UnitTest.PolylineUtilsTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1154
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/[Mapbox.MapboxSdkCs.UnitTest][suite]
+    - id: 1105
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/PolylineUtilsTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.PolylineUtilsTest.TestDecode]
+      name: TestDecode
+      fullName: Mapbox.MapboxSdkCs.UnitTest.PolylineUtilsTest.TestDecode
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1104
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.PolylineUtilsTest][suite]
+    - id: 1106
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/PolylineUtilsTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.PolylineUtilsTest.TestEncode]
+      name: TestEncode
+      fullName: Mapbox.MapboxSdkCs.UnitTest.PolylineUtilsTest.TestEncode
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1104
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.PolylineUtilsTest][suite]
+    - id: 1107
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.ReverseGeocodeResourceTest][suite]
+      name: ReverseGeocodeResourceTest
+      fullName: Mapbox.MapboxSdkCs.UnitTest.ReverseGeocodeResourceTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1154
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/[Mapbox.MapboxSdkCs.UnitTest][suite]
+    - id: 1109
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/ReverseGeocodeResourceTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.ReverseGeocodeResourceTest.GetUrl]
+      name: GetUrl
+      fullName: Mapbox.MapboxSdkCs.UnitTest.ReverseGeocodeResourceTest.GetUrl
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1107
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.ReverseGeocodeResourceTest][suite]
+    - id: 1108
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/ReverseGeocodeResourceTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.ReverseGeocodeResourceTest.SetInvalidTypes]
+      name: SetInvalidTypes
+      fullName: Mapbox.MapboxSdkCs.UnitTest.ReverseGeocodeResourceTest.SetInvalidTypes
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1107
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.ReverseGeocodeResourceTest][suite]
+    - id: 1110
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.SQLiteCacheTest][suite]
+      name: SQLiteCacheTest
+      fullName: Mapbox.MapboxSdkCs.UnitTest.SQLiteCacheTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1154
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/[Mapbox.MapboxSdkCs.UnitTest][suite]
+    - id: 1116
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/SQLiteCacheTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.SQLiteCacheTest.Clear]
+      name: Clear
+      fullName: Mapbox.MapboxSdkCs.UnitTest.SQLiteCacheTest.Clear
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1110
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.SQLiteCacheTest][suite]
+    - id: 1113
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/SQLiteCacheTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.SQLiteCacheTest.ConcurrentTilesetInsert]
+      name: ConcurrentTilesetInsert
+      fullName: Mapbox.MapboxSdkCs.UnitTest.SQLiteCacheTest.ConcurrentTilesetInsert
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1110
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.SQLiteCacheTest][suite]
+    - id: 1112
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/SQLiteCacheTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.SQLiteCacheTest.InsertSameTileForceOverwrite]
+      name: InsertSameTileForceOverwrite
+      fullName: Mapbox.MapboxSdkCs.UnitTest.SQLiteCacheTest.InsertSameTileForceOverwrite
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1110
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.SQLiteCacheTest][suite]
+    - id: 1111
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/SQLiteCacheTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.SQLiteCacheTest.InsertSameTileNoOverwrite]
+      name: InsertSameTileNoOverwrite
+      fullName: Mapbox.MapboxSdkCs.UnitTest.SQLiteCacheTest.InsertSameTileNoOverwrite
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1110
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.SQLiteCacheTest][suite]
+    - id: 1115
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/SQLiteCacheTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.SQLiteCacheTest.Prune]
+      name: Prune
+      fullName: Mapbox.MapboxSdkCs.UnitTest.SQLiteCacheTest.Prune
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1110
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.SQLiteCacheTest][suite]
+    - id: 1117
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/SQLiteCacheTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.SQLiteCacheTest.ReInit]
+      name: ReInit
+      fullName: Mapbox.MapboxSdkCs.UnitTest.SQLiteCacheTest.ReInit
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1110
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.SQLiteCacheTest][suite]
+    - id: 1114
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/SQLiteCacheTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.SQLiteCacheTest.VerifyTilesFromConcurrentInsert]
+      name: VerifyTilesFromConcurrentInsert
+      fullName: Mapbox.MapboxSdkCs.UnitTest.SQLiteCacheTest.VerifyTilesFromConcurrentInsert
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1110
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.SQLiteCacheTest][suite]
+    - id: 1121
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.TileCoverTest][suite]
+      name: TileCoverTest
+      fullName: Mapbox.MapboxSdkCs.UnitTest.TileCoverTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1154
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/[Mapbox.MapboxSdkCs.UnitTest][suite]
+    - id: 1123
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/TileCoverTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.TileCoverTest.Helsinki]
+      name: Helsinki
+      fullName: Mapbox.MapboxSdkCs.UnitTest.TileCoverTest.Helsinki
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1121
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.TileCoverTest][suite]
+    - id: 1122
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/TileCoverTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.TileCoverTest.World]
+      name: World
+      fullName: Mapbox.MapboxSdkCs.UnitTest.TileCoverTest.World
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1121
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.TileCoverTest][suite]
+    - id: 1124
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.TileJSONTest][suite]
+      name: TileJSONTest
+      fullName: Mapbox.MapboxSdkCs.UnitTest.TileJSONTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1154
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/[Mapbox.MapboxSdkCs.UnitTest][suite]
+    - id: 1126
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/TileJSONTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.TileJSONTest.ConcatenatedVectorTilesets]
+      name: ConcatenatedVectorTilesets
+      fullName: Mapbox.MapboxSdkCs.UnitTest.TileJSONTest.ConcatenatedVectorTilesets
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1124
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.TileJSONTest][suite]
+    - id: 1128
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/TileJSONTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.TileJSONTest.MapboxEmerald]
+      name: MapboxEmerald
+      fullName: Mapbox.MapboxSdkCs.UnitTest.TileJSONTest.MapboxEmerald
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1124
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.TileJSONTest][suite]
+    - id: 1127
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/TileJSONTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.TileJSONTest.MapboxSatellite]
+      name: MapboxSatellite
+      fullName: Mapbox.MapboxSdkCs.UnitTest.TileJSONTest.MapboxSatellite
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1124
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.TileJSONTest][suite]
+    - id: 1125
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/TileJSONTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.TileJSONTest.MapboxStreets]
+      name: MapboxStreets
+      fullName: Mapbox.MapboxSdkCs.UnitTest.TileJSONTest.MapboxStreets
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1124
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.TileJSONTest][suite]
+    - id: 1129
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.TileResourceTest][suite]
+      name: TileResourceTest
+      fullName: Mapbox.MapboxSdkCs.UnitTest.TileResourceTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1154
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/[Mapbox.MapboxSdkCs.UnitTest][suite]
+    - id: 1131
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/TileResourceTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.TileResourceTest.GetUrlClassicRaster]
+      name: GetUrlClassicRaster
+      fullName: Mapbox.MapboxSdkCs.UnitTest.TileResourceTest.GetUrlClassicRaster
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1129
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.TileResourceTest][suite]
+    - id: 1130
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/TileResourceTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.TileResourceTest.GetUrlRaster]
+      name: GetUrlRaster
+      fullName: Mapbox.MapboxSdkCs.UnitTest.TileResourceTest.GetUrlRaster
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1129
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.TileResourceTest][suite]
+    - id: 1132
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/TileResourceTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.TileResourceTest.GetUrlVector]
+      name: GetUrlVector
+      fullName: Mapbox.MapboxSdkCs.UnitTest.TileResourceTest.GetUrlVector
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1129
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.TileResourceTest][suite]
+    - id: 1118
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.TileTest][suite]
+      name: TileTest
+      fullName: Mapbox.MapboxSdkCs.UnitTest.TileTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1154
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/[Mapbox.MapboxSdkCs.UnitTest][suite]
+    - id: 1120
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/TileTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.TileTest.States]
+      name: States
+      fullName: Mapbox.MapboxSdkCs.UnitTest.TileTest.States
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1118
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.TileTest][suite]
+    - id: 1119
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/TileTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.TileTest.TileLoading]
+      name: TileLoading
+      fullName: Mapbox.MapboxSdkCs.UnitTest.TileTest.TileLoading
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1118
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.TileTest][suite]
+    - id: 1133
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.TokenTest][suite]
+      name: TokenTest
+      fullName: Mapbox.MapboxSdkCs.UnitTest.TokenTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1154
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/[Mapbox.MapboxSdkCs.UnitTest][suite]
+    - id: 1134
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/TokenTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.TokenTest.RetrieveConfigToken]
+      name: RetrieveConfigToken
+      fullName: Mapbox.MapboxSdkCs.UnitTest.TokenTest.RetrieveConfigToken
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1133
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.TokenTest][suite]
+    - id: 1136
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/TokenTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.TokenTest.TokenInvalid]
+      name: TokenInvalid
+      fullName: Mapbox.MapboxSdkCs.UnitTest.TokenTest.TokenInvalid
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1133
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.TokenTest][suite]
+    - id: 1135
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/TokenTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.TokenTest.TokenMalformed]
+      name: TokenMalformed
+      fullName: Mapbox.MapboxSdkCs.UnitTest.TokenTest.TokenMalformed
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1133
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.TokenTest][suite]
+    - id: 1067
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.Vector2dBoundsTest][suite]
+      name: Vector2dBoundsTest
+      fullName: Mapbox.MapboxSdkCs.UnitTest.Vector2dBoundsTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1154
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/[Mapbox.MapboxSdkCs.UnitTest][suite]
+    - id: 1072
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/Vector2dBoundsTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.Vector2dBoundsTest.CardinalLimits]
+      name: CardinalLimits
+      fullName: Mapbox.MapboxSdkCs.UnitTest.Vector2dBoundsTest.CardinalLimits
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1067
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.Vector2dBoundsTest][suite]
+    - id: 1074
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/Vector2dBoundsTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.Vector2dBoundsTest.Center]
+      name: Center
+      fullName: Mapbox.MapboxSdkCs.UnitTest.Vector2dBoundsTest.Center
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1067
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.Vector2dBoundsTest][suite]
+    - id: 1069
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/Vector2dBoundsTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.Vector2dBoundsTest.Extend]
+      name: Extend
+      fullName: Mapbox.MapboxSdkCs.UnitTest.Vector2dBoundsTest.Extend
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1067
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.Vector2dBoundsTest][suite]
+    - id: 1070
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/Vector2dBoundsTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.Vector2dBoundsTest.Hull]
+      name: Hull
+      fullName: Mapbox.MapboxSdkCs.UnitTest.Vector2dBoundsTest.Hull
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1067
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.Vector2dBoundsTest][suite]
+    - id: 1073
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/Vector2dBoundsTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.Vector2dBoundsTest.IsEmpty]
+      name: IsEmpty
+      fullName: Mapbox.MapboxSdkCs.UnitTest.Vector2dBoundsTest.IsEmpty
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1067
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.Vector2dBoundsTest][suite]
+    - id: 1068
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/Vector2dBoundsTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.Vector2dBoundsTest.SmallBounds]
+      name: SmallBounds
+      fullName: Mapbox.MapboxSdkCs.UnitTest.Vector2dBoundsTest.SmallBounds
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1067
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.Vector2dBoundsTest][suite]
+    - id: 1071
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/Vector2dBoundsTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.Vector2dBoundsTest.World]
+      name: World
+      fullName: Mapbox.MapboxSdkCs.UnitTest.Vector2dBoundsTest.World
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1067
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.Vector2dBoundsTest][suite]
+    - id: 1064
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.Vector2dTest][suite]
+      name: Vector2dTest
+      fullName: Mapbox.MapboxSdkCs.UnitTest.Vector2dTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1154
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/[Mapbox.MapboxSdkCs.UnitTest][suite]
+    - id: 1066
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/Vector2dTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.Vector2dTest.DC]
+      name: DC
+      fullName: Mapbox.MapboxSdkCs.UnitTest.Vector2dTest.DC
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1064
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.Vector2dTest][suite]
+    - id: 1065
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/Vector2dTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.Vector2dTest.NullIsland]
+      name: NullIsland
+      fullName: Mapbox.MapboxSdkCs.UnitTest.Vector2dTest.NullIsland
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1064
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.Vector2dTest][suite]
+    - id: 1137
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.VectorTileTest][suite]
+      name: VectorTileTest
+      fullName: Mapbox.MapboxSdkCs.UnitTest.VectorTileTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1154
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/[Mapbox.MapboxSdkCs.UnitTest][suite]
+    - id: 1138
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/VectorTileTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.VectorTileTest.ParseSuccess]
+      name: ParseSuccess
+      fullName: Mapbox.MapboxSdkCs.UnitTest.VectorTileTest.ParseSuccess
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1137
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.VectorTileTest][suite]
+    - id: 1139
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/VectorTileTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.VectorTileTest.SeveralTiles]
+      name: SeveralTiles
+      fullName: Mapbox.MapboxSdkCs.UnitTest.VectorTileTest.SeveralTiles
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1137
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/MapboxSdkCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.MapboxSdkCs.UnitTest.VectorTileTest][suite]
+    - id: 1151
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/[Mapbox.ProbeExtractorCs][suite]
+      name: ProbeExtractorCs
+      fullName: Mapbox.ProbeExtractorCs
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1146
+      parentUniqueId: Assembly-CSharp-Editor.dll/[Mapbox][suite]
+    - id: 1152
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/ProbeExtractorCs/[Mapbox.ProbeExtractorCs.UnitTest][suite]
+      name: UnitTest
+      fullName: Mapbox.ProbeExtractorCs.UnitTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1151
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/[Mapbox.ProbeExtractorCs][suite]
+    - id: 1020
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/ProbeExtractorCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.ProbeExtractorCs.UnitTest.ProbeExtractorCsTest][suite]
+      name: ProbeExtractorCsTest
+      fullName: Mapbox.ProbeExtractorCs.UnitTest.ProbeExtractorCsTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1152
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/ProbeExtractorCs/[Mapbox.ProbeExtractorCs.UnitTest][suite]
+    - id: 1023
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/ProbeExtractorCs/UnitTest/ProbeExtractorCsTest/[Assembly-CSharp-Editor][Mapbox.ProbeExtractorCs.UnitTest.ProbeExtractorCsTest.ExtractFootTrace]
+      name: ExtractFootTrace
+      fullName: Mapbox.ProbeExtractorCs.UnitTest.ProbeExtractorCsTest.ExtractFootTrace
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1020
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/ProbeExtractorCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.ProbeExtractorCs.UnitTest.ProbeExtractorCsTest][suite]
+    - id: 1022
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/ProbeExtractorCs/UnitTest/ProbeExtractorCsTest/[Assembly-CSharp-Editor][Mapbox.ProbeExtractorCs.UnitTest.ProbeExtractorCsTest.ExtractProbes]
+      name: ExtractProbes
+      fullName: Mapbox.ProbeExtractorCs.UnitTest.ProbeExtractorCsTest.ExtractProbes
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1020
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/ProbeExtractorCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.ProbeExtractorCs.UnitTest.ProbeExtractorCsTest][suite]
+    - id: 1021
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/ProbeExtractorCs/UnitTest/ProbeExtractorCsTest/[Assembly-CSharp-Editor][Mapbox.ProbeExtractorCs.UnitTest.ProbeExtractorCsTest.FixturesLoaded]
+      name: FixturesLoaded
+      fullName: Mapbox.ProbeExtractorCs.UnitTest.ProbeExtractorCsTest.FixturesLoaded
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1020
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/ProbeExtractorCs/UnitTest/[Assembly-CSharp-Editor][Mapbox.ProbeExtractorCs.UnitTest.ProbeExtractorCsTest][suite]
+    - id: 1147
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/[Mapbox.Unity][suite]
+      name: Unity
+      fullName: Mapbox.Unity
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1146
+      parentUniqueId: Assembly-CSharp-Editor.dll/[Mapbox][suite]
+    - id: 1148
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/Unity/[Mapbox.Unity.Ar][suite]
+      name: Ar
+      fullName: Mapbox.Unity.Ar
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1147
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/[Mapbox.Unity][suite]
+    - id: 1001
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/Unity/Ar/[Assembly-CSharp-Editor][Mapbox.Unity.Ar.AverageHeadingAlignmentStrategyTests][suite]
+      name: AverageHeadingAlignmentStrategyTests
+      fullName: Mapbox.Unity.Ar.AverageHeadingAlignmentStrategyTests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1148
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/Unity/[Mapbox.Unity.Ar][suite]
+    - id: 1005
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/Unity/Ar/AverageHeadingAlignmentStrategyTests/[Assembly-CSharp-Editor][Mapbox.Unity.Ar.AverageHeadingAlignmentStrategyTests.meanAngleAllNegative]
+      name: meanAngleAllNegative
+      fullName: Mapbox.Unity.Ar.AverageHeadingAlignmentStrategyTests.meanAngleAllNegative
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/Unity/Ar/[Assembly-CSharp-Editor][Mapbox.Unity.Ar.AverageHeadingAlignmentStrategyTests][suite]
+    - id: 1004
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/Unity/Ar/AverageHeadingAlignmentStrategyTests/[Assembly-CSharp-Editor][Mapbox.Unity.Ar.AverageHeadingAlignmentStrategyTests.MeanAngleAllPositive]
+      name: MeanAngleAllPositive
+      fullName: Mapbox.Unity.Ar.AverageHeadingAlignmentStrategyTests.MeanAngleAllPositive
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/Unity/Ar/[Assembly-CSharp-Editor][Mapbox.Unity.Ar.AverageHeadingAlignmentStrategyTests][suite]
+    - id: 1009
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/Unity/Ar/AverageHeadingAlignmentStrategyTests/[Assembly-CSharp-Editor][Mapbox.Unity.Ar.AverageHeadingAlignmentStrategyTests.MeanAngleFiveNinetys]
+      name: MeanAngleFiveNinetys
+      fullName: Mapbox.Unity.Ar.AverageHeadingAlignmentStrategyTests.MeanAngleFiveNinetys
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/Unity/Ar/[Assembly-CSharp-Editor][Mapbox.Unity.Ar.AverageHeadingAlignmentStrategyTests][suite]
+    - id: 1002
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/Unity/Ar/AverageHeadingAlignmentStrategyTests/[Assembly-CSharp-Editor][Mapbox.Unity.Ar.AverageHeadingAlignmentStrategyTests.MeanAngleOver360]
+      name: MeanAngleOver360
+      fullName: Mapbox.Unity.Ar.AverageHeadingAlignmentStrategyTests.MeanAngleOver360
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/Unity/Ar/[Assembly-CSharp-Editor][Mapbox.Unity.Ar.AverageHeadingAlignmentStrategyTests][suite]
+    - id: 1003
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/Unity/Ar/AverageHeadingAlignmentStrategyTests/[Assembly-CSharp-Editor][Mapbox.Unity.Ar.AverageHeadingAlignmentStrategyTests.MeanAngleOver360Negative]
+      name: MeanAngleOver360Negative
+      fullName: Mapbox.Unity.Ar.AverageHeadingAlignmentStrategyTests.MeanAngleOver360Negative
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/Unity/Ar/[Assembly-CSharp-Editor][Mapbox.Unity.Ar.AverageHeadingAlignmentStrategyTests][suite]
+    - id: 1007
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/Unity/Ar/AverageHeadingAlignmentStrategyTests/[Assembly-CSharp-Editor][Mapbox.Unity.Ar.AverageHeadingAlignmentStrategyTests.MeanAnglePositiveAndNegative]
+      name: MeanAnglePositiveAndNegative
+      fullName: Mapbox.Unity.Ar.AverageHeadingAlignmentStrategyTests.MeanAnglePositiveAndNegative
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/Unity/Ar/[Assembly-CSharp-Editor][Mapbox.Unity.Ar.AverageHeadingAlignmentStrategyTests][suite]
+    - id: 1006
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/Unity/Ar/AverageHeadingAlignmentStrategyTests/[Assembly-CSharp-Editor][Mapbox.Unity.Ar.AverageHeadingAlignmentStrategyTests.MeanAngleSameAngleDifferentForms]
+      name: MeanAngleSameAngleDifferentForms
+      fullName: Mapbox.Unity.Ar.AverageHeadingAlignmentStrategyTests.MeanAngleSameAngleDifferentForms
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/Unity/Ar/[Assembly-CSharp-Editor][Mapbox.Unity.Ar.AverageHeadingAlignmentStrategyTests][suite]
+    - id: 1008
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/Unity/Ar/AverageHeadingAlignmentStrategyTests/[Assembly-CSharp-Editor][Mapbox.Unity.Ar.AverageHeadingAlignmentStrategyTests.MeanAngleWithin180OfZero]
+      name: MeanAngleWithin180OfZero
+      fullName: Mapbox.Unity.Ar.AverageHeadingAlignmentStrategyTests.MeanAngleWithin180OfZero
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/Unity/Ar/[Assembly-CSharp-Editor][Mapbox.Unity.Ar.AverageHeadingAlignmentStrategyTests][suite]
+    - id: 1149
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/Unity/[Mapbox.Unity.UnitTest][suite]
+      name: UnitTest
+      fullName: Mapbox.Unity.UnitTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1147
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/[Mapbox.Unity][suite]
+    - id: 1010
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/Unity/UnitTest/[Assembly-CSharp-Editor][Mapbox.Unity.UnitTest.CircularBufferTest][suite]
+      name: CircularBufferTest
+      fullName: Mapbox.Unity.UnitTest.CircularBufferTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1149
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/Unity/[Mapbox.Unity.UnitTest][suite]
+    - id: 1011
+      uniqueId: Assembly-CSharp-Editor.dll/Mapbox/Unity/UnitTest/CircularBufferTest/[Assembly-CSharp-Editor][Mapbox.Unity.UnitTest.CircularBufferTest.SettingAndGettingValues]
+      name: SettingAndGettingValues
+      fullName: Mapbox.Unity.UnitTest.CircularBufferTest.SettingAndGettingValues
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1010
+      parentUniqueId: Assembly-CSharp-Editor.dll/Mapbox/Unity/UnitTest/[Assembly-CSharp-Editor][Mapbox.Unity.UnitTest.CircularBufferTest][suite]
+    m_ResultText: 
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: ff6b1182e455a896ea50d598f6336a998001d99b64c50f9f77874d9fddb6729f7be4a4aa04cb44b13e8ca2b20d9061b851e789c691f1c5cb103012cdf1ab9bced3293fdd92aa63e53789bbe90511e4ec69f6daee1491d8f18ee187fa3c2c3c038106980ab4d7081f418367237446f833dbec263bb99cc93e95a27f411ea402456a350b4ca481d45d921fb65e57d7f75e3bc6ec6d9ed6846e930bc7715867f179ffffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategoryMask: 0
+      availableCategories:
+      - Uncategorized
 --- !u!114 &14
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-    x: 1372
-    y: 0
-    width: 548
-    height: 947
-  m_MinSize: {x: 202, y: 222}
-  m_MaxSize: {x: 4002, y: 4022}
-  m_ActualView: {fileID: 15}
-  m_Panes:
-  - {fileID: 15}
-  - {fileID: 21}
-  m_Selected: 0
-  m_LastSelected: 1
---- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -365,13 +3137,13 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 2652
-    y: 73
-    width: 546
-    height: 928
+    x: 712.6667
+    y: 80
+    width: 565
+    height: 1281
   m_ViewDataDictionary: {fileID: 0}
   m_VSyncEnabled: 0
-  m_MaximizeOnPlay: 1
+  m_MaximizeOnPlay: 0
   m_Gizmos: 0
   m_Stats: 0
   m_SelectedSizes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
@@ -381,10 +3153,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -273
-    m_HBaseRangeMax: 273
-    m_VBaseRangeMin: -455.5
-    m_VBaseRangeMax: 455.5
+    m_HBaseRangeMin: -188.33334
+    m_HBaseRangeMax: 188.33334
+    m_VBaseRangeMin: -421.33334
+    m_VBaseRangeMax: 421.33334
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -393,7 +3165,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -402,29 +3174,84 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
-      width: 546
-      height: 911
+      width: 565
+      height: 1264
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 273, y: 455.5}
+    m_Translation: {x: 282.5, y: 632}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -273
-      y: -455.5
-      width: 546
-      height: 911
+      x: -282.5
+      y: -632
+      width: 565
+      height: 1264
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 546, y: 928}
+  m_LastWindowPixelSize: {x: 847.5, y: 1921.5}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
   m_XRRenderMode: 0
+--- !u!114 &15
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12061, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Hierarchy
+    m_Image: {fileID: -590624980919486359, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 0.6666667
+    y: 80
+    width: 204
+    height: 565
+  m_ViewDataDictionary: {fileID: 0}
+  m_SceneHierarchy:
+    m_TreeViewState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 60270000
+      m_LastClickedID: 0
+      m_ExpandedIDs: d485feffd885feff0a86feff0e86feff1286feff2a86feffa286feffa686feffd886feffdc86feffe086fefff886feff7087feff7487feffa687feffaa87feffae87feffc687feff4c88feff5088feff8288feff8688feff8a88feff9888feffa488feffae9afeffcc9afeffea9afeff089bfeff269bfeff449bfeffb4a3fefff0a3feff0ea4feff2ca4feff4aa4feff68a4feff86a4feff74fbffff0c4c00002a4c0000
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 9}
+      m_SearchString: 
+    m_ExpandedScenes: []
+    m_CurrenRootInstanceID: 0
+    m_LockTracker:
+      m_IsLocked: 0
+    m_CurrentSortingName: TransformSorting
+  m_WindowGUID: 1da5512e90539e9468a4dbda81e8cd41
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -446,14 +3273,14 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 147.33334
-    y: 136
-    width: 968
-    height: 477
+    x: 204.66667
+    y: 80
+    width: 506
+    height: 565
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
-  m_WindowGUID: d649c68144848d14c80952192cc329d8
-  m_Gizmos: 0
+  m_WindowGUID: c6396e224e1d2a347bb99f5c3cbdf509
+  m_Gizmos: 1
   m_SceneIsLit: 1
   m_SceneLighting: 1
   m_2DMode: 0
@@ -461,9 +3288,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0, y: 99.999985, z: 41.523586}
+    m_Target: {x: -12.556435, y: 17.022793, z: 184.84074}
     speed: 2
-    m_Value: {x: 0, y: 99.999985, z: 41.523586}
+    m_Value: {x: 160.42422, y: 87.329346, z: 44.818222}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -492,13 +3319,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+    m_Target: {x: -0.057995122, y: -0.44427225, z: 0.028827112, w: -0.89355576}
     speed: 2
-    m_Value: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+    m_Value: {x: -0.057994716, y: -0.44426912, z: 0.02882691, w: -0.8935495}
   m_Size:
-    m_Target: 159.58568
+    m_Target: 378.25723
     speed: 2
-    m_Value: 159.58568
+    m_Value: 396.08087
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -517,7 +3344,7 @@ MonoBehaviour:
     m_DynamicClip: 1
     m_OcclusionCulling: 0
   m_ShowGlobalGrid: 1
-  m_LastSceneViewRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LastSceneViewRotation: {x: -0.04694595, y: 0.6006396, z: -0.035365093, w: -0.7973633}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -532,62 +3359,7 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12061, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Hierarchy
-    m_Image: {fileID: -590624980919486359, guid: 0000000000000000d000000000000000,
-      type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 1280
-    y: 73
-    width: 403
-    height: 477
-  m_ViewDataDictionary: {fileID: 0}
-  m_SceneHierarchy:
-    m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 6e4b0000
-      m_LastClickedID: 19310
-      m_ExpandedIDs: 72fbffff664b00006e4b0000924b0000ae4b0000ca4b0000804c00008e4c0000
-      m_RenameOverlay:
-        m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
-        m_EditFieldRect:
-          serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-        m_UserData: 0
-        m_IsWaitingForDelay: 0
-        m_IsRenaming: 0
-        m_OriginalEventType: 11
-        m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 0}
-      m_SearchString: 
-    m_ExpandedScenes: []
-    m_CurrenRootInstanceID: 0
-    m_LockTracker:
-      m_IsLocked: 0
-    m_CurrentSortingName: TransformSorting
-  m_WindowGUID: 805e04695ad50ad488cb67c261f031dd
---- !u!114 &18
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 12111, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -600,12 +3372,12 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1683
+    x: 393
     y: 73
-    width: 967
-    height: 477
+    width: 729
+    height: 569
   m_ViewDataDictionary: {fileID: 0}
---- !u!114 &19
+--- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -626,10 +3398,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1280
-    y: 569
-    width: 1372
-    height: 432
+    x: 0.6666667
+    y: 664
+    width: 712
+    height: 697
   m_ViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -644,20 +3416,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Mapbox/Examples/6_ZoomableMap
+    - Assets/Mapbox/Unity/Editor/PropertyDrawers
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Mapbox/Examples/6_ZoomableMap
+  - Assets/Mapbox/Unity/Editor/PropertyDrawers
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: D:\hvccc_23sep\HVCCC_Visualisation
+  m_LastProjectPath: C:\Users\SENG\Desktop\hvccc_23spe\HVCCC_Visualisation
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 003a0000
-    m_LastClickedID: 14848
-    m_ExpandedIDs: 00000000cc3600002c370000003a00008a3a0000923a0000ac3a0000c23a0000ea3d00008a4200001c4600001c4700009048000000ca9a3b
+    scrollPos: {x: 0, y: 23}
+    m_SelectedIDs: 1e470000
+    m_LastClickedID: 18206
+    m_ExpandedIDs: 00000000ca3600002a370000fe390000883a0000903a0000aa3a0000c03a0000e83d0000884200001a4600001a4700008e48000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -673,7 +3445,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 11}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -685,7 +3457,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000cc3600002c370000003a00008a3a0000923a0000ac3a0000c23a0000ea3d00008a4200001c4600001c4700009048000000ca9a3b
+    m_ExpandedIDs: 00000000ca3600002a370000fe390000883a0000aa3a0000e83d0000884200001a4600008e480000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -713,7 +3485,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c6230000
+    m_ExpandedInstanceIDs: c623000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -729,7 +3501,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 11}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -740,8 +3512,8 @@ MonoBehaviour:
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
-  m_DirectoriesAreaWidth: 312
---- !u!114 &20
+  m_DirectoriesAreaWidth: 254
+--- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -762,12 +3534,12 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 2236
-    y: 572
-    width: 688
-    height: 428
+    x: 0
+    y: 661
+    width: 1525
+    height: 340
   m_ViewDataDictionary: {fileID: 0}
---- !u!114 &21
+--- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -788,10 +3560,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 2652
-    y: 73
-    width: 546
-    height: 928
+    x: 712.6667
+    y: 80
+    width: 565
+    height: 1281
   m_ViewDataDictionary: {fileID: 0}
   m_OpenAddComponentMenu: 0
   m_ObjectsLockedBeforeSerialization: []
