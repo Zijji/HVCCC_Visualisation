@@ -219,4 +219,8 @@ public class XMLHelper{
         return return_dict;
     }
 
+    public float GetLastTime()
+    {
+        return float.Parse(rail_log.railEvents[0].TrainReachedJunction[rail_log.railEvents[0].TrainReachedJunction.Length-1].time);
+    }
 } 

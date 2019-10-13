@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     public Slider time;
     public GameObject universalTime;
     public Text timeText;
+    public XMLHelper finalTimeObject;
 
     // Use this for initialization
     void Start()
@@ -42,7 +43,11 @@ public class UIManager : MonoBehaviour
         setToggle = !setToggle;
         foreach (GameObject go in objects)
         {
-            go.SetActive(setToggle);
+            foreach (Transform child in go.transform)
+            {
+                child.GetChild(0).gameObject.SetActive(setToggle);
+                child.GetChild(1).gameObject.SetActive(setToggle);
+            }
         }
     }
     public void AccelerateTime()
