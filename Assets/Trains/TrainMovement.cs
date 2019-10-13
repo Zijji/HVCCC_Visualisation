@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using Schemas;
+using UnityEngine.AI;
 
 /* Scripts that make trains move */
 public class TrainMovement : MonoBehaviour
@@ -15,6 +16,7 @@ public class TrainMovement : MonoBehaviour
 
     private GameObject getTimeObj;
 
+    public NavMeshAgent agent;  
     private int pathCurrentDest = 0;        //Index of current destination in path
 
     // Update is called once per frame

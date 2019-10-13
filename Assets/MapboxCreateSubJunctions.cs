@@ -6,7 +6,6 @@ using Mapbox.Utils;
 using Mapbox.Unity.Map;
 using Mapbox.Unity.MeshGeneration.Factories;
 using Mapbox.Unity.Utilities;
-
 using UnityEngine.AI;
 
 
@@ -52,9 +51,17 @@ public class MapboxCreateSubJunctions : MonoBehaviour
 
         foreach (List<List<float>> tracks in allTracks)
         {
-            foreach (List<float> subTracks in tracks)
+            int temp = 0;
+            for (temp = 0; temp < tracks.Count; temp++) //List<float> subTracks in tracks
             {
-                allSubJunctions.Add(Convert.ToString(subTracks[1]) + "," + Convert.ToString(subTracks[0]));
+                allSubJunctions.Add(Convert.ToString(tracks[temp][1]) + "," + Convert.ToString(tracks[temp][0]));
+                if (temp >= 1)
+                {
+                    Debug.Log("Making more junctions with " + Convert.ToString(tracks[temp][1]) + "," + Convert.ToString(tracks[temp][0]));
+                    //(float long1, float lat1, float long2, float lat2)
+                    allSubJunctions.Add(makeMoreSubjunctions(tracks[temp][0], tracks[temp][1], tracks[temp - 1][0], tracks[temp - 1][1]));
+                    
+                }
             }
         }
 
@@ -93,7 +100,33 @@ public class MapboxCreateSubJunctions : MonoBehaviour
         }
     }
 
-        
+     private String makeMoreSubjunctions(float long1, float lat1, float long2, float lat2)
+     {
+         float longitude = (long1 + long2) /2;
+         float latitude = (lat1 + lat2) /2;
+         Debug.Log("New subjunctions " + long1 + " lon2 " + long2 + " lat1 " + lat1 + " lat2 " + lat2 + " ==> " + longitude + " , " + latitude);
+         /**
+         if (getDistance(long1, lat1, long2, lat2) < 20)
+         {
+            Debug.Log("New subjunctions between 1" );
+            return makeMoreSubjunctions(longitude, latitude, long1, lat1);
+         }
+         else if (getDistance(long1, lat1, long2, lat2) < 20)
+         {
+            Debug.Log("New subjunctions between 2 " );
+            return makeMoreSubjunctions(longitude, latitude, long2, lat2);
+         }
+         else
+         {  */
+             return Convert.ToString(longitude) + "," + Convert.ToString(latitude);
+         //}
+         
+     }  
+
+     private float getDistance (float long1, float lat1, float long2, float lat2)
+     {
+        return (float) Math.Sqrt(Math.Pow(Math.Abs((double)long1 - (double)long2), 2) + Math.Pow(Math.Abs((double)lat1 - (double)lat2), 2));
+     }
 
     /**
     void Update()
