@@ -225,7 +225,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   worldTime: {fileID: 36642500}
-  time: 1.28
   universalTime: {fileID: 455425660}
 --- !u!1 &82494214
 GameObject:
@@ -1276,7 +1275,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1476737511}
   m_Direction: 0
   m_MinValue: 1
-  m_MaxValue: 32
+  m_MaxValue: 64
   m_WholeNumbers: 0
   m_Value: 1
   m_OnValueChanged:
