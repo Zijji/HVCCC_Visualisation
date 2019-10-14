@@ -510,7 +510,7 @@ MonoBehaviour:
         isActive: 1
         layerSource:
           Name: Streets
-          Id: mapbox://styles/cccritter7/cjy568l380erf1cs9gc5dguh8
+          Id: mapbox://styles/cccritter7/ck1ppqeby2net1cmauajpmdn3
           Modified: 
           UserName: 
       rasterOptions:
@@ -529,7 +529,7 @@ MonoBehaviour:
           UserName: 
       elevationLayerType: 1
       requiredOptions:
-        exaggerationFactor: 1
+        exaggerationFactor: 2.5
       colliderOptions:
         addCollider: 0
       modificationOptions:
@@ -7138,11 +7138,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45265403386bbe943b67f668b6fd26e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  junctionDestination: {fileID: 0}
-  junctionPrevTransform: {x: 0, y: 0, z: 0}
-  _map: {fileID: 555018383}
-  _spawnScale: 2
 --- !u!114 &7454756744562161888
 MonoBehaviour:
   m_ObjectHideFlags: 0
