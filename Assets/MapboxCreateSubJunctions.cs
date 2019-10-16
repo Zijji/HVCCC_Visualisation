@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System;
+using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
 using Mapbox.Utils;
 using Mapbox.Unity.Map;
 using Mapbox.Unity.MeshGeneration.Factories;
 using Mapbox.Unity.Utilities;
+using SimpleJSON;
 
 public class MapboxCreateSubJunctions : MonoBehaviour
 {
@@ -31,11 +33,30 @@ public class MapboxCreateSubJunctions : MonoBehaviour
     List<GameObject> _spawnedObjects;
 
     public float zoom;
-    XMLHelper xml_helper = new XMLHelper();
+    XMLHelper xml_helper = new XMLHelper();     //Not currently used, looks at hunter_vally_tracks.geojson instead
+
 
 
     void Start()
     {
+
+        //Currently looks at the geojson file directly to get the track coordinates
+        //Debug.Log("Features:"+ SubjunctionFromGeojson.Create().features);
+        /*
+        //Returns json from the file.
+        string geJsonPath = "hunter_valley_tracks.geojson";
+        string getJsonString = "";
+        StreamReader sr = new StreamReader(geJsonPath); 
+        getJsonString += sr.ReadToEnd();
+        sr.Close();
+
+        var GJ = JSON.Parse(getJsonString);
+        string example = GJ["features"][0]["type"].Value;
+        Debug.Log("value:"+example);
+         */
+        
+        
+
 
         List<List<List<float>>> allTracks = xml_helper.getAllTrackCoords();
         List<string> allSubJunctions = new List<string>();
