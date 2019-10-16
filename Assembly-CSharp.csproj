@@ -537,7 +537,6 @@
      <Compile Include="Assets\MoveCamera.cs" />
      <Compile Include="Assets\RailEventsLog.cs" />
      <Compile Include="Assets\Section.cs" />
-     <Compile Include="Assets\SubjunctionFromGeojson.cs" />
      <Compile Include="Assets\SubJunctionsTrack.cs" />
      <Compile Include="Assets\TimeController.cs" />
      <Compile Include="Assets\TimeScript.cs" />
