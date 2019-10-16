@@ -2782,8 +2782,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1c48f3b1b72acb40aff85b5dd946efe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modelInputs: 
-  railEventLogs: 
 --- !u!1 &1625238410748352
 GameObject:
   m_ObjectHideFlags: 0
@@ -5545,6 +5543,28 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11500000, guid: 094505b3aa82f4d63a8213df757e515b, type: 3}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11500000, guid: 6c6c4a60b58e9e84fa8d89fe2e46dfd1, type: 3}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

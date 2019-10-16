@@ -13,7 +13,7 @@ public class XMLHelper
 {
     public data model_inputs_data_object;
     public railLog rail_log;
-
+    public bool file = false;
     public XMLHelper(){
         XmlSerializer ser = new XmlSerializer(typeof(data));
         if (FileManager.modelInputs != null)
@@ -28,20 +28,21 @@ public class XMLHelper
             {
                 rail_log = (railLog)ser1.Deserialize(reader);
             }
+            file = true;
         }
-        else
-        {
-            using (XmlReader reader = XmlReader.Create("modelInputs.xml"))
-            {
-                model_inputs_data_object = (data)ser.Deserialize(reader);
-            }
+        //else
+        //{
+        //    using (XmlReader reader = XmlReader.Create("modelInputs.xml"))
+        //    {
+        //        model_inputs_data_object = (data)ser.Deserialize(reader);
+        //    }
 
-            XmlSerializer ser1 = new XmlSerializer(typeof(railLog));
-            using (XmlReader reader = XmlReader.Create("RailEventsLog.xml"))
-            {
-                rail_log = (railLog)ser1.Deserialize(reader);
-            }
-        }
+        //    XmlSerializer ser1 = new XmlSerializer(typeof(railLog));
+        //    using (XmlReader reader = XmlReader.Create("RailEventsLog.xml"))
+        //    {
+        //        rail_log = (railLog)ser1.Deserialize(reader);
+        //    }
+        //}
     }
 
     public dataRailNetworkJunctionsJunction[] getJunctions(){
@@ -133,6 +134,8 @@ public class XMLHelper
         //
         // Gets all the trains that leave the departure terminal
         //
+        if (!file)
+            return null;
         railLogRailEventsTrainCreated[]  trains_created = rail_log.railEvents[0].TrainCreated;
         List<string> train_ids = new List<string>();
         for (int i =0;i<trains_created.Length;i++ ){
