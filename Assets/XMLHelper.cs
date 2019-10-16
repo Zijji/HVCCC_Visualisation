@@ -5,6 +5,7 @@ using Schemas;
 using Schemas1;
 using System;
 using System.Collections.Generic;
+using System.Collections;
 //
 
 
@@ -15,17 +16,32 @@ public class XMLHelper
 
     public XMLHelper(){
         XmlSerializer ser = new XmlSerializer(typeof(data));
-        using (XmlReader reader = XmlReader.Create("modelInputs.xml"))
+        if (FileManager.modelInputs != null)
         {
-            model_inputs_data_object = (data) ser.Deserialize(reader);
-        }
+            using (XmlReader reader = XmlReader.Create(FileManager.modelInputs))
+            {
+                model_inputs_data_object = (data)ser.Deserialize(reader);
+            }
 
-        XmlSerializer ser1 = new XmlSerializer(typeof(railLog));
-        using (XmlReader reader = XmlReader.Create("RailEventsLog.xml"))
+            XmlSerializer ser1 = new XmlSerializer(typeof(railLog));
+            using (XmlReader reader = XmlReader.Create(FileManager.railEventLogs))
+            {
+                rail_log = (railLog)ser1.Deserialize(reader);
+            }
+        }
+        else
         {
-            rail_log= (railLog) ser1.Deserialize(reader);
-        }
+            using (XmlReader reader = XmlReader.Create("modelInputs.xml"))
+            {
+                model_inputs_data_object = (data)ser.Deserialize(reader);
+            }
 
+            XmlSerializer ser1 = new XmlSerializer(typeof(railLog));
+            using (XmlReader reader = XmlReader.Create("RailEventsLog.xml"))
+            {
+                rail_log = (railLog)ser1.Deserialize(reader);
+            }
+        }
     }
 
     public dataRailNetworkJunctionsJunction[] getJunctions(){
