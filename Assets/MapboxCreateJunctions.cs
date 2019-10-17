@@ -156,7 +156,7 @@ public class MapboxCreateJunctions : MonoBehaviour
             }
         }
         
-        Debug.Log(Event.current.type);
+//        Debug.Log(Event.current.type);
     }
 
 }
