@@ -11,31 +11,32 @@ using UnityEditor;
 //
 
 
-public class XMLHelper:MonoBehaviour
+public class XMLHelper : MonoBehaviour
 {
     public data model_inputs_data_object;
     public railLog rail_log;
-    public GameObject files;
+    public string modelInputs, railEvents;
 
-    void Start()
+    void Awake()
     {
-        files =   GameObject.Find("FileManager");
+        
     }
 
-    public XMLHelper()
+    public void ParseXML()
     {
         XmlSerializer ser = new XmlSerializer(typeof(data));
-        using (XmlReader reader = XmlReader.Create("modelInputs.xml"))
+        modelInputs = this.GetComponent<FileManager>().GetMI();
+        using (XmlReader reader = XmlReader.Create(modelInputs))
         {
             model_inputs_data_object = (data)ser.Deserialize(reader);
         }
 
         XmlSerializer ser1 = new XmlSerializer(typeof(railLog));
-        using (XmlReader reader = XmlReader.Create("RailEventsLog.xml"))
+        railEvents = this.GetComponent<FileManager>().GetREL();
+        using (XmlReader reader = XmlReader.Create(railEvents))
         {
-            rail_log= (railLog) ser1.Deserialize(reader);
+            rail_log = (railLog)ser1.Deserialize(reader);
         }
-
     }
 
     public dataRailNetworkJunctionsJunction[] getJunctions(){

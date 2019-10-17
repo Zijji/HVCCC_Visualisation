@@ -8,6 +8,7 @@ using UnityEditor;
 public class FileManager : MonoBehaviour
 {
     public string modelInputs, railEventLogs;
+    public XMLHelper xml;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class FileManager : MonoBehaviour
 
     public void StartVisualisation()
     {
+        xml.ParseXML();
         DontDestroyOnLoad(this.gameObject);
         SceneManager.LoadScene("ZoomableMap");
     }

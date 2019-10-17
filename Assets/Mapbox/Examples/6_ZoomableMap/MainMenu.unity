@@ -434,6 +434,7 @@ GameObject:
   m_Component:
   - component: {fileID: 952561984}
   - component: {fileID: 952561983}
+  - component: {fileID: 952561985}
   m_Layer: 0
   m_Name: FileManager
   m_TagString: Untagged
@@ -455,6 +456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modelInputs: 
   railEventLogs: 
+  xml: {fileID: 952561985}
 --- !u!4 &952561984
 Transform:
   m_ObjectHideFlags: 0
@@ -469,6 +471,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &952561985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952561982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e5299b74fd63714a914ef2e125c71ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modelInputs: 
+  railEvents: 
 --- !u!1 &956638740
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,7 +566,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 956638743}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 952561983}
+        m_MethodName: OpenREL
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &956638743
 MonoBehaviour:
   m_ObjectHideFlags: 0
