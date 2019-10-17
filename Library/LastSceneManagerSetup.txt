@@ -1,5 +1,9 @@
 sceneSetups:
-- path: Assets/Mapbox/Examples/6_ZoomableMap/ZoomableMap.unity
+- path: Assets/Mapbox/Examples/6_ZoomableMap/MainMenu.unity
   isLoaded: 1
   isActive: 1
+  isSubScene: 0
+- path: Assets/Mapbox/Examples/6_ZoomableMap/ZoomableMap.unity
+  isLoaded: 0
+  isActive: 0
   isSubScene: 0

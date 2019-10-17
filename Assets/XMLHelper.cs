@@ -5,18 +5,29 @@ using Schemas;
 using Schemas1;
 using System;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEditor;
 //
 
 
-public class XMLHelper{
+public class XMLHelper:MonoBehaviour
+{
     public data model_inputs_data_object;
     public railLog rail_log;
+    public GameObject files;
 
-    public XMLHelper(){
+    void Start()
+    {
+        files =   GameObject.Find("FileManager");
+    }
+
+    public XMLHelper()
+    {
         XmlSerializer ser = new XmlSerializer(typeof(data));
         using (XmlReader reader = XmlReader.Create("modelInputs.xml"))
         {
-            model_inputs_data_object = (data) ser.Deserialize(reader);
+            model_inputs_data_object = (data)ser.Deserialize(reader);
         }
 
         XmlSerializer ser1 = new XmlSerializer(typeof(railLog));

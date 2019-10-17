@@ -156,7 +156,6 @@ public class MapboxCreateJunctions : MonoBehaviour
                 spawnedObject.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
             }
         }
-        Debug.Log("Current Event" + Event.current.type);
     }
 
 }

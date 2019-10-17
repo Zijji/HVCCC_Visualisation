@@ -16,7 +16,6 @@ public class WorldTime : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(finalTimeObject.GetLastTime());
         worldTime.onValueChanged.AddListener(ListenerMethod);
         worldTime.maxValue = finalTimeObject.GetLastTime();
         worldTime.minValue = universalTime.GetComponent<TimeController>().GetTime();

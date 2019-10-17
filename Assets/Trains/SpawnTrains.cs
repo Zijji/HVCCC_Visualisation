@@ -24,7 +24,7 @@ public class SpawnTrains : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("is using new Spawntrains");
+        //Debug.Log("is using new Spawntrains");
         //Finds time object
         getTimeObj = GameObject.Find("TimeObject");
         if(getTimeObj == null)
