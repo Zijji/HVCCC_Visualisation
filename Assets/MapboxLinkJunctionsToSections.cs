@@ -93,12 +93,12 @@ public class MapboxLinkJunctionsToSections : MonoBehaviour
             }
             //places junction at section
             junctionStrings[i1] = getSections[selectedSection].pathCoords[0];
-            junctionStrings[i1] = "-32.9213408, 151.7530507";//getSections[selectedSection].pathCoords[0];
+            //junctionStrings[i1] = "-32.9213408, 151.7530507";//getSections[selectedSection].pathCoords[0];
 
         }
 
         //Transfers junction strings back to junction object.
-        junctionScript.setLocationStrings(junctionStrings);
+        //junctionScript.setLocationStrings(junctionStrings);
         
         
         /*
