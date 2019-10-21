@@ -37,7 +37,7 @@ public class SpawnTrains : MonoBehaviour
 
         // Get input from XML
         string[] train_ids = xml_helper.getWorkingTrainIds();
-        Debug.Log("working trains " + train_ids.Length);
+        //Debug.Log("working trains " + train_ids.Length);
         for (int i = 0; i < train_ids.Length; i++)
         {
             Dictionary<string, List<string>> xml_train_paths_dic = xml_helper.getTimeOrderedRouteById(train_ids[i]);
@@ -56,19 +56,19 @@ public class SpawnTrains : MonoBehaviour
             pathsChecked.Add(0);
         }
         
-        print("Input order: ");
-        foreach (var p in paths)
-        {
-            print(p);
-        }
+        //print("Input order: ");
+        //foreach (var p in paths)
+        //{
+        //    print(p);
+        //}
 
         paths.Sort(); // Sorts the collection based on the CompareTo() -- which sorts it based the minimum time on the time.
 
-        print("Sorted order: ");
-        foreach (var p in paths)
-        {
-            print(p);
-        }
+        //print("Sorted order: ");
+        //foreach (var p in paths)
+        //{
+        //    print(p);
+        //}
 
         /*
          * Should make a dispatcher that creates trains at the correct time

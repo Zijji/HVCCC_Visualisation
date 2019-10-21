@@ -9,7 +9,6 @@ using Mapbox.Unity.Utilities;
 //Creates the junctions using the mapbox scaling
 public class MapboxCreateJunctions : MonoBehaviour
 {
-    public XMLHelper xml_helper = new XMLHelper();
     List<AllJunctions> junctions = new List<AllJunctions>();
 
     [SerializeField]

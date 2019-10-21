@@ -11,7 +11,6 @@ public class UIManager : MonoBehaviour
     public Slider time;
     public GameObject universalTime;
     public Text timeText;
-    public XMLHelper finalTimeObject;
 
     // Use this for initialization
     void Start()

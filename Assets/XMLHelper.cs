@@ -6,8 +6,6 @@ using Schemas1;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEditor;
 //
 
 
@@ -22,20 +20,29 @@ public class XMLHelper : MonoBehaviour
         
     }
 
-    public void ParseXML()
+    public Boolean ParseXML()
     {
-        XmlSerializer ser = new XmlSerializer(typeof(data));
-        modelInputs = this.GetComponent<FileManager>().GetMI();
-        using (XmlReader reader = XmlReader.Create(modelInputs))
+        try
         {
-            model_inputs_data_object = (data)ser.Deserialize(reader);
-        }
+            XmlSerializer ser = new XmlSerializer(typeof(data));
+            modelInputs = this.GetComponent<FileManager>().GetMI();
+            using (XmlReader reader = XmlReader.Create(modelInputs))
+            {
+                model_inputs_data_object = (data)ser.Deserialize(reader);
+            }
 
-        XmlSerializer ser1 = new XmlSerializer(typeof(railLog));
-        railEvents = this.GetComponent<FileManager>().GetREL();
-        using (XmlReader reader = XmlReader.Create(railEvents))
+            XmlSerializer ser1 = new XmlSerializer(typeof(railLog));
+            railEvents = this.GetComponent<FileManager>().GetREL();
+            using (XmlReader reader = XmlReader.Create(railEvents))
+            {
+                rail_log = (railLog)ser1.Deserialize(reader);
+            }
+            return true;
+        }
+        catch(Exception e)
         {
-            rail_log = (railLog)ser1.Deserialize(reader);
+            Debug.Log(e);
+            return false;
         }
     }
 

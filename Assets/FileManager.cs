@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine.SceneManagement;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor;
@@ -9,10 +8,11 @@ public class FileManager : MonoBehaviour
 {
     public string modelInputs, railEventLogs;
     public XMLHelper xml;
+    public Text errorMsg;
     // Start is called before the first frame update
     void Start()
     {
-        
+        errorMsg.text = "";
     }
 
     // Update is called once per frame
@@ -23,9 +23,17 @@ public class FileManager : MonoBehaviour
 
     public void StartVisualisation()
     {
-        xml.ParseXML();
-        DontDestroyOnLoad(this.gameObject);
-        SceneManager.LoadScene("ZoomableMap");
+        Boolean test = xml.ParseXML();
+        if(test == false)
+        {
+            errorMsg.text = "Invalid XML files";
+        }
+        else
+        {
+            DontDestroyOnLoad(this.gameObject);
+            SceneManager.LoadScene("ZoomableMap");
+        }
+        
     }
 
     //

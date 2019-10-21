@@ -27,19 +27,22 @@ public class WorldTime : MonoBehaviour
 
     public void SliderSelected()
     {
+        Debug.Log("Slider Selected");
         sliderSelected = true;
     }
 
     public void SliderDeselect()
     {
+        Debug.Log("Slider unSelected");
+
         sliderSelected = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        time += (Time.deltaTime) * 0.0002f;
-        if (!sliderSelected)
+        time += (Time.deltaTime) * 0.002f;
+        if (sliderSelected==false)
         {
             worldTime.value = time;
         }

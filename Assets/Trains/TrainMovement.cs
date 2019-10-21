@@ -8,7 +8,7 @@ using Schemas;
 public class TrainMovement : MonoBehaviour
 {
     //public GameObject stationDestionation;
-    public float speed = 0.25f;
+    public float speed = 1.0f;
     public GameObject junctionDestination = null; //set this variable to be the next destination.
     public GameObject junctionPrev = null; //previous junction.
     public ConsistPath TrainPath = null;
