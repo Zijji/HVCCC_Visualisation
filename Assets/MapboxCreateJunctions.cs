@@ -32,9 +32,11 @@ public class MapboxCreateJunctions : MonoBehaviour
 
     public float zoom;
     
+    private MapboxLinkJunctionsToSections thisMBLJS;    //Holds the link junctions to sections component
 
     void Start()
     {
+        thisMBLJS = GetComponent<MapboxLinkJunctionsToSections>();
         //EXCEL PART, THE CSV IS IN THE RESOURCES FOLDER
         TextAsset junctionData = Resources.Load<TextAsset>("Junctions_Coordinates");
         string[] data = junctionData.text.Split(new char[] { '\n' });
@@ -122,6 +124,8 @@ public class MapboxCreateJunctions : MonoBehaviour
     
         zoom = _map.AbsoluteZoom;
 
+        thisMBLJS.JunctionsCreate();
+        thisMBLJS.junctionStrings = _locationStrings;
     }
 
     void Update()
@@ -157,6 +161,17 @@ public class MapboxCreateJunctions : MonoBehaviour
         }
         
 //        Debug.Log(Event.current.type);
+    }
+
+    public void setLocationStrings(string[] newStrings)
+    {
+        _locationStrings = newStrings;
+        _locations = new Vector2d[_locationStrings.Length];
+        
+    }
+    public string[] getLocationStrings()
+    {
+        return _locationStrings;
     }
 
 }

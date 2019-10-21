@@ -37,8 +37,12 @@ public class MapboxCreateSections : MonoBehaviour
 
     public string[] dpue;
 
+    private MapboxLinkJunctionsToSections thisMBLJS;    //Holds the link junctions to sections component
+
     void Start()
     {
+        thisMBLJS = GetComponent<MapboxLinkJunctionsToSections>();
+
 
         //Currently looks at the geojson file directly to get the track coordinates
         //May need to get from xml file.
@@ -80,8 +84,7 @@ public class MapboxCreateSections : MonoBehaviour
          */
          
         //pathCoords = null;
-        //List<string> allCoords = new List<string>();    //All co-ordinates in values
-
+        List<string> allCoords = new List<string>();    //All co-ordinates in values
 
         Debug.Log(getGeoJson["features"].AsArray.Count);
         Debug.Log(getGeoJson["features"][1]["geometry"]["coordinates"][0].AsArray.Count);
@@ -93,7 +96,7 @@ public class MapboxCreateSections : MonoBehaviour
         List<List<string>> allSectionsPaths = new List<List<string>>(); //Stores all sections paths in one big list.
         
         
-              //gets path for one section
+        //gets path for one section
         //Test code for creating a single section
         for (int i1 = 0; i1 < getGeoJson["features"].AsArray.Count; i1++)
         {
@@ -103,24 +106,47 @@ public class MapboxCreateSections : MonoBehaviour
             {
                 sectionPath.Add(getGeoJson["features"][i1]["geometry"]["coordinates"][0][i2][1].Value + ", " + getGeoJson["features"][i1]["geometry"]["coordinates"][0][i2][0].Value);
                 //distinctSubjunctions.Add(getGeoJson["features"][i1]["geometry"]["coordinates"][0][i2][1].Value + ", " + getGeoJson["features"][i1]["geometry"]["coordinates"][0][i2][0].Value);
-                //allCoords.Add(getGeoJson["features"][i1]["geometry"]["coordinates"][0][i2][1].Value + ", " + getGeoJson["features"][i1]["geometry"]["coordinates"][0][i2][0].Value);
+                allCoords.Add(getGeoJson["features"][i1]["geometry"]["coordinates"][0][i2][1].Value + ", " + getGeoJson["features"][i1]["geometry"]["coordinates"][0][i2][0].Value);
             }
             allSectionsPaths.Add(sectionPath);
         }
-        
-        List<string>  distinctSubjunctions = new HashSet<string>(allCoords).ToList();   //distinct subJunctions.
+        /*
+        //Gets a list of all subjunctions that appear more than once
+        HashSet<string> distinctSubjunctions = new HashSet<string>(allCoords);   //distinct subJunctions.
+        HashSet<string> duplicateSubjunctions = new HashSet<string>();           //All duplicate sub junctions
 
-        foreach(string s in allSectionsPaths[i])    //for each string in section coords checks if string has appeared before. If found Connects the section to the existing section at coord
+        foreach(string s in distinctSubjunctions)
         {
-            for(int x1 = 0; x1 < i; x1++)
+            //Counts number of times string appears in allcoords. If found more than once, adds to duplicates list.
+            int numEntries = 0;
+            int coordIndex = 0;
+            while(coordIndex < allCoords.Count && numEntries < 2 )
             {
-                if(allSectionsPaths[x1].Contains(s))
+                if(allCoords[coordIndex].Equals(s))
                 {
-                    instance.GetComponent<Section>().nextSection.Add(existingSections[x1]);
-                    instance.GetComponent<Section>().nextSectionCoord.Add(s);
+                    numEntries++;
                 }
+                
+                coordIndex++;
+            }
+            if(numEntries > 1)
+            {
+                //Add to List if duplicate is found
+                duplicateSubjunctions.Add(s);
             }
         }
+        
+        Debug.Log("all coords");
+        Debug.Log(allCoords.Count);
+        Debug.Log("distinct junctions hashset");
+        Debug.Log(distinctSubjunctions.Count);
+        Debug.Log("dupe junctions hashset");
+        Debug.Log(duplicateSubjunctions.Count);
+        
+        
+        
+         */
+        
         /*
         
         
@@ -210,6 +236,8 @@ public class MapboxCreateSections : MonoBehaviour
         
         //List that matches game object to allSections
         List<GameObject> existingSections = new List<GameObject>();
+        //Contains sections that have added next sections
+        HashSet<GameObject> existingSectionsHasNext = new HashSet<GameObject>();
 
         
         for (int i = 0; i < _locationStrings.Length; i++)
@@ -220,6 +248,7 @@ public class MapboxCreateSections : MonoBehaviour
             instance.transform.parent = _subJunctionParent.transform;
             instance.transform.localPosition = _map.GeoToWorldPosition(_locations[i], true);
             instance.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
+            instance.name = "Section"+i.ToString();
             instance.GetComponent<Section>().pathCoords = allSectionsPaths[i].ToArray();
             foreach(string s in allSectionsPaths[i])    //for each string in section coords checks if string has appeared before. If found Connects the section to the existing section at coord
             {
@@ -229,6 +258,7 @@ public class MapboxCreateSections : MonoBehaviour
                     {
                         instance.GetComponent<Section>().nextSection.Add(existingSections[x1]);
                         instance.GetComponent<Section>().nextSectionCoord.Add(s);
+                        existingSectionsHasNext.Add(instance);
                     }
                 }
             }
@@ -259,7 +289,6 @@ public class MapboxCreateSections : MonoBehaviour
             
              */
             
-            
             existingSections.Add(instance);
             
             /*
@@ -270,7 +299,25 @@ public class MapboxCreateSections : MonoBehaviour
             */
             _spawnedObjects.Add(instance);
         }
+        //Makes connections bi-directional
+        foreach(GameObject thisGameObject in existingSectionsHasNext)
+        {
+            if(thisGameObject.GetComponent<Section>().nextSection != null)
+            {
+                int sectionNo = 0;
+                foreach(GameObject sectionObject in thisGameObject.GetComponent<Section>().nextSection)
+                {
+                    sectionObject.GetComponent<Section>().nextSection.Add(thisGameObject);
+                    sectionObject.GetComponent<Section>().nextSectionCoord.Add(thisGameObject.GetComponent<Section>().nextSectionCoord[sectionNo]);
+                    sectionNo++;
+                }
+            }
+        }
         zoom = _map.AbsoluteZoom;
+
+        thisMBLJS.SectionsCreate();
+        thisMBLJS.sectionStrings = _locationStrings;
+        //thisMBLJS.sectionObjects = _spawnedObjects;
     }
 
     /**
