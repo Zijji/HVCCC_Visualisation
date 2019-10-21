@@ -1,6 +1,15 @@
 # HVCCC Visualization
 
-One Paragraph of project description goes here
+Our purpose is to provide a realistic three-dimensional visualisation model of the network
+with a high degree of detail and visual fidelity.
+This project aims to:
+- Provide a three-dimensional visualisation model of the Hunter Valley Rail Network,
+- Provide a model that can be used to sell the advantages of the HVCCC and its rail
+network to potential customers,
+- Give HVCCC and its customers a holistic three-dimensional overview of what is
+occurring on the network at any one time,
+- Give HVCCC the ability to easily modify and manipulate the network to visualise
+various rail topologies.
 
 ## Getting Started
 
@@ -69,8 +78,8 @@ See also the list of [contributors](https://github.com/your/project/contributors
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
-* HVCCC Boys
-* Both supervisors
+* HVCCC Employees Riley Clement and Martin Jackson
+* Dr. Karen Blackmore and Dr. Hongyu Zhang
 * Hat tip to anyone whose code was used
 * Inspiration
 * etc make this look fancy and proper later...

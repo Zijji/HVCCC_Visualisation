@@ -9,6 +9,9 @@ public class UIManager : MonoBehaviour
     public GameObject[] objects;
     public bool setToggle = true;
     public Slider time;
+    public GameObject universalTime;
+    public Text timeText;
+    public XMLHelper finalTimeObject;
 
     // Use this for initialization
     void Start()
@@ -18,19 +21,20 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        DisplayTime();
     }
 
 
     //controls the pausing of the scene
     public void pauseControl()
     {
-        if (Time.timeScale == 1)
+        if (Time.timeScale != 0)
         {
             Time.timeScale = 0;
         }
         else if (Time.timeScale == 0)
         {
-            Time.timeScale = 1;
+            Time.timeScale = time.value;
         }
     }
 
@@ -39,12 +43,26 @@ public class UIManager : MonoBehaviour
         setToggle = !setToggle;
         foreach (GameObject go in objects)
         {
-            go.SetActive(setToggle);
+            foreach (Transform child in go.transform)
+            {
+                child.GetChild(0).gameObject.SetActive(setToggle);
+                child.GetChild(1).gameObject.SetActive(setToggle);
+            }
         }
     }
     public void AccelerateTime()
     {
         Time.timeScale = (float)time.value;
+    }
+    public void DisplayTime()
+    {
+        timeText.text = ""+ universalTime.GetComponent<TimeController>().GetTime();
+        float hours = universalTime.GetComponent<TimeController>().GetTime();
+        float minutes = hours % 1;
+        hours = hours - minutes;
+        minutes = minutes * 60;
+
+        timeText.text = hours + ":" + (int)minutes;
     }
 
 }

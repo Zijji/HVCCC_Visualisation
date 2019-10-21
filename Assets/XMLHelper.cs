@@ -5,26 +5,38 @@ using Schemas;
 using Schemas1;
 using System;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEditor;
 //
 
 
-public class XMLHelper{
+public class XMLHelper : MonoBehaviour
+{
     public data model_inputs_data_object;
     public railLog rail_log;
+    public string modelInputs, railEvents;
 
-    public XMLHelper(){
+    void Awake()
+    {
+        
+    }
+
+    public void ParseXML()
+    {
         XmlSerializer ser = new XmlSerializer(typeof(data));
-        using (XmlReader reader = XmlReader.Create("modelInputs.xml"))
+        modelInputs = this.GetComponent<FileManager>().GetMI();
+        using (XmlReader reader = XmlReader.Create(modelInputs))
         {
-            model_inputs_data_object = (data) ser.Deserialize(reader);
+            model_inputs_data_object = (data)ser.Deserialize(reader);
         }
 
         XmlSerializer ser1 = new XmlSerializer(typeof(railLog));
-        using (XmlReader reader = XmlReader.Create("RailEventsLog.xml"))
+        railEvents = this.GetComponent<FileManager>().GetREL();
+        using (XmlReader reader = XmlReader.Create(railEvents))
         {
-            rail_log= (railLog) ser1.Deserialize(reader);
+            rail_log = (railLog)ser1.Deserialize(reader);
         }
-
     }
 
     public dataRailNetworkJunctionsJunction[] getJunctions(){
@@ -219,4 +231,8 @@ public class XMLHelper{
         return return_dict;
     }
 
+    public float GetLastTime()
+    {
+        return float.Parse(rail_log.railEvents[0].TrainReachedJunction[rail_log.railEvents[0].TrainReachedJunction.Length-1].time);
+    }
 } 
