@@ -37,8 +37,12 @@ public class MapboxCreateSections : MonoBehaviour
 
     public string[] dpue;
 
+    private MapboxLinkJunctionsToSections thisMBLJS;    //Holds the link junctions to sections component
+
     void Start()
     {
+        thisMBLJS = GetComponent<MapboxLinkJunctionsToSections>();
+
 
         //Currently looks at the geojson file directly to get the track coordinates
         //May need to get from xml file.
@@ -92,7 +96,7 @@ public class MapboxCreateSections : MonoBehaviour
         List<List<string>> allSectionsPaths = new List<List<string>>(); //Stores all sections paths in one big list.
         
         
-              //gets path for one section
+        //gets path for one section
         //Test code for creating a single section
         for (int i1 = 0; i1 < getGeoJson["features"].AsArray.Count; i1++)
         {
@@ -310,6 +314,10 @@ public class MapboxCreateSections : MonoBehaviour
             }
         }
         zoom = _map.AbsoluteZoom;
+
+        thisMBLJS.SectionsCreate();
+        thisMBLJS.sectionStrings = _locationStrings;
+        //thisMBLJS.sectionObjects = _spawnedObjects;
     }
 
     /**
