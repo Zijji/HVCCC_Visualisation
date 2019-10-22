@@ -55,13 +55,33 @@ public class UIManager : MonoBehaviour
     }
     public void DisplayTime()
     {
-        timeText.text = ""+ universalTime.GetComponent<TimeController>().GetTime();
+        //timeText.text = "" + universalTime.GetComponent<TimeController>().GetTime();
         float hours = universalTime.GetComponent<TimeController>().GetTime();
         float minutes = hours % 1;
+        string hr;
+        string min;
+        int m;
         hours = hours - minutes;
         minutes = minutes * 60;
-
-        timeText.text = hours + ":" + (int)minutes;
+        m = (int)minutes;
+        if(hours<10)
+        {
+            hr = "0"+hours.ToString();
+        }
+        else
+        {
+            hr = hours.ToString();
+        }
+        if (minutes < 10)
+        {
+            min = "0" + m.ToString();
+        }
+        else
+        {
+            min = m.ToString();
+        }
+        timeText.text = hr + ":" + min;
+        //timeText.text = "" + universalTime.GetComponent<TimeController>().GetTime();
     }
 
 }

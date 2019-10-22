@@ -20,12 +20,17 @@ public class TrainMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if(pathCurrentDest==0)
+        {
+            GetPathDest();
+        }
         TimeTrainMovement();
         float trainTime = getTimeObj.GetComponent<TimeController>().GetTime();
-        //if (GetNearDest()
+
         //Now checks if time > departure time
-        if (trainTime > TrainPath.GetDepartureTime(pathCurrentDest - 1))
+        if (trainTime > TrainPath.GetDepartureTime(pathCurrentDest ))
         {
+            
             if (NoMorePath())
             {
                 junctionDestination = null;
@@ -33,7 +38,6 @@ public class TrainMovement : MonoBehaviour
             else
             {
                 GetPathDest();
-                TimeTrainMovement(); // Comment out causing: Index out of range error 0 might be too low
             }
 
         }
@@ -49,9 +53,9 @@ public class TrainMovement : MonoBehaviour
             Debug.Log("Error: No time object found. Create an object called 'TimeObject' with the script 'TimeController.cs'");
         }
 
-        pathCurrentDest = 1;
-        GetPathDest();
-        TimeTrainMovement();
+        pathCurrentDest = 0;
+        //GetPathDest();
+        //TimeTrainMovement();
     }
 
     private void BasicTrainMovement()
@@ -72,6 +76,8 @@ public class TrainMovement : MonoBehaviour
         float prevTime = (TrainPath.GetArrivalTime(pathCurrentDest - 1));
         float distance = Vector3.Distance(junctionDestination.transform.position, junctionPrev.transform.position);
 
+        float timeStarted = trainTime - prevTime;
+        float p = timeStarted / (destTime - prevTime);
         //transform.position = junctionPrev.transform.position;
 
 
@@ -87,10 +93,15 @@ public class TrainMovement : MonoBehaviour
                                         junctionPrev.transform.position.z + (junctionDestination.transform.position.z - junctionPrev.transform.position.z) * ((trainTime - prevTime) / (prevTime - destTime))
                                             );
          */
-        transform.position = new Vector3(junctionDestination.transform.position.x - (junctionDestination.transform.position.x - junctionPrev.transform.position.x) * ((trainTime - prevTime) / (prevTime - destTime)),
-                                        junctionDestination.transform.position.y - (junctionDestination.transform.position.y - junctionPrev.transform.position.y) * ((trainTime - prevTime) / (prevTime - destTime)),
-                                        junctionDestination.transform.position.z - (junctionDestination.transform.position.z - junctionPrev.transform.position.z) * ((trainTime - prevTime) / (prevTime - destTime))
-                                            );
+        //transform.position = new Vector3(junctionDestination.transform.position.x - (junctionDestination.transform.position.x - junctionPrev.transform.position.x) * ((trainTime - prevTime) / (prevTime - destTime)),
+        //                                junctionDestination.transform.position.y - (junctionDestination.transform.position.y - junctionPrev.transform.position.y) * ((trainTime - prevTime) / (prevTime - destTime)),
+        //                                junctionDestination.transform.position.z - (junctionDestination.transform.position.z - junctionPrev.transform.position.z) * ((trainTime - prevTime) / (prevTime - destTime))
+        //                                    );
+
+        //this works for the movement
+        transform.position = Vector3.Lerp(junctionPrev.transform.position,junctionDestination.transform.position,p);
+
+
         //junctionPrev.transform.position * distance*(destTime - trainTime)/(prevTime - trainTime);
 
 
@@ -115,9 +126,10 @@ public class TrainMovement : MonoBehaviour
     {
         if (pathCurrentDest < TrainPath.Length())
         {
+            pathCurrentDest++;
             junctionDestination = GameObject.Find(TrainPath.GetJunction(pathCurrentDest));
             junctionPrev = GameObject.Find(TrainPath.GetJunction(pathCurrentDest - 1));
-            pathCurrentDest++;
+            //Debug.Log(this + " " + junctionDestination + " " + TrainPath.GetArrivalTime(pathCurrentDest));    //use this to check against rail event logs
             return true;
         }
         return false;
