@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "hvccc_rail",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "osm_id": "705298196", "code": 6101, "fclass": "rail", "name": "Unmade_rode_1", "fromjunc":"jn_KCT_Depart", "tojunc":"jn_K9" }, "geometry": { "type": "MultiLineString", "coordinates": [ [  [ 151.749461, -32.866053], [151.75586700439453, -32.8666295304497], [151.75861358642578, -32.86899052158339], [ 151.762397, -32.868446 ] ] ] } },
+{ "type": "Feature", "properties": { "osm_id": "705298196", "code": 6101, "fclass": "rail", "name": "This road from jn_K9 to jn_NCIG is for demonstration only. It should make the train zig-zag towards NCIG. This should be removed in the final version so the train follows all the sections towardds the final junction.", "fromjunc":"jn_K9", "tojunc":"jn_NCIG" }, "geometry": { "type": "MultiLineString", "coordinates": [ [  [ 151.718430, -32.871517], [ 151.762397, -32.868446 ] ] ] } }
+]
+}

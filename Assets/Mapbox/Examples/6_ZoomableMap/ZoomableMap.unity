@@ -385,9 +385,7 @@ GameObject:
   - component: {fileID: 555018386}
   - component: {fileID: 555018388}
   - component: {fileID: 555018385}
-  - component: {fileID: 555018387}
   - component: {fileID: 555018389}
-  - component: {fileID: 555018390}
   m_Layer: 0
   m_Name: Map
   m_TagString: Untagged
@@ -612,25 +610,6 @@ MonoBehaviour:
   _referenceCamera: {fileID: 1787361574}
   _mapManager: {fileID: 555018383}
   _useDegreeMethod: 0
---- !u!114 &555018387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 555018382}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c2957ca15af673489e39ed35a21c9ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _map: {fileID: 555018383}
-  _locationStrings: []
-  _spawnScale: 4
-  _markerPrefab: {fileID: 1839187062704024, guid: fbebd7f9fdb621141997dc95eead1f28,
-    type: 3}
-  _subJunctionParent: {fileID: 106248484}
-  zoom: 0
 --- !u!114 &555018388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -672,22 +651,6 @@ MonoBehaviour:
   _subJunctionParent: {fileID: 106248484}
   zoom: 0
   dpue: []
---- !u!114 &555018390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 555018382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d584d26ad4e1bbd479164b4daf84241d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sectionStrings: []
-  junctionStrings: []
-  junctionParent: {fileID: 1107453587}
-  sectionParent: {fileID: 106248484}
 --- !u!1 &641411409
 GameObject:
   m_ObjectHideFlags: 0

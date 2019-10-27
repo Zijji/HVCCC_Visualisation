@@ -37,18 +37,16 @@ public class MapboxCreateSections : MonoBehaviour
 
     public string[] dpue;
 
-    private MapboxLinkJunctionsToSections thisMBLJS;    //Holds the link junctions to sections component
 
     void Start()
     {
-        thisMBLJS = GetComponent<MapboxLinkJunctionsToSections>();
 
 
         //Currently looks at the geojson file directly to get the track coordinates
         //May need to get from xml file.
 
         //Returns json from the file.
-        string getJsonPath = "hunter_valley_tracks.geojson";
+        string getJsonPath = "hvccc_rail.geojson";
         string getJsonString = "";
         StreamReader sr = new StreamReader(getJsonPath); 
         getJsonString += sr.ReadToEnd();
@@ -250,6 +248,10 @@ public class MapboxCreateSections : MonoBehaviour
             instance.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
             instance.name = "Section"+i.ToString();
             instance.GetComponent<Section>().pathCoords = allSectionsPaths[i].ToArray();
+            instance.GetComponent<Section>().fromJunction = GameObject.Find(getGeoJson["features"][i]["fromjunc"].Value);
+            instance.GetComponent<Section>().toJunction = GameObject.Find(getGeoJson["features"][i]["tojunc"].Value);
+
+            /*
             foreach(string s in allSectionsPaths[i])    //for each string in section coords checks if string has appeared before. If found Connects the section to the existing section at coord
             {
                 for(int x1 = 0; x1 < i; x1++)
@@ -262,6 +264,8 @@ public class MapboxCreateSections : MonoBehaviour
                     }
                 }
             }
+            
+             */
             
             /*
             for(int x2 = 0; x2 < allSectionsPaths.Count; x2++)
@@ -315,8 +319,6 @@ public class MapboxCreateSections : MonoBehaviour
         }
         zoom = _map.AbsoluteZoom;
 
-        thisMBLJS.SectionsCreate();
-        thisMBLJS.sectionStrings = _locationStrings;
         //thisMBLJS.sectionObjects = _spawnedObjects;
     }
 

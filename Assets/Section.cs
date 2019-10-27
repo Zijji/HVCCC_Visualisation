@@ -12,8 +12,8 @@ public class Section : MonoBehaviour
     public string[] pathCoords;     //Stores all co-ordinate pairs in the pathCoords object
 
     //nextSection
-    public List<GameObject> nextSection; //Which section does this go to next?
-    public List<string> nextSectionCoord; //Which coord in the next section does this section connect to?
+    public GameObject fromJunction;   //Assumes first pathCoord is the from junction
+    public GameObject toJunction;   //Assumes last pathCoord is the to Junction
 
     
     void Start()
