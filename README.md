@@ -1,4 +1,4 @@
-# HVCCC Visualization
+# HVCCC Visualisation
 
 Our purpose is to provide a realistic three-dimensional visualisation model of the network
 with a high degree of detail and visual fidelity.
@@ -69,7 +69,13 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Chris Chapman** - [ChrisChapman1](https://github.com/ChrisChapman1)
+* **Nathan Ebba** - [EbbaNat](https://github.com/ChrisChapman1)
+* **Chris Chapman** - [ChrisChapman1](https://github.com/ChrisChapman1)
+* **Chris Chapman** - [ChrisChapman1](https://github.com/ChrisChapman1)
+* **Chris Chapman** - [ChrisChapman1](https://github.com/ChrisChapman1)
+* **Chris Chapman** - [ChrisChapman1](https://github.com/ChrisChapman1)
+* **Chris Chapman** - [ChrisChapman1](https://github.com/ChrisChapman1)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project. Work in progress.
 
@@ -80,6 +86,3 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 * HVCCC Employees Riley Clement and Martin Jackson
 * Dr. Karen Blackmore and Dr. Hongyu Zhang
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc make this look fancy and proper later...
