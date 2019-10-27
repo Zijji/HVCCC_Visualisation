@@ -8,6 +8,8 @@ using Mapbox.Unity.Map;
 using Mapbox.Unity.MeshGeneration.Factories;
 using Mapbox.Unity.Utilities;
 using SimpleJSON;
+using Console = System.Console;
+
 
 public class MapboxCreateSubJunctions : MonoBehaviour
 {
@@ -27,10 +29,15 @@ public class MapboxCreateSubJunctions : MonoBehaviour
     [SerializeField]
     GameObject _markerPrefab;
 
+    public static HashSet<string> subjunctionSet;
 
     public GameObject _subJunctionParent;
 
     List<GameObject> _spawnedObjects;
+
+    public static List<string> allSubJunctions; 
+    //public static List<string> allSubJunctionsLat;
+    //public static List<string> allSubJunctionsLong;
 
     public float zoom;
     XMLHelper xml_helper = new XMLHelper();     //Not currently used, looks at hunter_vally_tracks.geojson instead
@@ -49,77 +56,47 @@ public class MapboxCreateSubJunctions : MonoBehaviour
         StreamReader sr = new StreamReader(getJsonPath); 
         getJsonString += sr.ReadToEnd();
         sr.Close();
-/*
-"features": [
-{ "type": "Feature", "properties": { "osm_id": "2654260", "code": 6102, "fclass": "light_rail", "name": "Inner West Light Rail" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 151.1964198, -33.868837 ], [ 151.1962464, -33.8687557 ] ] ] } },
-
- */
- /*
-        string example = GJ["features"][0]["properties"]["name"].Value;
-        Debug.Log("value:"+example);
-        string geometry = GJ["features"][0]["geometry"]["coordinates"][0][0][0].Value;
-        Debug.Log("geometry:"+geometry);
-        Debug.Log("isNull?:"+ geometry==null);
-        var arrayCount = GJ["features"][0]["geometry"]["coordinates"][0][0][2].Value;
-        Debug.Log("end of array:"+arrayCount);
-        Debug.Log("isEmpty?:"+ arrayCount.Equals(""));
-  */
         
-        //var thisCoord = GJ["features"][0]["geometry"]["coordinates"][0][0][0].Value;
-        // 1: spawn all subjunctions   2:link subjunctions  3: get closest junctions to subjunctions  4: 
-
+        allSubJunctions = new List<string>();
         
-
-
         var getGeoJson = JSON.Parse(getJsonString);
-        /*
-        Debug.Log("array length:" + );
-        Debug.Log("end of array0:" + getGeoJson["features"][0]["geometry"]["coordinates"][0][0][0].Value.Equals(""));
-        Debug.Log("end of array1:" + getGeoJson["features"][0]["geometry"]["coordinates"][0][0][1].Value.Equals(""));
-        Debug.Log("end of array2:" + getGeoJson["features"][0]["geometry"]["coordinates"][0][0][2].Value.Equals(""));
-         */
-        Debug.Log(getGeoJson["features"].AsArray.Count);
-        Debug.Log(getGeoJson["features"][1]["geometry"]["coordinates"][0].AsArray.Count);
-        
-        List<string> allSubJunctions = new List<string>();
 
-        
-        
         for(int i1 = 0; i1 < getGeoJson["features"].AsArray.Count; i1++)
         {
-            for(int i2 = 0; i2 < getGeoJson["features"][i1]["geometry"]["coordinates"][0].AsArray.Count; i2++)
+            for (int i2 = 0; i2 < getGeoJson["features"][i1]["geometry"]["coordinates"][0].AsArray.Count; i2++)
             {
-                allSubJunctions.Add(getGeoJson["features"][i1]["geometry"]["coordinates"][0][i2][1].Value + ", " + getGeoJson["features"][i1]["geometry"]["coordinates"][0][i2][0].Value);
+                //Checks within 20km of Hexham for debugging purposes 
+                /*
+                if (
+                    (checkDistance(float.Parse(allSubJunctions[i2].Split(',')[0]), float.Parse(allSubJunctions[i2].Split(',')[1]),
+                         float.Parse("-32.836132"), float.Parse("151.686721")) < 20000))
+                { */
+                    allSubJunctions.Add(getGeoJson["features"][i1]["geometry"]["coordinates"][0][i2][1].Value + ", " +
+                                        getGeoJson["features"][i1]["geometry"]["coordinates"][0][i2][0].Value);
+                    //allSubJunctionsLat.Add(getGeoJson["features"][i1]["geometry"]["coordinates"][0][i2][1].Value );
+                    //allSubJunctionsLong.Add(  getGeoJson["features"][i1]["geometry"]["coordinates"][0][i2][0].Value);
+                //}
             }
         }
         //Removes duplicate subjunction coords
         var distinctSubjunctions = new HashSet<string>(allSubJunctions);
         
         allSubJunctions = new List<string>(distinctSubjunctions);
-        /*
-        for(i = 0; !getGeoJson["features"][i].Equals(""); i++)
-        {
-            for(i2 = 0; !getGeoJson["features"][i]["geometry"]["coordinates"][0][i2].Equals(""); i2++)
-            {
-                allSubJunctions.Add(getGeoJson["features"][i]["geometry"]["coordinates"][0][i2][0].Value + "," + getGeoJson["features"][i]["geometry"]["coordinates"][0][i2][1].Value);
-            }
-        }
-        */
-
-        /*
-        List<List<List<float>>> allTracks = xml_helper.getAllTrackCoords();
-        List<string> allSubJunctions = new List<string>();
         
-        foreach (List<List<float>> tracks in allTracks)
+        //Would have to sort if we were using BinarySearch
+        //allSubJunctions.Sort();
+        
+        //Removes subjunctions that are within 50m of each other
+        for (int i =0; i < allSubJunctions.Count - 1; i++)
         {
-            foreach (List<float> subTracks in tracks)
+            if ((checkDistance(float.Parse(allSubJunctions[i].Split(',')[0]), float.Parse(allSubJunctions[i].Split(',')[1]),
+                    float.Parse(allSubJunctions[i + 1].Split(',')[0]), float.Parse(allSubJunctions[i + 1].Split(',')[1])))
+                < 50)
             {
-                allSubJunctions.Add(Convert.ToString(subTracks[1]) + "," + Convert.ToString(subTracks[0]));
-            }
+                allSubJunctions.RemoveAt(i);
+            } 
         }
-         */
-
-
+        
         List<string> subJunctionNames = new List<string>();
 
         for (int i =0; i < allSubJunctions.Count; i++)
@@ -127,6 +104,8 @@ public class MapboxCreateSubJunctions : MonoBehaviour
             subJunctionNames.Add("subJunction_" + i);
         }
 
+        //Puts into set which makes it faster to search
+        subjunctionSet = new HashSet<string>(allSubJunctions);
 
         //Inserts the junctions to the start of the location strings array. 
         string[] subJunctionLocationsArr = allSubJunctions.ToArray();
@@ -139,9 +118,8 @@ public class MapboxCreateSubJunctions : MonoBehaviour
 
         _locations = new Vector2d[_locationStrings.Length];
         _spawnedObjects = new List<GameObject>();
-        /*Disabled placement code for locations for testing
-        
-        
+       
+        //Disabled placement code for locations for testing
         for (int i = 0; i < _locationStrings.Length; i++)
         {
             var locationString = _locationStrings[i];
@@ -156,7 +134,7 @@ public class MapboxCreateSubJunctions : MonoBehaviour
             }
             _spawnedObjects.Add(instance);
         }
-        */
+       
         zoom = _map.AbsoluteZoom;
     }
 
@@ -178,6 +156,19 @@ public class MapboxCreateSubJunctions : MonoBehaviour
         }
     }*/
 
+    //https://stackoverflow.com/questions/6366408/calculating-distance-between-two-latitude-and-longitude-geocoordinates
+    public double checkDistance(float longitude, float latitude, float otherLongitude, float otherLatitude)
+    {
+        var d1 = latitude * (Math.PI / 180.0);
+        var num1 = longitude * (Math.PI / 180.0);
+        var d2 = otherLatitude * (Math.PI / 180.0);
+        var num2 = otherLongitude * (Math.PI / 180.0) - num1;
+        var d3 = Math.Pow(Math.Sin((d2 - d1) / 2.0), 2.0) + Math.Cos(d1) * Math.Cos(d2) * Math.Pow(Math.Sin(num2 / 2.0), 2.0);
+
+        return 6376500.0 * (2.0 * Math.Atan2(Math.Sqrt(d3), Math.Sqrt(1.0 - d3)));
+    }
+
+  
     void OnGUI()
     {
         if (Event.current.type == EventType.ScrollWheel || Event.current.type == EventType.MouseDrag ||
@@ -192,8 +183,6 @@ public class MapboxCreateSubJunctions : MonoBehaviour
                 spawnedObject.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
             }
         }
-
-        Debug.Log(Event.current.type);
     }
 
 }

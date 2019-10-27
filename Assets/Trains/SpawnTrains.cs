@@ -24,7 +24,6 @@ public class SpawnTrains : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("is using new Spawntrains");
         //Finds time object
         getTimeObj = GameObject.Find("TimeObject");
         if(getTimeObj == null)
@@ -43,29 +42,10 @@ public class SpawnTrains : MonoBehaviour
 
             for (int j = 0; j < xml_train_paths_dic["passed"].Count; j++)
             {
-
-
                 path.AddDestination(xml_train_paths_dic["junctions"][j], float.Parse(xml_train_paths_dic["reached"][j]), float.Parse(xml_train_paths_dic["passed"][j]));
-
-            
-
             }
             paths.Add(path);
             pathsChecked.Add(0);
-        }
-        
-        print("Input order: ");
-        foreach (var p in paths)
-        {
-            print(p);
-        }
-
-        paths.Sort(); // Sorts the collection based on the CompareTo() -- which sorts it based the minimum time on the time.
-
-        print("Sorted order: ");
-        foreach (var p in paths)
-        {
-            print(p);
         }
 
         /*

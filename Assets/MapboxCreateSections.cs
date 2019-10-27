@@ -41,23 +41,25 @@ public class MapboxCreateSections : MonoBehaviour
 
     void Start()
     {
-        thisMBLJS = GetComponent<MapboxLinkJunctionsToSections>();
+    }
+    /**
+    thisMBLJS = GetComponent<MapboxLinkJunctionsToSections>();
 
 
-        //Currently looks at the geojson file directly to get the track coordinates
-        //May need to get from xml file.
+    //Currently looks at the geojson file directly to get the track coordinates
+    //May need to get from xml file.
 
-        //Returns json from the file.
-        string getJsonPath = "hunter_valley_tracks.geojson";
-        string getJsonString = "";
-        StreamReader sr = new StreamReader(getJsonPath); 
-        getJsonString += sr.ReadToEnd();
-        sr.Close();
+    //Returns json from the file.
+    string getJsonPath = "hunter_valley_tracks.geojson";
+    string getJsonString = "";
+    StreamReader sr = new StreamReader(getJsonPath); 
+    getJsonString += sr.ReadToEnd();
+    sr.Close();
 /*
 "features": [
 { "type": "Feature", "properties": { "osm_id": "2654260", "code": 6102, "fclass": "light_rail", "name": "Inner West Light Rail" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 151.1964198, -33.868837 ], [ 151.1962464, -33.8687557 ] ] ] } },
 
- */
+*/
  /*
         string example = GJ["features"][0]["properties"]["name"].Value;
         Debug.Log("value:"+example);
@@ -67,7 +69,7 @@ public class MapboxCreateSections : MonoBehaviour
         var arrayCount = GJ["features"][0]["geometry"]["coordinates"][0][0][2].Value;
         Debug.Log("end of array:"+arrayCount);
         Debug.Log("isEmpty?:"+ arrayCount.Equals(""));
-  */
+
         
         //var thisCoord = GJ["features"][0]["geometry"]["coordinates"][0][0][0].Value;
         // 1: spawn all subjunctions   2:link subjunctions  3: get closest junctions to subjunctions  4: 
@@ -81,7 +83,7 @@ public class MapboxCreateSections : MonoBehaviour
         Debug.Log("end of array0:" + getGeoJson["features"][0]["geometry"]["coordinates"][0][0][0].Value.Equals(""));
         Debug.Log("end of array1:" + getGeoJson["features"][0]["geometry"]["coordinates"][0][0][1].Value.Equals(""));
         Debug.Log("end of array2:" + getGeoJson["features"][0]["geometry"]["coordinates"][0][0][2].Value.Equals(""));
-         */
+        
          
         //pathCoords = null;
         List<string> allCoords = new List<string>();    //All co-ordinates in values
@@ -214,7 +216,7 @@ public class MapboxCreateSections : MonoBehaviour
             subJunctionNames.Add("subJunction_" + i);
         }
         
-         */
+       
         
 
 
@@ -287,7 +289,7 @@ public class MapboxCreateSections : MonoBehaviour
             }
             
             
-             */
+             
             
             existingSections.Add(instance);
             
@@ -296,7 +298,7 @@ public class MapboxCreateSections : MonoBehaviour
             {
                 instance.name = subJunctionNames[i];
             }
-            */
+         
             _spawnedObjects.Add(instance);
         }
         //Makes connections bi-directional

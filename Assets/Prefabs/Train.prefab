@@ -5975,8 +5975,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.25
   junctionDestination: {fileID: 0}
-  junctionPrevTransform: {x: 0, y: 0, z: 0}
-  leadTrain: {fileID: 573896129211237948}
+  junctionPrev: {fileID: 0}
 --- !u!1 &4913700054615866642
 GameObject:
   m_ObjectHideFlags: 0
