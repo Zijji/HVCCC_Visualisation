@@ -18,6 +18,8 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 1. Unity - v2019.2.5f1 
+2. Windows Operating System
+3. 10GB of Disk Space
 
 ### Installing
 
@@ -33,6 +35,10 @@ git clone https://github.com/Zijji/HVCCC_Visualisation.git
 ## Tests
 
 Our tests can be found in the test document. Refer to "Test Outcomes" document. 
+
+## Requirements
+
+Our requirements and deliverables can be found in the requirements document. Refer to "Software Requirements Specification" document. 
 
 ## Coding Style
 
