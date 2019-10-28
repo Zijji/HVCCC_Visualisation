@@ -32,9 +32,11 @@ public class MapboxCreateJunctions : MonoBehaviour
 
     public float zoom;
     
+    MapboxCreateSections thisMBCS;
 
     void Start()
     {
+        thisMBCS = GetComponent<MapboxCreateSections>();
         //EXCEL PART, THE CSV IS IN THE RESOURCES FOLDER
         TextAsset junctionData = Resources.Load<TextAsset>("Junctions_Coordinates");
         string[] data = junctionData.text.Split(new char[] { '\n' });
@@ -121,7 +123,7 @@ public class MapboxCreateJunctions : MonoBehaviour
         }
     
         zoom = _map.AbsoluteZoom;
-
+        thisMBCS.AssignSections();
     }
 
     void Update()

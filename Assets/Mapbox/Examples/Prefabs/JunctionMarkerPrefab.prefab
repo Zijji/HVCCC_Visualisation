@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 114657051886494624}
   - component: {fileID: 114584515627220354}
   - component: {fileID: 6522083786275602261}
-  - component: {fileID: 7385072478031043886}
+  - component: {fileID: 8697020034702183229}
   m_Layer: 10
   m_Name: JunctionMarkerPrefab
   m_TagString: Untagged
@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _textMesh: {fileID: 102975335696083196}
---- !u!114 &7385072478031043886
+--- !u!114 &8697020034702183229
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -268,6 +268,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1839187062704024}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a692e7550aee745b99e098e44d2214, type: 3}
+  m_Script: {fileID: 11500000, guid: 3533c649b50616241ababeb038daa678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  junction_id: 
+  connecting_junctions: []
+  junction_connections: []

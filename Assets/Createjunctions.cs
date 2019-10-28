@@ -105,10 +105,10 @@ public class Createjunctions : MonoBehaviour
             junction_object.transform.parent = junction_parent.transform;
             //givens the id and signal to the junction
             junction_object.name = junctions[i].id;
-            junction_object.GetComponent<Junction>().junction_id = junctions[i].id; //set the variable you want to initialize
-            junction_object.GetComponent<Junction>().printJunctionConnectionData(); //set the variable you want to initialize
+            //junction_object.GetComponent<Junction>().junction_id = junctions[i].id; //set the variable you want to initialize
+            //junction_object.GetComponent<Junction>().printJunctionConnectionData(); //set the variable you want to initialize
             
-            junction_object.GetComponent<Junction>().connecting_junctions = connecting_junction_id_list; //sets the connection junctions to a vraible inside junction
+            //junction_object.GetComponent<Junction>().connecting_junctions = connecting_junction_id_list; //sets the connection junctions to a vraible inside junction
 
         }
         //Creates sections between junctions
