@@ -55,7 +55,7 @@ Additionally, MapBox uses key coding standards which we had to adapt our code to
 ## Built With
 * [MapBox](https://www.mapbox.com/) - Satellite images
 * [GEOFABRIK](https://www.geofabrik.de/) - Rail network
-* [Unity] (https://unity.com/) - 3D Graphics and Physics Engine
+* [Unity](https://unity.com/) - 3D Graphics and Physics Engine
 
 ## Contributing & Acknowledgements
 
