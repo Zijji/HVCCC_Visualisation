@@ -30,59 +30,45 @@ git clone https://github.com/Zijji/HVCCC_Visualisation.git
 4. Load Scene (Need to put the name of the Scene here)
 5. Click the play button
 
-## Running the tests
+## Tests
 
-Explain how to run the automated tests for this system. Work in progress...
+Our tests can be found in the test document. Refer to "Test Outcomes" document. 
 
-### Break down into end to end tests
+## Coding Style
 
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
+Where applicable, the HVCCC C# coding standards have been abided by. There are such instances where the Unity game engine makes us use specific coding styles.
+Additionally, MapBox uses key coding standards which we had to adapt our code to abide by. This guide can be found in their [API documentation.] (https://docs.mapbox.com/api/)
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+### Deploying system into an executable
+1. Go to ”File”
+2. Go to ”Build Settings”
+3. Click ”Build"
 
 ## Built With
 * [MapBox](https://www.mapbox.com/) - Satellite images
 * [GEOFABRIK](https://www.geofabrik.de/) - Rail network
 * [Unity] (https://unity.com/) - 3D Graphics and Physics Engine
 
-## Contributing
+## Contributing & Acknowledgements
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us. Work in progress.
+Thank you to [Dr. Karen Blackmore](https://www.newcastle.edu.au/profile/karen-blackmore) and [Associate Professor Hongyu Zhang](https://www.newcastle.edu.au/profile/hongyu-zhang) for their guidance.
 
-## Versioning
+Thank you to HVCCCC representatives [Riley Clement](https://au.linkedin.com/in/rileyclement) and [Martin Jackson](https://au.linkedin.com/in/martin-jackson-80773829) for their input. 
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). Work in progress.
 
 ## Authors
 
 * **Chris Chapman** - [ChrisChapman1](https://github.com/ChrisChapman1)
-* **Nathan Ebba** - [EbbaNat](https://github.com/ChrisChapman1)
-* **Chris Chapman** - [ChrisChapman1](https://github.com/ChrisChapman1)
-* **Chris Chapman** - [ChrisChapman1](https://github.com/ChrisChapman1)
-* **Chris Chapman** - [ChrisChapman1](https://github.com/ChrisChapman1)
-* **Chris Chapman** - [ChrisChapman1](https://github.com/ChrisChapman1)
-* **Chris Chapman** - [ChrisChapman1](https://github.com/ChrisChapman1)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project. Work in progress.
+* **Nathan Ebba** - [ebbanat](https://github.com/ebbanat)
+* **Lachlan Greene** - [Legend9119](https://github.com/Legend9119)
+* **James Valencia** - [jpvale](https://github.com/jpvale)
+* **Liam Battle** - [LBBatt](https://github.com/LBBatt)
+* **Samuel Brackenrig** - [samuelBrackenrig](https://github.com/samuelBrackenrig)
+* **Edward Ingle** - [Zijji](https://github.com/Zijji)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed to HVCCC for their own use internally. No commercial products (outside of the HVCCC ecosystem) can be developed from this work without written consent from the Authors (stated above). 
 
-## Acknowledgments
-* HVCCC Employees Riley Clement and Martin Jackson
-* Dr. Karen Blackmore and Dr. Hongyu Zhang
