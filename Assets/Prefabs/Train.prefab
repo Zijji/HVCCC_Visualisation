@@ -758,7 +758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Leader: {fileID: 573896129211237948}
-  followDistance: 100
+  followDistance: 15
 --- !u!1 &573246664664407744
 GameObject:
   m_ObjectHideFlags: 0
@@ -1919,7 +1919,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Leader: {fileID: 573659553588515812}
-  followDistance: 100
+  followDistance: 15
 --- !u!1 &573591183487246098
 GameObject:
   m_ObjectHideFlags: 0
@@ -2398,7 +2398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Leader: {fileID: 573243190556028000}
-  followDistance: 100
+  followDistance: 15
 --- !u!1 &573660479605678326
 GameObject:
   m_ObjectHideFlags: 0
@@ -5975,8 +5975,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.25
   junctionDestination: {fileID: 0}
-  junctionPrevTransform: {x: 0, y: 0, z: 0}
-  leadTrain: {fileID: 573896129211237948}
+  junctionPrev: {fileID: 0}
+  superSectionPrefab: {fileID: 1908083069073896461, guid: 2e9970f6f286bbc7e8cdec83c173e11f,
+    type: 3}
+  sectionPrev: {fileID: 0}
+  superSection: {fileID: 0}
+  sectionCurrent: {fileID: 0}
+  sectionPartCurrent: 0
+  sectionTimeTotal: 0
+  sectionTime: []
+  sectionCoords: []
+  _map: {fileID: 0}
+  zoom: 0
+  _spawnScale: 1
 --- !u!1 &4913700054615866642
 GameObject:
   m_ObjectHideFlags: 0

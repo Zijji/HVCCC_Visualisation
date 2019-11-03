@@ -7265,7 +7265,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000015258789}
+  m_AnchoredPosition: {x: 0, y: -0.000045776367}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224885143435679198
@@ -7381,6 +7381,15 @@ MonoBehaviour:
   speed: 0.25
   junctionDestination: {fileID: 0}
   junctionPrev: {fileID: 0}
+  sectionCurrent: {fileID: 0}
+  sectionPartCurrent: 0
+  sectionPrev: {fileID: 0}
+  sectionTimeTotal: 0
+  sectionTime: []
+  sectionCoords: []
+  _map: {fileID: 0}
+  zoom: 0
+  _spawnScale: 1
 --- !u!1 &2102466805505159837
 GameObject:
   m_ObjectHideFlags: 0

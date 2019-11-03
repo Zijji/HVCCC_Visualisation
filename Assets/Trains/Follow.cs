@@ -7,7 +7,8 @@ public class Follow : MonoBehaviour
     //place this script on the player gameobject
 
     public GameObject Leader; // in the inspector drag the gameobject the will be following the player to this field
-    public int followDistance;
+    //public int followDistance;
+    public float followDistance;
     private List<Vector3> storedPositions;
     private List<Quaternion> rotations;
 
@@ -48,12 +49,17 @@ public class Follow : MonoBehaviour
             //rotations.Add(Leader.transform.rotation);
         }
 
-        if (storedPositions.Count > followDistance)
+        //if (storedPositions.Count > followDistance)
+        if (Vector3.Distance(Leader.transform.position, transform.position) > followDistance)
         {
             transform.position = storedPositions[0]; //move
             //transform.rotation = rotations[0];
             storedPositions.RemoveAt(0); //delete the position that player just move to
             //rotations.RemoveAt(0);
+        }
+        else
+        {
+            transform.position = storedPositions[0];
         }
     }
 }
