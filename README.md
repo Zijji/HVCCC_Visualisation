@@ -78,3 +78,6 @@ Thank you to HVCCCC representatives [Riley Clement](https://au.linkedin.com/in/r
 
 This project is licensed to HVCCC for their own use internally. No commercial products (outside of the HVCCC ecosystem) can be developed from this work without written consent from the Authors (stated above). 
 
+## Acknowledgments
+* HVCCC: Riley Clement and Martin Jackson
+* University of Newcastle: Dr. Karen Blackmore and Dr. Hongyu Zhang

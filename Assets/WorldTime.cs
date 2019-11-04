@@ -6,39 +6,43 @@ using UnityEngine.UI;
 
 public class WorldTime : MonoBehaviour
 {
-    public XMLHelper finalTimeObject = new XMLHelper();
+    public GameObject finalTimeObject;
     public Slider worldTime;
     private float currentValue;
     private float time = 1.28f;
     public GameObject universalTime;
     bool sliderSelected = false;
+    public XMLHelper xml;
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(finalTimeObject.GetLastTime());
+        finalTimeObject = GameObject.Find("FileManager");
+        xml = finalTimeObject.GetComponent<XMLHelper>();
         worldTime.onValueChanged.AddListener(ListenerMethod);
-        worldTime.maxValue = finalTimeObject.GetLastTime();
+        worldTime.maxValue = xml.GetLastTime();
         worldTime.minValue = universalTime.GetComponent<TimeController>().GetTime();
         worldTime.value = currentValue;
-
     }
 
     public void SliderSelected()
     {
+        Debug.Log("Slider Selected");
         sliderSelected = true;
     }
 
     public void SliderDeselect()
     {
+        Debug.Log("Slider unSelected");
+
         sliderSelected = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        time += (Time.deltaTime) * 0.0002f;
-        if (!sliderSelected)
+        time += (Time.deltaTime) * 0.002f;
+        if (sliderSelected==false)
         {
             worldTime.value = time;
         }

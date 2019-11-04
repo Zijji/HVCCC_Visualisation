@@ -33,10 +33,4 @@ public class TimeController : MonoBehaviour
     {
         return speed;
     }
-
-    // Sets the time
-    public void SetTime()
-    {
-        //time = slider.value;
-    }
 }

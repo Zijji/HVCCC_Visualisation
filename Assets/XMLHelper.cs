@@ -5,26 +5,45 @@ using Schemas;
 using Schemas1;
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 //
 
 
-public class XMLHelper{
+public class XMLHelper : MonoBehaviour
+{
     public data model_inputs_data_object;
     public railLog rail_log;
+    public string modelInputs, railEvents;
 
-    public XMLHelper(){
-        XmlSerializer ser = new XmlSerializer(typeof(data));
-        using (XmlReader reader = XmlReader.Create("modelInputs.xml"))
+    void Awake()
+    {
+        
+    }
+
+    public Boolean ParseXML()
+    {
+        try
         {
-            model_inputs_data_object = (data) ser.Deserialize(reader);
-        }
+            XmlSerializer ser = new XmlSerializer(typeof(data));
+            modelInputs = this.GetComponent<FileManager>().GetMI();
+            using (XmlReader reader = XmlReader.Create(modelInputs))
+            {
+                model_inputs_data_object = (data)ser.Deserialize(reader);
+            }
 
-        XmlSerializer ser1 = new XmlSerializer(typeof(railLog));
-        using (XmlReader reader = XmlReader.Create("RailEventsLog.xml"))
+            XmlSerializer ser1 = new XmlSerializer(typeof(railLog));
+            railEvents = this.GetComponent<FileManager>().GetREL();
+            using (XmlReader reader = XmlReader.Create(railEvents))
+            {
+                rail_log = (railLog)ser1.Deserialize(reader);
+            }
+            return true;
+        }
+        catch(Exception e)
         {
-            rail_log= (railLog) ser1.Deserialize(reader);
+            Debug.Log(e);
+            return false;
         }
-
     }
 
     public dataRailNetworkJunctionsJunction[] getJunctions(){

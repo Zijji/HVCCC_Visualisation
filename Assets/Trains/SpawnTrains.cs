@@ -15,6 +15,7 @@ public class SpawnTrains : MonoBehaviour
     public GameObject Train;
     private GameObject getTimeObj;
     private int trainNo = 0;
+    XMLHelper xml_helper;
 
 
     List<ConsistPath> paths = new List<ConsistPath>(); // Will contain all the trains that will need to be spawned at anytime.
@@ -24,7 +25,9 @@ public class SpawnTrains : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("is using new Spawntrains");
+        xml_helper = GameObject.Find("FileManager").GetComponent<XMLHelper>();
+
+        //Debug.Log("is using new Spawntrains");
         //Finds time object
         getTimeObj = GameObject.Find("TimeObject");
         if(getTimeObj == null)
@@ -33,9 +36,8 @@ public class SpawnTrains : MonoBehaviour
         }
 
         // Get input from XML
-        XMLHelper xml_helper = new XMLHelper();
         string[] train_ids = xml_helper.getWorkingTrainIds();
-        Debug.Log("working trains " + train_ids.Length);
+        //Debug.Log("working trains " + train_ids.Length);
         for (int i = 0; i < train_ids.Length; i++)
         {
             Dictionary<string, List<string>> xml_train_paths_dic = xml_helper.getTimeOrderedRouteById(train_ids[i]);
@@ -54,19 +56,19 @@ public class SpawnTrains : MonoBehaviour
             pathsChecked.Add(0);
         }
         
-        print("Input order: ");
-        foreach (var p in paths)
-        {
-            print(p);
-        }
+        //print("Input order: ");
+        //foreach (var p in paths)
+        //{
+        //    print(p);
+        //}
 
         paths.Sort(); // Sorts the collection based on the CompareTo() -- which sorts it based the minimum time on the time.
 
-        print("Sorted order: ");
-        foreach (var p in paths)
-        {
-            print(p);
-        }
+        //print("Sorted order: ");
+        //foreach (var p in paths)
+        //{
+        //    print(p);
+        //}
 
         /*
          * Should make a dispatcher that creates trains at the correct time
