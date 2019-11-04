@@ -45,11 +45,15 @@ public class TrainMovement : MonoBehaviour
     {
         if(!NoMorePath())
         {
+            if(pathCurrentDest == 0)
+            {
+                GetPathDest();
+            }
             TimeTrainMovement();
             float trainTime = getTimeObj.GetComponent<TimeController>().GetTime();
             //if (GetNearDest()
             //Now checks if time > departure time
-            if (trainTime > TrainPath.GetDepartureTime(pathCurrentDest - 1))
+            if (trainTime > TrainPath.GetDepartureTime(pathCurrentDest))
             {
                 if (NoMorePath())
                 {
@@ -58,7 +62,6 @@ public class TrainMovement : MonoBehaviour
                 else
                 {
                     GetPathDest();
-                    TimeTrainMovement(); // Comment out causing: Index out of range error 0 might be too low
                 }
 
             }
@@ -78,19 +81,7 @@ public class TrainMovement : MonoBehaviour
         }
 
         zoom = _map.AbsoluteZoom;
-        pathCurrentDest = 1;
-        GetPathDest();
-        TimeTrainMovement();
-    }
-
-    private void BasicTrainMovement()
-    {
-        if (junctionDestination != null)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, junctionDestination.transform.position, speed * Time.deltaTime);
-            transform.LookAt(junctionDestination.transform.position, Vector3.up);
-        }
-
+        pathCurrentDest = 0;
     }
     //Movement taking into consideration time.
     private void TimeTrainMovement()
@@ -161,8 +152,12 @@ public class TrainMovement : MonoBehaviour
             else
             {
                 Vector3 posVector = (getCoordPos - transform.position);
-                Quaternion rotationQuaternion = Quaternion.LookRotation(posVector);
-                transform.rotation = Quaternion.Slerp( transform.rotation,rotationQuaternion, ((trainTime - sectionTime[sectionPartCurrent-1]) / (sectionTime[sectionPartCurrent] - sectionTime[sectionPartCurrent-1])));
+                if(posVector != Vector3.zero)
+                {
+                    Quaternion rotationQuaternion = Quaternion.LookRotation(posVector);
+                    transform.rotation = Quaternion.Slerp(transform.rotation, rotationQuaternion, ((trainTime - sectionTime[sectionPartCurrent - 1]) / (sectionTime[sectionPartCurrent] - sectionTime[sectionPartCurrent - 1])));
+                }
+                
                 
             }
             
@@ -192,8 +187,10 @@ public class TrainMovement : MonoBehaviour
     //Gets destination from path. True if there is still more paths, false if there are no more.
     private bool GetPathDest()
     {
+        
         if (pathCurrentDest < TrainPath.Length())
         {
+            pathCurrentDest++;
             junctionDestination = GameObject.Find(TrainPath.GetJunction(pathCurrentDest));
             junctionPrev = GameObject.Find(TrainPath.GetJunction(pathCurrentDest - 1));
             //Finds the next section from the current junction.
@@ -259,68 +256,19 @@ public class TrainMovement : MonoBehaviour
                     if(!found)
                     {
                         currentJunctionIndex = 0;
+                        Debug.Log("COUNT " + junctionsFound.Count);
                         while(junctionsSearched.Contains(junctionsFound[currentJunctionIndex]))
                         {
+                            Debug.Log("Current index = "+currentJunctionIndex);
                             currentJunctionIndex++;
+                            
                         }
-                        /*
-                        while(junctionsSearched.Contains(junctionsFound[currentJunctionIndex]) && currentJunctionIndex < junctionsFound.Count)
-                        {
-                            currentJunctionIndex++;
-                        }
-                        
-                         */
                         currentJunction = junctionsFound[currentJunctionIndex];
                         junctionsSearched.Add(currentJunction);
                         
                     }
                 }
-                /*
-                    Debug.Log("Loop: ");
-                    Debug.Log(loop);
-                    Debug.Log("junctionsSearch");
-                    for(int i = 0; i < junctionsSearched.Count; i++)
-                    {
-                        Debug.Log(junctionsSearched[i].name);
-                    }
-                    Debug.Log("junctionsFound");
-                    for(int i = 0; i < junctionsFound.Count; i++)
-                    {
-                        Debug.Log(junctionsFound[i].name);
-                    }
-                    loop++;
-                if(loop >= 10)
-                {
-                    Debug.Log("Error! Endless while loop found.");
-                    Debug.Log("isFound?");
-                    Debug.Log(found);
-                    Debug.Log("junctionsSearchCount ");
-                    for(int i = 0; i < junctionsSearched.Count; i++)
-                    {
-                        Debug.Log(junctionsSearched[i].name);
-                    }
-                    Debug.Log("junctionsFoundCount ");
-                    for(int i = 0; i < junctionsFound.Count; i++)
-                    {
-                        Debug.Log(junctionsFound[i].name);
-                    }
-                    Debug.Log("Loop:");
-                    Debug.Log(loop);
-                    Debug.Log("junctionsSearchCount ");
-                    Debug.Log(junctionsSearched.Count);
-                    Debug.Log("junctionsFoundCount ");
-                    Debug.Log(junctionsFound.Count);
-
-                }
-                
-                 */
-                /*
-                for(int i = 0; i < junctionsSearched.Count; i++)
-                {
-                    Debug.Log(junctionsFound[i].name);
-                }
-                
-                 */
+               
                 //All searched junctions (including start and end junctions) are stored in junctionsSearched
                 //Does a DFS to find all the sections to that junction.
                 List<GameObject> dfsJunctionPath = new List<GameObject>();       //List of the 'true' path containing all the sections up to the junction
@@ -354,11 +302,11 @@ public class TrainMovement : MonoBehaviour
                     {
                         jpfound = true;
                     }
-                    Debug.Log("Path List:");
-                    for(int i = 0; i < dfsJunctionPath.Count; i++)
-                    {
-                        Debug.Log(dfsJunctionPath[i].name);
-                    }
+                    //Debug.Log("Path List:");
+                    //for(int i = 0; i < dfsJunctionPath.Count; i++)
+                    //{
+                    //    Debug.Log(dfsJunctionPath[i].name);
+                    //}
                 }
                 if(loop >= 100)     //Haven't tested this with a larger network. Will remove when first route is implemented
                 {
@@ -562,7 +510,7 @@ public class TrainMovement : MonoBehaviour
 
             sectionPartCurrent = 1; //Has to start at ==1 otherwise it starts moving towards the junction instead of the first point of the junction.
 
-            pathCurrentDest++;
+            
             return true;
         }
         return false;
