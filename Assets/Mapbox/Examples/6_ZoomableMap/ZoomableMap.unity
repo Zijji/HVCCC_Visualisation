@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -548,7 +548,7 @@ MonoBehaviour:
   xml_helper: {fileID: 0}
   _map: {fileID: 555018383}
   _locationStrings: []
-  _spawnScale: 14
+  _spawnScale: 8
   _markerPrefab: {fileID: 1839187062704024, guid: 70b491ba3713d6e4ebe7aec4f7709403,
     type: 3}
   _junctionParent: {fileID: 1107453587}
@@ -584,7 +584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _map: {fileID: 555018383}
   _locationStrings: []
-  _spawnScale: 14
+  _spawnScale: 8
   _markerPrefab: {fileID: 632044044779309480, guid: 984df08ee75d0d64c81cc7003ba25e79,
     type: 3}
   _subJunctionParent: {fileID: 515040658}
@@ -1007,7 +1007,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prevTime: 0
-  Train: {fileID: 4596497141785460168, guid: 2d772b4095c084b48980035e7fe52e4e, type: 3}
+  Train: {fileID: 4596497141785460168, guid: 0cb950e01f0c5f6459194a7d6610ff1d, type: 3}
 --- !u!4 &1088814475
 Transform:
   m_ObjectHideFlags: 0
