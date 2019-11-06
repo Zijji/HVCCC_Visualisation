@@ -545,9 +545,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c6c4a60b58e9e84fa8d89fe2e46dfd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xml_helper: {fileID: 0}
   _map: {fileID: 555018383}
   _locationStrings: []
-  _spawnScale: 4
+  _spawnScale: 14
   _markerPrefab: {fileID: 1839187062704024, guid: 70b491ba3713d6e4ebe7aec4f7709403,
     type: 3}
   _junctionParent: {fileID: 1107453587}
@@ -583,7 +584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _map: {fileID: 555018383}
   _locationStrings: []
-  _spawnScale: 4
+  _spawnScale: 14
   _markerPrefab: {fileID: 632044044779309480, guid: 984df08ee75d0d64c81cc7003ba25e79,
     type: 3}
   _subJunctionParent: {fileID: 515040658}
@@ -6603,6 +6604,8 @@ MonoBehaviour:
   sectionTimeTotal: 0
   sectionTime: []
   sectionCoords: []
+  nomoretrack: 0
+  stopTrain: 0
   _map: {fileID: 0}
   zoom: 0
   _spawnScale: 1

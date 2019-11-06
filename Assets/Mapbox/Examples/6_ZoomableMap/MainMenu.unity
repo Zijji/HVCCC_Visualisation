@@ -394,9 +394,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Welcome to the HVCCC 3D Simulation Model \n\nPlease load your Model Inputs
-    and Rail Event Log XML files\n\n- WASD to move\n- Click and drag to move\n- Scroll
-    to zoom"
+  m_Text: "Welcome to the HVCCC 3D Visualisation Model \n\nPlease load your Model
+    Inputs and Rail Event Log XML files\n\n- WASD to move\n- Click and drag to move\n-
+    Scroll to zoom"
 --- !u!222 &523690739
 CanvasRenderer:
   m_ObjectHideFlags: 0

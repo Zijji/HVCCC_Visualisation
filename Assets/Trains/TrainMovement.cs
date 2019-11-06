@@ -25,7 +25,8 @@ public class TrainMovement : MonoBehaviour
     public List<float> sectionTime = new List<float>(); //The time that the train should be at each coord in the section
     public string[] sectionCoords;
 
-
+    public bool nomoretrack;
+    public bool stopTrain = false;
     private GameObject getTimeObj;
 
     private int pathCurrentDest = 0;        //Index of current destination in path
@@ -41,8 +42,9 @@ public class TrainMovement : MonoBehaviour
     float _spawnScale = 1.0f;
 
     // Update is called once per frame
-    void FixedUpdate()
+    void LateUpdate()
     {
+        nomoretrack = NoMorePath();
         if(!NoMorePath())
         {
             if(pathCurrentDest == 0)
@@ -53,18 +55,30 @@ public class TrainMovement : MonoBehaviour
             float trainTime = getTimeObj.GetComponent<TimeController>().GetTime();
             //if (GetNearDest()
             //Now checks if time > departure time
-            if (trainTime > TrainPath.GetDepartureTime(pathCurrentDest))
+            if( TrainPath != null)
             {
-                if (NoMorePath())
+                if (trainTime > TrainPath.GetDepartureTime(pathCurrentDest))
                 {
-                    junctionDestination = null;
-                }
-                else
-                {
-                    GetPathDest();
-                }
+                    if (NoMorePath())
+                    {
+                        junctionDestination = null;
+                    }
+                    else
+                    {
+                        GetPathDest();
+                    }
 
+                }
             }
+            
+        }
+        else
+        {
+            transform.position = new Vector3(junctionDestination.transform.position.x,
+                                        junctionDestination.transform.position.y,
+                                        junctionDestination.transform.position.z
+                                            );
+            //Destroy(gameObject);
         }
         
 
@@ -102,7 +116,7 @@ public class TrainMovement : MonoBehaviour
         //Moves towards next portion of the section.
         if(sectionCurrent == null)
         {
-            transform.LookAt(junctionDestination.transform.position, Vector3.up);
+            //transform.LookAt(junctionDestination.transform.position, Vector3.up);
             float trainTime = getTimeObj.GetComponent<TimeController>().GetTime();
             float destTime = (TrainPath.GetArrivalTime(pathCurrentDest));
             float prevTime = (TrainPath.GetArrivalTime(pathCurrentDest - 1));
@@ -143,7 +157,7 @@ public class TrainMovement : MonoBehaviour
             Debug.Log(getCoordPosPrev);
             
              */
-            
+            transform.position = Vector3.Lerp(getCoordPosPrev, getCoordPos, ((trainTime - sectionTime[sectionPartCurrent-1]) / (sectionTime[sectionPartCurrent] - sectionTime[sectionPartCurrent-1])));
             //First part of the section has the train look at the point directly; from then on, uses slerp to rotate.
             if(sectionPartCurrent <= 1)
             {
@@ -161,7 +175,6 @@ public class TrainMovement : MonoBehaviour
                 
             }
             
-            transform.position = Vector3.Lerp(getCoordPosPrev, getCoordPos, ((trainTime - sectionTime[sectionPartCurrent-1]) / (sectionTime[sectionPartCurrent] - sectionTime[sectionPartCurrent-1])));
             //Debug.Log(((trainTime - sectionTime[sectionPartCurrent-1]) / (sectionTime[sectionPartCurrent-1] - sectionTime[sectionPartCurrent] )));
             /*
             transform.position = new Vector3(getCoordPos.x - (getCoordPos.x - getCoordPosPrev.x) * ((trainTime- sectionTime[sectionPartCurrent]) / (sectionTime[sectionPartCurrent] - sectionTime[sectionPartCurrent+1] )),
@@ -187,11 +200,21 @@ public class TrainMovement : MonoBehaviour
     //Gets destination from path. True if there is still more paths, false if there are no more.
     private bool GetPathDest()
     {
-        
+                
         if (pathCurrentDest < TrainPath.Length())
         {
             pathCurrentDest++;
             junctionDestination = GameObject.Find(TrainPath.GetJunction(pathCurrentDest));
+        
+            //Checks if the junction has sections connected to it. If not, disables train movement.
+            if(junctionDestination.GetComponent<Junction>().junctionNeighbour.Count <= 0 )
+            {
+                junctionDestination = GameObject.Find(TrainPath.GetJunction(pathCurrentDest-1));
+                junctionPrev = GameObject.Find(TrainPath.GetJunction(pathCurrentDest-2));
+                TrainPath = null;
+                stopTrain = true;
+                return false;
+            }
             junctionPrev = GameObject.Find(TrainPath.GetJunction(pathCurrentDest - 1));
             //Finds the next section from the current junction.
             //This part should be expanded to do a breadth-search for junctions that could be in the network. 
@@ -519,7 +542,11 @@ public class TrainMovement : MonoBehaviour
     //Are there no more paths? true = no more paths; false = more paths
     private bool NoMorePath()
     {
-        if (pathCurrentDest < TrainPath.Length())
+        if(stopTrain == true)
+        {
+            return true;
+        }
+        if (pathCurrentDest < TrainPath.Length()-1)
         {
             return false;
         }
@@ -541,7 +568,6 @@ public class TrainMovement : MonoBehaviour
     }
 
     /*
-    
     void Update()
     {
         if (zoom != _map.AbsoluteZoom)
@@ -561,7 +587,8 @@ public class TrainMovement : MonoBehaviour
             transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
         }
     
+    
 //        Debug.Log(Event.current.type);
     }
-    */
+     */
 }

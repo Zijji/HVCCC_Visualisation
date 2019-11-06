@@ -146,7 +146,8 @@ public class MapboxCreateJunctions : MonoBehaviour
     void OnGUI()
     {
         if (Event.current.type == EventType.ScrollWheel || Event.current.type == EventType.MouseDrag || 
-            Event.current.type == EventType.MouseUp || Event.current.type == EventType.MouseDown)
+            Event.current.type == EventType.MouseUp || Event.current.type == EventType.MouseDown || 
+			Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
             int count = _spawnedObjects.Count;
             for (int i = 0; i < count; i++)
